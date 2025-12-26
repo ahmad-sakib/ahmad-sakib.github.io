@@ -1,0 +1,28 @@
+title: Physics&Philosophy
+email: ahmadhasansakib7@gmail.com
+description: >-
+  Exploring Next-to-Leading Order (NLO) physics, Machine Learning, and the Philosophy of Science.
+
+# URL Settings
+baseurl: "" # Keep empty for custom domains, or "/repo-name" if using standard gh-pages
+url: "https://ahmad-sakib.github.io" # Replace with your GitHub URL
+
+# Author Settings
+author:
+  name: AHMAD HASAN SAKIB
+  email: ahmadhasansakib7@example.com
+
+# Build settings
+markdown: kramdown
+theme: minima # Acts as a fallback for styles we don't manually override
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Exclude system files from the build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor

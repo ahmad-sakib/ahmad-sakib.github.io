@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-12-26T23:35:29+06:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Physics&amp;amp;Philosophy</title><subtitle>Exploring Next-to-Leading Order (NLO) physics, Machine Learning, and the Philosophy of Science.</subtitle><author><name>AHMAD HASAN SAKIB</name><email>contact@example.com</email></author><entry><title type="html">Introduction to NLO Calculations</title><link href="http://localhost:4000/nlo/2023/12/27/nlo-intro.html" rel="alternate" type="text/html" title="Introduction to NLO Calculations" /><published>2023-12-27T09:00:00+06:00</published><updated>2023-12-27T09:00:00+06:00</updated><id>http://localhost:4000/nlo/2023/12/27/nlo-intro</id><content type="html" xml:base="http://localhost:4000/nlo/2023/12/27/nlo-intro.html"><![CDATA[<p>In Quantum Chromodynamics (QCD), leading-order calculations are often insufficient. We must look at <strong>Next-to-Leading Order (NLO)</strong> corrections.</p>
+
+<h3 id="the-virtual-correction">The Virtual Correction</h3>
+
+<p>Consider the loop integral in $d = 4 - 2\epsilon$ dimensions. Using dimensional regularization, we encounter the gamma function:</p>
+
+\[\int \frac{d^dk}{(2\pi)^d} \frac{1}{(k^2 - m^2)^2} \sim \Gamma\left(2 - \frac{d}{2}\right)\]
+
+<h3 id="the-divergence">The Divergence</h3>
+
+<p>As $\epsilon \to 0$, the expression diverges:</p>
+
+\[\Gamma(\epsilon) = \frac{1}{\epsilon} - \gamma_E + \mathcal{O}(\epsilon)\]
+
+<p>This singularity must be cancelled by the real emission diagrams to obtain a finite physical cross-section.</p>
+
+<hr />
+<p><em>If you see the math equations above nicely formatted, MathJax is working!</em></p>]]></content><author><name>AHMAD HASAN SAKIB</name><email>contact@example.com</email></author><category term="NLO" /><category term="physics" /><category term="qcd" /><summary type="html"><![CDATA[A test of MathJax rendering for complex integrals.]]></summary></entry></feed>

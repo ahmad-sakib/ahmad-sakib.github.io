@@ -1,0 +1,18 @@
+---
+layout: default
+title: Home
+---
+
+<h2>Latest Research Notes</h2>
+
+<div class="post-list">
+  {% for post in site.posts %}
+    <article style="margin-bottom: 2.5rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
+      <h3><a href="{{ post.url | relative_url }}" style="text-decoration: none; color: #0366d6;">{{ post.title }}</a></h3>
+      <p style="font-size: 0.85rem; color: #586069;">
+        {{ post.date | date: "%B %d, %Y" }} • {{ post.categories | join: ', ' }}
+      </p>
+      <p>{{ post.description }}</p>
+    </article>
+  {% endfor %}
+</div>

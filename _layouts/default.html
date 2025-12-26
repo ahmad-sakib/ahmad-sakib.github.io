@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      }
+    };
+  </script>
+</head>
+<body>
+
+<div class="site-wrapper">
+  <aside class="sidebar">
+    <div class="logo">
+      <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+    </div>
+    <nav>
+      <a href="{{ '/' | relative_url }}">Home</a>
+      <a href="{{ '/about' | relative_url }}">About</a>
+      <hr style="border-color: #444; margin: 15px 0;">
+      <a href="{{ '/nlo' | relative_url }}">NLO</a>
+      <a href="{{ '/machine-learning' | relative_url }}">Machine Learning</a>
+      <a href="{{ '/philosophy' | relative_url }}">Philosophy</a>
+    </nav>
+  </aside>
+
+  <main class="content-wrapper">
+    {{ content }}
+  </main>
+</div>
+
+</body>
+</html>
