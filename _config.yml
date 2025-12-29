@@ -4,8 +4,8 @@ description: >-
   Exploring Next-to-Leading Order (NLO) physics, Machine Learning, and the Philosophy of Science.
 
 # URL Settings
-baseurl: "" 
 url: "https://ahmad-sakib.github.io"
+baseurl: "/discuss-physics-with-sakib.github.io" # <--- THIS IS THE FIX
 
 # Author Settings
 author:
