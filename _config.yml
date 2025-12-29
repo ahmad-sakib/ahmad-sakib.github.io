@@ -5,7 +5,7 @@ description: >-
 
 # URL Settings
 url: "https://ahmad-sakib.github.io"
-baseurl: "/discuss-physics-with-sakib.github.io" # <--- THIS IS THE FIX
+baseurl: ""  # <--- Keep this empty!
 
 # Author Settings
 author:
