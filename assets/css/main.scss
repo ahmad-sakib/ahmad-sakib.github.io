@@ -1,21 +1,21 @@
 @import "minimal-mistakes";
 
 /* =========================================
-   PERMANENT DARK LANDING PAGE STYLES
+   PERMANENT LIGHT LANDING PAGE STYLES
    ========================================= */
 
-/* 1. Global Background (Fixes white/light bars between sections) */
+/* 1. Global Background */
 body {
-  background-color: #3a2e41; /* Matches the featured section for a seamless look */
-  color: #e6e6e6;
+  background-color: #fcfcfc; /* Clean off-white */
+  color: #333333; /* Soft dark grey for readability */
   margin: 0;
 }
 
 /* 2. Hero Section Container */
 .hero-section-container {
-  padding: 3em 0;
-  background-color: #000000; /* Deep Black Background */
-  border-bottom: 1px solid #1f293a; 
+  padding: 4em 0;
+  background-color: #ffffff; /* Pure white */
+  border-bottom: 1px solid #eeeeee; 
 }
 
 /* The Grid Layout */
@@ -46,9 +46,9 @@ body {
 .hero-image-wrapper img.hero-profile-img {
   width: 100%;
   height: auto;
-  border-radius: 30px;
-  /* White glow shadow to pop against dark bg */
-  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1); 
+  border-radius: 20px;
+  /* Dark subtle shadow for depth on light background */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
 }
 
 /* Text Styling */
@@ -59,7 +59,7 @@ body {
 .hero-content h1.hero-title {
   font-size: 2.1em;
   font-weight: 800;
-  color: #ffffff; 
+  color: #111111; /* Strong black for headings */
   line-height: 1.1;
   margin-bottom: 25px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -67,7 +67,7 @@ body {
 
 .hero-content p.hero-text-intro {
   font-size: 1.3em;
-  color: #d1d1d1; 
+  color: #555555; /* Medium grey for intro text */
   line-height: 1.5;
   margin-bottom: 35px;
   font-family: serif; 
@@ -90,24 +90,25 @@ body {
   margin-right: 0;
 }
 
-/* Force "About Me" style buttons to be White Outline */
+/* Force "About Me" style buttons to be Dark Outline for Light Theme */
 .hero-buttons .btn:not(.btn--primary):not(.btn--inverse) {
-  color: #ffffff;
-  border: 1px solid #ffffff;
+  color: #333333;
+  border: 1px solid #333333;
   background-color: transparent;
 }
 
 .hero-buttons .btn:not(.btn--primary):not(.btn--inverse):hover {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #333333;
+  color: #ffffff;
 }
 
 
 /* 3. Featured Section */
 .featured-section-container.custom-dark-bg {
-  background-color: #010a18; /* Deep Dark Blue/Black */
+  background-color: #f7f9fc; /* Very light blue-grey section break */
   padding: 5em 0;
   margin-top: 0;
+  border-top: 1px solid #eaeaea;
 }
 
 .featured-grid {
@@ -122,7 +123,7 @@ body {
 
 @media (max-width: 800px) {
   .featured-grid {
-    flex-direction: column-reverse; /* Keeps text above image on mobile if image is first in HTML */
+    flex-direction: column-reverse;
     text-align: center;
   }
 }
@@ -135,20 +136,20 @@ body {
   flex: 1;
 }
 
-/* Ensure Headings inside featured section are light */
+/* Ensure Headings inside featured section are dark */
 .featured-text-content h2, 
 .featured-text-content h3 {
-  color: #ffffff !important;
+  color: #111111 !important;
 }
 
 .featured-text-content p {
-  color: #cccccc !important;
+  color: #444444 !important;
 }
 
 img.featured-img-tilted {
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
   transform: rotate(2deg);
-  border: 3px solid #ffffff;
+  border: 4px solid #ffffff; /* White border looks like a polaroid on light grey */
   max-width: 100%;
   height: auto;
 }
