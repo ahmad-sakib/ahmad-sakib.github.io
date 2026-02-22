@@ -178,3 +178,66 @@ img.featured-img-tilted {
   max-width: 100%;
   height: auto;
 }
+
+/* =========================================
+   BLOG POST "PAPER" READING VIEW
+   ========================================= */
+
+/* 1. Widen the overall page container */
+.page {
+  /* Increases the max width from the narrow default */
+  max-width: 1000px !important; 
+}
+
+/* Force paragraphs and lists to use the full new width */
+.page__content p, 
+.page__content li, 
+.page__content .math {
+  max-width: 100% !important; 
+  font-size: 1.15em; /* Slightly larger text for readability */
+  line-height: 1.7;  /* Better breathing room between lines */
+}
+
+/* 2. The "Paper on a Desk" Comfortable Theme */
+.page__inner-wrap {
+  /* A soft, warm off-white (like a physical book page) */
+  background-color: #faf9f5; 
+  /* Dark charcoal text (easier on eyes than pure black) */
+  color: #2b2b2b; 
+  
+  /* Adds spacing inside the "paper" */
+  padding: 3em 4em; 
+  border-radius: 8px; 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Drops a shadow onto the dark background */
+}
+
+@media (max-width: 800px) {
+  .page__inner-wrap {
+    padding: 2em 1.5em; /* Tighter padding for mobile screens */
+  }
+}
+
+/* 3. Fix Headings inside the reading area */
+.page__inner-wrap h1,
+.page__inner-wrap h2,
+.page__inner-wrap h3,
+.page__inner-wrap h4 {
+  color: #111111; /* Strong contrast for headers */
+  font-family: Georgia, serif; /* Academic journal feel */
+  border-bottom: 1px solid #e0ddd3; /* Soft divider line under headers */
+  padding-bottom: 0.3em;
+  margin-top: 1.5em;
+}
+
+/* 4. Subtitle / Meta Text (Date, Category, etc.) */
+.page__meta {
+  color: #666666 !important;
+}
+
+/* 5. Clean up inline code blocks and math wrappers */
+.page__content code {
+  background-color: #ebe8e1;
+  color: #8c2a2a;
+  border-radius: 4px;
+  padding: 0.1em 0.3em;
+}
