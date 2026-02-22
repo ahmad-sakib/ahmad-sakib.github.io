@@ -1,27 +1,24 @@
 @import "minimal-mistakes";
 
 /* =========================================
-   1. ACADEMIC CHALKBOARD THEME VARIABLES
+   ACADEMIC CHALKBOARD THEME STYLES
    ========================================= */
 
-$chalkboard-bg: #1e2220;      /* Deep matte slate-green */
-$chalkboard-darker: #151816;  /* Darker for hero section */
-$chalkboard-lighter: #262b29; /* Slightly lighter for reading "paper" area */
-$chalk-text: #e0ded8;         /* Warm off-white, easy on the eyes */
-$chalk-muted: #a8a6a1;        /* Dimmer text for intros/descriptions */
-$accent-brass: #c89f59;       /* Muted amber/brass for highlights */
-$border-color: #323835;       /* Subtle border color */
+/* Theme Variables for easy tweaking */
+$chalkboard-bg: #1e2220;     /* Deep matte slate-green */
+$chalkboard-darker: #151816; /* Slightly darker for hero section */
+$chalk-text: #e0ded8;        /* Warm off-white, easy on the eyes */
+$chalk-muted: #a8a6a1;       /* Dimmer text for intros/descriptions */
+$accent-brass: #c89f59;      /* Muted amber/brass for highlights */
+$border-color: #323835;      /* Subtle border color */
 
-/* =========================================
-   2. GLOBAL & LANDING PAGE STYLES
-   ========================================= */
-
+/* 1. Global Dark Background */
 body {
   background-color: $chalkboard-bg; 
   color: $chalk-text;
 }
 
-/* Hero Section Container */
+/* 2. Hero Section Container */
 .hero-section-container {
   padding: 4em 0;
   background-color: $chalkboard-darker; 
@@ -49,13 +46,13 @@ body {
 /* Image Styling */
 .hero-image-wrapper {
   flex: 1;
-  max-width: 450px; 
+  max-width: 450px; /* Slightly tighter for a cleaner look */
 }
 
 .hero-image-wrapper img.hero-profile-img {
   width: 100%;
   height: auto;
-  border-radius: 8px; 
+  border-radius: 8px; /* Sharper edges fit the academic vibe better than extreme rounding */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); 
   border: 1px solid $border-color;
 }
@@ -71,7 +68,7 @@ body {
   color: $chalk-text; 
   line-height: 1.2;
   margin-bottom: 20px;
-  font-family: Georgia, serif; 
+  font-family: Georgia, serif; /* Classic academic serif */
 }
 
 .hero-content p.hero-text-intro {
@@ -95,8 +92,11 @@ body {
   }
 }
 
-.hero-buttons .btn { margin-right: 0; }
+.hero-buttons .btn { 
+  margin-right: 0; 
+}
 
+/* Primary Button - Brass/Amber */
 .btn--primary {
   background-color: $accent-brass;
   color: #151816;
@@ -108,6 +108,7 @@ body {
   color: #151816;
 }
 
+/* Outline Buttons (Replaces your inverse/about me logic) */
 .btn:not(.btn--primary) {
   background-color: transparent;
   color: $chalk-text;
@@ -119,7 +120,7 @@ body {
   color: $chalkboard-darker;
 }
 
-/* Featured Section */
+/* 3. Featured Section */
 .featured-section-container {
   background-color: $chalkboard-bg; 
   padding: 5em 0;
@@ -145,6 +146,7 @@ body {
 .featured-text-content { flex: 1.5; }
 .featured-media-wrapper { flex: 1; }
 
+/* Cleaned up featured text formatting */
 .featured-subtitle {
   color: $accent-brass;
   font-size: 1.1em;
@@ -171,79 +173,8 @@ body {
 img.featured-img-tilted {
   box-shadow: 0 15px 35px rgba(0,0,0,0.4);
   transform: rotate(2deg);
-  border: 4px solid $border-color; 
+  border: 4px solid $border-color; /* Gives it a subtle framed look */
   border-radius: 4px;
   max-width: 100%;
   height: auto;
-}
-
-/* =========================================
-   3. EXPANDED BLOG POST READING VIEW
-   ========================================= */
-
-/* Expand the Main Reading Column */
-.page {
-  max-width: 900px !important; 
-  margin: 0 auto;
-}
-
-/* Force text elements to fill the new width */
-.page__content p, 
-.page__content li, 
-.page__content .math,
-.page__content div.highlighter-rouge {
-  max-width: 100% !important; 
-  font-size: 1.15em; 
-  line-height: 1.8;  
-  letter-spacing: 0.3px; 
-}
-
-/* Soften the Contrast (Matches Chalkboard Theme) */
-.page__inner-wrap {
-  background-color: $chalkboard-lighter; 
-  padding: 3em 4em; 
-  border-radius: 8px;
-  color: $chalk-text; 
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-
-@media (max-width: 800px) {
-  .page__inner-wrap {
-    padding: 2em 1.5em; 
-  }
-}
-
-/* Headings styling for clear hierarchy */
-.page__content h1,
-.page__content h2,
-.page__content h3,
-.page__content h4 {
-  color: #ffffff; /* Crisp white for headers to stand out */
-  font-family: Georgia, serif; 
-  margin-top: 1.8em;
-  margin-bottom: 0.5em;
-  font-weight: 600;
-}
-
-.page__content h2 {
-  border-bottom: 1px solid $border-color; 
-  padding-bottom: 0.3em;
-}
-
-/* Better styling for inline math and code */
-.page__content code {
-  background-color: $chalkboard-darker;
-  color: $accent-brass; 
-  padding: 0.2em 0.4em;
-  border-radius: 4px;
-  font-size: 0.9em;
-}
-
-/* Fix blockquote styling for physics/philosophy quotes */
-.page__content blockquote {
-  border-left: 4px solid $accent-brass;
-  padding-left: 1.5em;
-  color: $chalk-muted;
-  font-style: italic;
-  background-color: transparent;
 }
