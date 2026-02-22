@@ -1,45 +1,36 @@
----
----
 @import "minimal-mistakes";
 
 /* =========================================
-   ACADEMIC CHARCOAL THEME - VARIABLES
+   ACADEMIC CHALKBOARD THEME STYLES
    ========================================= */
-:root {
-  --bg-dark-base: #121212;      /* Deep Charcoal */
-  --bg-dark-surface: #1e1e1e;   /* Slightly lighter surface */
-  --text-ivory: #e0e0e0;        /* Warm off-white for body text */
-  --text-muted: #a8a8a8;        /* Soft gray for secondary text */
-  --accent-amber: #d99c52;      /* Prestigious copper/amber */
-  --accent-amber-hover: #c4873f;
-  --border-subtle: #2e2e2e;     
-  --font-serif: "Merriweather", Georgia, "Times New Roman", serif;
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-}
 
-/* =========================================
-   GLOBAL DARK STYLES
-   ========================================= */
+/* Theme Variables for easy tweaking */
+$chalkboard-bg: #1e2220;     /* Deep matte slate-green */
+$chalkboard-darker: #151816; /* Slightly darker for hero section */
+$chalk-text: #e0ded8;        /* Warm off-white, easy on the eyes */
+$chalk-muted: #a8a6a1;       /* Dimmer text for intros/descriptions */
+$accent-brass: #c89f59;      /* Muted amber/brass for highlights */
+$border-color: #323835;      /* Subtle border color */
+
+/* 1. Global Dark Background */
 body {
-  background-color: var(--bg-dark-base); 
-  color: var(--text-ivory);
-  font-family: var(--font-sans);
+  background-color: $chalkboard-bg; 
+  color: $chalk-text;
 }
 
-/* =========================================
-   HERO SECTION
-   ========================================= */
+/* 2. Hero Section Container */
 .hero-section-container {
   padding: 4em 0;
-  background-color: var(--bg-dark-base); 
-  border-bottom: 1px solid var(--border-subtle); 
+  background-color: $chalkboard-darker; 
+  border-bottom: 1px solid $border-color; 
 }
 
+/* The Grid Layout */
 .hero-grid {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 60px;
+  gap: 50px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
@@ -49,49 +40,46 @@ body {
   .hero-grid {
     flex-direction: column;
     text-align: center;
-    gap: 30px;
   }
 }
 
-/* Hero Image */
+/* Image Styling */
 .hero-image-wrapper {
   flex: 1;
-  max-width: 450px;
+  max-width: 450px; /* Slightly tighter for a cleaner look */
 }
 
 .hero-image-wrapper img.hero-profile-img {
   width: 100%;
   height: auto;
-  border-radius: 8px; /* Slightly squared corners for an academic look */
-  border: 1px solid var(--border-subtle);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4); 
+  border-radius: 8px; /* Sharper edges fit the academic vibe better than extreme rounding */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); 
+  border: 1px solid $border-color;
 }
 
-/* Hero Text */
+/* Text Styling */
 .hero-content {
   flex: 1.2;
 }
 
 .hero-content h1.hero-title {
-  font-family: var(--font-serif);
-  font-size: 2.4em;
-  font-weight: 400; /* Regular weight for Serif titles feels more refined */
-  color: var(--text-ivory); 
+  font-size: 2.2em;
+  font-weight: 700;
+  color: $chalk-text; 
   line-height: 1.2;
   margin-bottom: 20px;
+  font-family: Georgia, serif; /* Classic academic serif */
 }
 
 .hero-content p.hero-text-intro {
-  font-family: var(--font-serif);
   font-size: 1.25em;
-  color: var(--text-muted); 
+  color: $chalk-muted; 
   line-height: 1.6;
-  margin-bottom: 40px;
+  margin-bottom: 35px;
+  font-family: Georgia, serif; 
 }
 
-/* =========================================
-   BUTTON STYLES
-   ========================================= */
+/* Buttons Area */
 .hero-buttons {
   display: flex;
   gap: 15px;
@@ -104,47 +92,38 @@ body {
   }
 }
 
-.hero-buttons .btn { margin-right: 0; }
-
-/* Primary Button Override for Amber Accent */
-.btn--primary,
-.btn--accent {
-  background-color: var(--accent-amber);
-  color: var(--bg-dark-base);
-  border: 1px solid var(--accent-amber);
-  font-weight: 600;
-  transition: all 0.3s ease;
+.hero-buttons .btn { 
+  margin-right: 0; 
 }
 
-.btn--primary:hover,
-.btn--accent:hover {
-  background-color: var(--accent-amber-hover);
-  color: var(--bg-dark-base);
+/* Primary Button - Brass/Amber */
+.btn--primary {
+  background-color: $accent-brass;
+  color: #151816;
+  border: 1px solid $accent-brass;
 }
 
-/* Outline/Inverse Buttons */
-.btn--outline,
-.btn--inverse {
+.btn--primary:hover {
+  background-color: darken($accent-brass, 10%);
+  color: #151816;
+}
+
+/* Outline Buttons (Replaces your inverse/about me logic) */
+.btn:not(.btn--primary) {
   background-color: transparent;
-  color: var(--text-ivory);
-  border: 1px solid var(--text-ivory);
-  transition: all 0.3s ease;
+  color: $chalk-text;
+  border: 1px solid $chalk-text;
 }
 
-.btn--outline:hover,
-.btn--inverse:hover {
-  background-color: var(--text-ivory);
-  color: var(--bg-dark-base);
+.btn:not(.btn--primary):hover {
+  background-color: $chalk-text;
+  color: $chalkboard-darker;
 }
 
-/* =========================================
-   FEATURED SECTION
-   ========================================= */
-.featured-section-container.custom-dark-bg {
-  background-color: var(--bg-dark-surface); /* Lighter surface for contrast */
+/* 3. Featured Section */
+.featured-section-container {
+  background-color: $chalkboard-bg; 
   padding: 5em 0;
-  margin-top: 0;
-  border-bottom: 1px solid var(--border-subtle);
 }
 
 .featured-grid {
@@ -154,56 +133,48 @@ body {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px;
-  gap: 60px;
+  gap: 50px;
 }
 
 @media (max-width: 800px) {
   .featured-grid {
     flex-direction: column-reverse;
     text-align: center;
-    gap: 30px;
   }
 }
 
 .featured-text-content { flex: 1.5; }
 .featured-media-wrapper { flex: 1; }
 
-/* Text Content for Featured Area */
-.featured-tagline {
-  color: var(--accent-amber) !important;
-  font-family: var(--font-sans);
+/* Cleaned up featured text formatting */
+.featured-subtitle {
+  color: $accent-brass;
   font-size: 1.1em;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
 }
 
 .featured-title {
-  color: var(--text-ivory) !important;
-  font-family: var(--font-serif);
-  font-size: 2.2em;
-  margin-bottom: 20px;
-  font-weight: 400;
+  color: $chalk-text;
+  font-size: 2em;
+  font-weight: 700;
+  margin-top: 0;
+  font-family: Georgia, serif;
 }
 
-.featured-desc {
-  color: var(--text-muted) !important;
-  font-family: var(--font-sans);
-  font-size: 1.15em;
+.featured-description {
+  color: $chalk-muted;
+  font-size: 1.1em;
   line-height: 1.6;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
-/* Clean Image Layout */
-img.featured-img-clean {
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  border: 1px solid var(--border-subtle);
+img.featured-img-tilted {
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+  transform: rotate(2deg);
+  border: 4px solid $border-color; /* Gives it a subtle framed look */
   border-radius: 4px;
   max-width: 100%;
   height: auto;
-  transition: transform 0.3s ease;
-}
-
-img.featured-img-clean:hover {
-  transform: translateY(-5px); /* Adds a subtle, professional hover effect instead of a static tilt */
 }
