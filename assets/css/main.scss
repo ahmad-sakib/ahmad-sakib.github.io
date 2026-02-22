@@ -139,7 +139,7 @@ body {
 /* Ensure Headings inside featured section are dark */
 .featured-text-content h2, 
 .featured-text-content h3 {
-  color: #111111 !important;
+  color: #2f9c69 !important;
 }
 
 .featured-text-content p {
@@ -149,7 +149,7 @@ body {
 img.featured-img-tilted {
   box-shadow: 0 15px 35px rgba(0,0,0,0.1);
   transform: rotate(2deg);
-  border: 4px solid #ffffff; /* White border looks like a polaroid on light grey */
+  border: 4px solid #9b0e0e; /* White border looks like a polaroid on light grey */
   max-width: 100%;
   height: auto;
 }
