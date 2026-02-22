@@ -1,281 +1,147 @@
----
-
----
-
-
-
 @import "minimal-mistakes";
 
-
-
 /* =========================================
-
    PERMANENT DARK LANDING PAGE STYLES
-
    ========================================= */
 
-
-
 /* 1. Global Dark Background (Fixes white bars) */
-
 body {
-
   background-color: #b7c3d6; /* Matches your bottom section */
-
   color: #e6e6e6;
-
 }
-
-
 
 /* 2. Hero Section Container */
-
 .hero-section-container {
-
   padding: 3em 0;
-
   background-color: #000000; /* Your Deep Navy/Purple Background */
-
   border-bottom: 1px solid #1f293a; /* Darker, subtle border */
-
 }
-
-
 
 /* The Grid Layout */
-
 .hero-grid {
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   gap: 50px;
-
   max-width: 1200px;
-
   margin: 0 auto;
-
   padding: 0 20px;
-
-
-
-  @media (max-width: 800px) {
-
-    flex-direction: column;
-
-    text-align: center;
-
-  }
-
 }
 
-
+/* Media Query handled outside of selector for standard CSS compatibility */
+@media (max-width: 800px) {
+  .hero-grid {
+    flex-direction: column;
+    text-align: center;
+  }
+}
 
 /* Image Styling */
-
 .hero-image-wrapper {
-
   flex: 1;
-
   max-width: 500px;
-
-  
-
-  img.hero-profile-img {
-
-    width: 100%;
-
-    height: auto;
-
-    border-radius: 30px;
-
-    /* White glow shadow to pop against dark bg */
-
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1); 
-
-  }
-
 }
 
-
+.hero-image-wrapper img.hero-profile-img {
+  width: 100%;
+  height: auto;
+  border-radius: 30px;
+  /* White glow shadow to pop against dark bg */
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1); 
+}
 
 /* Text Styling */
-
 .hero-content {
-
   flex: 1.2;
-
-
-
-  h1.hero-title {
-
-    font-size: 2.1em;
-
-    font-weight: 800;
-
-    color: #ffffff; /* Pure white title */
-
-    line-height: 1.1;
-
-    margin-bottom: 25px;
-
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-
-  }
-
-
-
-  p.hero-text-intro {
-
-    font-size: 1.3em;
-
-    /* CHANGED: Was #555 (invisible). Now Light Grey. */
-
-    color: #d1d1d1; 
-
-    line-height: 1.5;
-
-    margin-bottom: 35px;
-
-    font-family: serif; 
-
-  }
-
 }
 
+.hero-content h1.hero-title {
+  font-size: 2.1em;
+  font-weight: 800;
+  color: #ffffff; /* Pure white title */
+  line-height: 1.1;
+  margin-bottom: 25px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
 
+.hero-content p.hero-text-intro {
+  font-size: 1.3em;
+  color: #d1d1d1; 
+  line-height: 1.5;
+  margin-bottom: 35px;
+  font-family: serif; 
+}
 
 /* Buttons Area */
-
 .hero-buttons {
-
   display: flex;
-
   gap: 15px;
-
   flex-wrap: wrap;
-
-  
-
-  @media (max-width: 800px) {
-
-    justify-content: center;
-
-  }
-
-  
-
-  .btn { margin-right: 0; }
-
-
-
-  /* Force "About Me" button to be White Outline */
-
-  .btn:not(.btn--primary):not(.btn--inverse) {
-
-    color: #fff;
-
-    border: 1px solid #fff;
-
-  }
-
-  .btn:not(.btn--primary):not(.btn--inverse):hover {
-
-    background: #fff;
-
-    color: #000;
-
-  }
-
 }
 
+@media (max-width: 800px) {
+  .hero-buttons {
+    justify-content: center;
+  }
+}
 
+.hero-buttons .btn { 
+  margin-right: 0; 
+}
 
+/* Force "About Me" button to be White Outline */
+.hero-buttons .btn:not(.btn--primary):not(.btn--inverse) {
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.hero-buttons .btn:not(.btn--primary):not(.btn--inverse):hover {
+  background: #fff;
+  color: #000;
+}
 
 
 /* 3. Featured Section */
-
 .featured-section-container.custom-dark-bg {
-
   background-color: #010a18; /* Deep Dark Blue/Black */
-
   padding: 5em 0;
-
   margin-top: 0;
-
 }
-
-
 
 .featured-grid {
-
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   max-width: 1100px;
-
   margin: 0 auto;
-
   padding: 0 20px;
-
   gap: 50px;
-
-
-
-  @media (max-width: 800px) {
-
-    flex-direction: column-reverse;
-
-    text-align: center;
-
-  }
-
 }
 
-
+@media (max-width: 800px) {
+  .featured-grid {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+}
 
 .featured-text-content { flex: 1.5; }
-
 .featured-media-wrapper { flex: 1; }
 
-
-
 /* Ensure Headings inside featured section are light */
-
 .featured-text-content h2, 
-
 .featured-text-content h3 {
-
   color: #fff !important;
-
 }
-
-
 
 .featured-text-content p {
-
   color: #ccc !important;
-
 }
-
-
 
 img.featured-img-tilted {
-
   box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-
   transform: rotate(2deg);
-
   border: 3px solid #fff;
-
   max-width: 100%;
-
   height: auto;
-
-}
+} /* Removed trailing comma here */
