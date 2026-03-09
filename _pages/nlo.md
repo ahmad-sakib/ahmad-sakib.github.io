@@ -1,7 +1,7 @@
 ---
 layout: single
-title: NLO 
-permalink: /nlo/
+title: "Non-linear Physics"
+permalink: /non-linear-physics/
 ---
 
 <p>This section will contain my post regarading Non Linear optics. </p>

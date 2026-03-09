@@ -12,6 +12,6 @@ Here you can explore my specific areas of research and interest.
 
 ## Research Areas
 
-* [**Next-to-Leading Order (NLO) Physics**](/nlo/)
+* [**Nonlinear Optics**](/nlo/)
 * [**Machine Learning**](/machine-learning/)
 * [**Philosophy of Science**](/philosophy/)

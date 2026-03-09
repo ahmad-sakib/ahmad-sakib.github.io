@@ -1,7 +1,7 @@
 title: Physics&Philosophy
 email: ahmadhasansakib7@gmail.com
 description: >-
-  Exploring Next-to-Leading Order (NLO) physics, Machine Learning, and the Philosophy of Science.
+  Exploring Nonlinear Physics, Machine Learning, and the Philosophy of Science.
 
 # URL Settings
 url: "https://ahmad-sakib.github.io"
@@ -15,7 +15,7 @@ author:
 # Build settings
 markdown: kramdown
 theme: minimal-mistakes-jekyll
-minimal_mistakes_skin: "default"
+minimal_mistakes_skin: "dark"
 
 # Enable search and breadcrumbs
 search: true

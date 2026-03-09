@@ -1,10 +1,12 @@
 ---
 layout: single
-title: "Machine Learning"
-permalink: /machine-learning/
+title: "Linear Regression"
+date: 2026-03-09
+categories: ML
+use_math: true
 ---
 
-## SLIDE 1  
+## SLIDE 1      
 
 **Linear regression** is one of the simplest and most fundamental supervised learning algorithms used to predict a **continuous-valued output** ($Y$) based on one or more input features ($X$). In the context of machine learning, it involves taking a training set of data and feeding it into a learning algorithm to produce a function called a **hypothesis ($h$)**, which is then used to estimate outputs for new, unseen inputs.
 
