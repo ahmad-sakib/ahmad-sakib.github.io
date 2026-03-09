@@ -1,0 +1,167 @@
+---
+layout: null
+title: "Interactive Gradient Descent: Visualizing f(x) = x² + x + 1"
+date: 2026-03-09
+categories: machine-learning
+excerpt: "Watch the algorithm converge in real-time as red dots find the minimum of the cost function."
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Descent Lab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #0f172a; color: #f8fafc; }
+        .slide-card { background: #1e293b; border-radius: 12px; border: 1px solid #334155; }
+        input[type=range] { accent-color: #ef4444; }
+    </style>
+</head>
+<body class="p-6 md:p-12">
+
+    <nav class="max-w-4xl mx-auto mb-8">
+        <a href="/" class="text-slate-400 hover:text-sky-400 transition-colors text-sm uppercase tracking-widest font-semibold">&larr; Back to Home</a>
+    </nav>
+
+    <main class="max-w-4xl mx-auto space-y-8">
+        <header class="text-center">
+            <h1 class="text-4xl font-bold text-sky-400 mb-2">Gradient Descent Visualizer</h1>
+            <p class="text-slate-400">Optimization of the Cost Function: \(f(x) = x^2 + x + 1\)</p>
+        </header>
+
+        <section class="slide-card p-6">
+            <div class="bg-slate-900 p-4 rounded-lg mb-6">
+                <canvas id="gdChart"></canvas>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-end">
+                <div>
+                    <label class="block text-sm font-bold text-sky-400 mb-2">Initial Guess (\(x_0\)): <span id="xVal">2.5</span></label>
+                    <input id="initialX" type="range" min="-3" max="3" step="0.1" value="2.5" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-sky-400 mb-2">Learning Rate (\(\alpha\)): <span id="lrVal">0.1</span></label>
+                    <input id="learningRate" type="range" min="0.01" max="0.9" step="0.01" value="0.1" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer">
+                </div>
+                <button id="runBtn" class="bg-sky-500 hover:bg-sky-400 text-white font-bold py-2 px-6 rounded-lg transition-colors">Run Simulation</button>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="slide-card p-6">
+                <h2 class="text-xl font-bold text-sky-400 mb-4">Current Status</h2>
+                <div class="space-y-2 text-lg">
+                    <p>Step: <span id="stepCount" class="text-white font-mono">0</span></p>
+                    <p>Current \(x\): <span id="currX" class="text-white font-mono">2.50</span></p>
+                    <p>Cost \(f(x)\): <span id="currCost" class="text-white font-mono">9.75</span></p>
+                </div>
+            </div>
+            <div class="slide-card p-6 text-sm text-slate-400">
+                <h2 class="text-xl font-bold text-sky-400 mb-4">The Algorithm</h2>
+                <p class="mb-2">1. Calculate Gradient: \(f'(x) = 2x + 1\)</p>
+                <p>2. Update Rule: \(x_{new} = x - \alpha \cdot f'(x)\)</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const ctx = document.getElementById('gdChart').getContext('2d');
+        let animationId = null;
+        let currentX = 2.5;
+        let steps = [];
+
+        // Math functions based on your examples
+        const f = (x) => Math.pow(x, 2) + x + 1; // 
+        const df = (x) => 2 * x + 1;             // 
+
+        // Generate static curve data
+        const curveData = [];
+        for (let x = -3.5; x <= 3.5; x += 0.1) {
+            curveData.push({x: x, y: f(x)});
+        }
+
+        const chart = new Chart(ctx, {
+            type: 'scatter',
+            data: {
+                datasets: [
+                    {
+                        label: 'Cost Function f(x)',
+                        data: curveData,
+                        showLine: true,
+                        borderColor: '#38bdf8',
+                        borderWidth: 2,
+                        pointRadius: 0,
+                        fill: false
+                    },
+                    {
+                        label: 'Gradient Steps',
+                        data: [],
+                        backgroundColor: '#ef4444',
+                        pointRadius: 6,
+                        pointHoverRadius: 8
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    x: { type: 'linear', position: 'bottom', grid: { color: '#334155' }, min: -4, max: 4 },
+                    y: { grid: { color: '#334155' }, min: 0, max: 15 }
+                },
+                animation: { duration: 0 }
+            }
+        });
+
+        function reset() {
+            clearInterval(animationId);
+            currentX = parseFloat(document.getElementById('initialX').value);
+            steps = [{x: currentX, y: f(currentX)}];
+            updateDisplay(0);
+            chart.data.datasets[1].data = steps;
+            chart.update();
+        }
+
+        function updateDisplay(step) {
+            document.getElementById('stepCount').innerText = step;
+            document.getElementById('currX').innerText = currentX.toFixed(4);
+            document.getElementById('currCost').innerText = f(currentX).toFixed(4);
+        }
+
+        function runSimulation() {
+            reset();
+            const alpha = parseFloat(document.getElementById('learningRate').value);
+            let step = 0;
+
+            animationId = setInterval(() => {
+                const gradient = df(currentX);
+                currentX = currentX - (alpha * gradient);
+                
+                steps.push({x: currentX, y: f(currentX)});
+                chart.data.datasets[1].data = [...steps];
+                chart.update();
+                
+                step++;
+                updateDisplay(step);
+
+                if (Math.abs(gradient) < 0.001 || step > 50) {
+                    clearInterval(animationId);
+                }
+            }, 100);
+        }
+
+        document.getElementById('initialX').addEventListener('input', (e) => {
+            document.getElementById('xVal').innerText = e.target.value;
+            reset();
+        });
+        document.getElementById('learningRate').addEventListener('input', (e) => {
+            document.getElementById('lrVal').innerText = e.target.value;
+        });
+        document.getElementById('runBtn').addEventListener('click', runSimulation);
+
+        reset(); // Initial state
+    </script>
+</body>
+</html>
