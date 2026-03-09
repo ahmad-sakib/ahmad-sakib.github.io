@@ -10,7 +10,7 @@ permalink: /philosophy/
   {% for post in site.categories.philosophy %}
     <li>
       <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <span style="color: #666; font-size: 0.85em"> — {{ post.date | date: "%Y-%m-%d" }}</span>
+      <span style="color: #868; font-size: 0.85em"> — {{ post.date | date: "%Y-%m-%d" }}</span>
     </li>
   {% endfor %}
 </ul>
