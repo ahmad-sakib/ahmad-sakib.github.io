@@ -66,3 +66,4 @@ defaults:
       mathjax: true        
       author_profile: true 
       layout: single
+permalink: /:title/
