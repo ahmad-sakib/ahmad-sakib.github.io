@@ -1,69 +1,138 @@
-title: Physics&Philosophy
-email: ahmadhasansakib7@gmail.com
-description: >-
-  Exploring Nonlinear Physics, Machine Learning, and the Philosophy of Science.
-
-# URL Settings
+# -----------------------------------------------------------------------------
+# Site Information
+# -----------------------------------------------------------------------------
+title: "Ahmad Hasan Sakib | Computational Physics & Nonlinear Optics"
+description: "A scholarly archive dedicated to Nonlinear Optics, Machine Learning, and the Foundations of Physics. Investigating the convergence of computational intelligence and physical phenomena."
 url: "https://ahmad-sakib.github.io"
-baseurl: ""  # <--- Keep this empty!
+baseurl: "" # Keep empty if served from the root
+repository: "ahmad-sakib/ahmad-sakib.github.io"
+teaser: "/assets/images/teaser.jpg" # Default teaser for social sharing
+logo: "/assets/images/logo.png" # Site logo in masthead
+locale: "en-US"
 
-# Author Settings
+# -----------------------------------------------------------------------------
+# Author Information
+# -----------------------------------------------------------------------------
 author:
-  name: "AHMAD HASAN SAKIB"
-  email: "ahmadhasansakib7@example.com"
+  name: "Ahmad Hasan Sakib"
+  avatar: "/assets/images/sakib.jpeg"
+  bio: "Physics Scholar at SUST. Specializing in Nonlinear Optics and Machine Learning. Exploring the intersection of computational physics and philosophical rigor."
+  location: "Sylhet, Bangladesh" # Updated to SUST's location
+  email: "ahmadhasansakib7@gmail.com"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/ahmad-sakib"
+    - label: "Google Scholar"
+      icon: "fas fa-fw fa-graduation-cap"
+      url: "#" # Replace with your URL
+    - label: "ORCID"
+      icon: "fab fa-fw fa-orcid"
+      url: "#" # Replace with your URL
+    - label: "ResearchGate"
+      icon: "fab fa-fw fa-researchgate"
+      url: "#" # Replace with your URL
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/ahmad-hasan-sakib"
 
-# Build settings
-markdown: kramdown
+# -----------------------------------------------------------------------------
+# Theme Settings
+# -----------------------------------------------------------------------------
 theme: minimal-mistakes-jekyll
-minimal_mistakes_skin: "dark"
+minimal_mistakes_skin: "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
-# Enable search and breadcrumbs
+# Search Settings
 search: true
+search_full_content: true
+
+# Breadcrumbs
 breadcrumbs: true
 
+# -----------------------------------------------------------------------------
+# Plugins
+# -----------------------------------------------------------------------------
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-include-cache
+  - jekyll-paginate
 
+# -----------------------------------------------------------------------------
+# Pagination
+# -----------------------------------------------------------------------------
+paginate: 5
+paginate_path: /blog/page:num/
+
+# -----------------------------------------------------------------------------
 # Collections
+# -----------------------------------------------------------------------------
 collections:
   pages:
     output: true
     permalink: /:path/
 
-# Main navigation
-main:
-  - title: "Blog"
-    url: /blog/
-  - title: "About"
-    url: /about/
-  - title: "Resources"
-    url: /resources/
-
-# Exclude system files from the build
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor
-
-# ------------------------------------
-# MathJax & Content Settings
-# ------------------------------------
+# -----------------------------------------------------------------------------
+# Markdown / Kramdown
+# -----------------------------------------------------------------------------
+markdown: kramdown
 kramdown:
   math_engine: mathjax
   input: GFM
+  syntax_highlighter: rouge
   syntax_highlighter_opts:
     block:
-      line_numbers: true 
+      line_numbers: true
       # prevents math inside code blocks from breaking
 
+# -----------------------------------------------------------------------------
+# Defaults
+# -----------------------------------------------------------------------------
 defaults:
+  # _posts
   - scope:
       path: ""
+      type: posts
     values:
-      mathjax: true        
-      author_profile: true 
       layout: single
-permalink: /:title/
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+      mathjax: true
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+      mathjax: true
+
+# -----------------------------------------------------------------------------
+# SEO / Social Metadata
+# -----------------------------------------------------------------------------
+twitter:
+  username: "AhmadSakib" # Replace with your actual handle
+facebook:
+  publisher: "AhmadHasanSakib" # Replace with your actual handle
+  app_id: 
+  publisher_id: 
+
+# -----------------------------------------------------------------------------
+# Exclusions
+# -----------------------------------------------------------------------------
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemini.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+  - .github/
+  - .git/
+  - .gitignore
+  - README.md
