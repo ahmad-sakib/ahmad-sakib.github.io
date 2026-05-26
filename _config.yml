@@ -4,11 +4,12 @@
 title: "Ahmad Hasan Sakib | Computational Physics & Nonlinear Optics"
 description: "A scholarly archive dedicated to Nonlinear Optics, Machine Learning, and the Foundations of Physics. Investigating the convergence of computational intelligence and physical phenomena."
 url: "https://ahmad-sakib.github.io"
-baseurl: "" # Keep empty if served from the root
-repository: "ahmad-sakib/ahmad-sakib.github.io"
+baseurl: "/discuss-physics-with-sakib.github.io" # Correct baseurl for project sites
+repository: "ahmad-sakib/discuss-physics-with-sakib.github.io"
 teaser: "/assets/images/teaser.jpg" # Default teaser for social sharing
 logo: "/assets/images/logo.png" # Site logo in masthead
 locale: "en-US"
+keywords: "Computational Physics, Nonlinear Optics, Machine Learning, Physics Scholar, SUST, AI in Physics, Ahmad Hasan Sakib"
 
 # -----------------------------------------------------------------------------
 # Author Information
@@ -17,24 +18,21 @@ author:
   name: "Ahmad Hasan Sakib"
   avatar: "/assets/images/sakib.jpeg"
   bio: "Physics Scholar at SUST. Specializing in Nonlinear Optics and Machine Learning. Exploring the intersection of computational physics and philosophical rigor."
-  location: "Sylhet, Bangladesh" # Updated to SUST's location
+  location: "Sylhet, Bangladesh"
   email: "ahmadhasansakib7@gmail.com"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/ahmad-sakib"
-    - label: "Google Scholar"
-      icon: "fas fa-fw fa-graduation-cap"
-      url: "#" # Replace with your URL
-    - label: "ORCID"
-      icon: "fab fa-fw fa-orcid"
-      url: "#" # Replace with your URL
-    - label: "ResearchGate"
-      icon: "fab fa-fw fa-researchgate"
-      url: "#" # Replace with your URL
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://linkedin.com/in/ahmad-hasan-sakib"
+    - label: "Google Scholar"
+      icon: "fas fa-fw fa-graduation-cap"
+      url: "https://scholar.google.com" # Placeholder, update when available
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter"
+      url: "https://twitter.com/AhmadSakib"
 
 # -----------------------------------------------------------------------------
 # Theme Settings
@@ -58,6 +56,18 @@ plugins:
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-paginate
+
+# --------------------------------------------------------
+# SEO & Social Sharing (Enhanced)
+# --------------------------------------------------------
+twitter:
+  username: "AhmadSakib"
+  card: summary_large_image
+facebook:
+  publisher: "AhmadHasanSakib"
+  app_id: 
+  publisher_id: 
+og_image: "/assets/images/teaser.jpg"
 
 # -----------------------------------------------------------------------------
 # Pagination
@@ -84,11 +94,10 @@ kramdown:
   syntax_highlighter_opts:
     block:
       line_numbers: true
-      # prevents math inside code blocks from breaking
 
 # -----------------------------------------------------------------------------
 # Defaults
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------
 defaults:
   # _posts
   - scope:
@@ -102,6 +111,7 @@ defaults:
       share: true
       related: true
       mathjax: true
+      show_date: true
   # _pages
   - scope:
       path: ""
@@ -110,16 +120,6 @@ defaults:
       layout: single
       author_profile: true
       mathjax: true
-
-# -----------------------------------------------------------------------------
-# SEO / Social Metadata
-# -----------------------------------------------------------------------------
-twitter:
-  username: "AhmadSakib" # Replace with your actual handle
-facebook:
-  publisher: "AhmadHasanSakib" # Replace with your actual handle
-  app_id: 
-  publisher_id: 
 
 # -----------------------------------------------------------------------------
 # Exclusions
