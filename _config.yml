@@ -4,7 +4,7 @@
 title: "Ahmad Hasan Sakib | Computational Physics & Nonlinear Optics"
 description: "A scholarly archive dedicated to Nonlinear Optics, Machine Learning, and the Foundations of Physics. Investigating the convergence of computational intelligence and physical phenomena."
 url: "https://ahmad-sakib.github.io"
-baseurl: "/discuss-physics-with-sakib.github.io" # Correct baseurl for project sites
+baseurl: "" # Correct baseurl for project sites
 repository: "ahmad-sakib/discuss-physics-with-sakib.github.io"
 teaser: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80" # Professional space/tech teaser
 logo: # Leave empty if no local logo exists for a cleaner masthead
