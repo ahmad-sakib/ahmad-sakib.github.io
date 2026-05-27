@@ -1,16 +1,17 @@
 ---
-title: "Scientific Resources & Research"
+title: "Academic Resources"
 layout: single
 permalink: /resources/
 header:
-  overlay_color: "#000000"
-  overlay_filter: "0.5"
-excerpt: "Curated resources for Physics, Machine Learning, and Philosophy."
+  overlay_color: "#05080d"
+  overlay_filter: "0.6"
+  overlay_image: https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80
+excerpt: "Curated research tools, datasets, and literature for Physics and Machine Learning."
 ---
 
-This page serves as a hub for scientific resources, datasets, and literature that I frequently reference in my research.
+This repository serves as a hub for scientific resources, software tools, and academic literature that I frequently utilize in my research.
 
-## Primary Research Domains
+## <i class="fas fa-microscope"></i> Primary Research Domains
 
 Explore specialized archives for each of my core research areas:
 
@@ -18,18 +19,22 @@ Explore specialized archives for each of my core research areas:
 *   [**Machine Learning (ML)**](/machine-learning/): Covers neural network theory, optimization, and applications in physical data analysis.
 *   [**Philosophy of Science**](/philosophy/): Investigates the epistemological and logical foundations of physical theories.
 
-## Computational Tools
+## <i class="fas fa-code"></i> Computational Toolkit
 
-I actively use and recommend the following tools for computational physics:
+I leverage these tools for high-performance numerical modeling and data analysis:
 
-*   **PyTorch/TensorFlow**: For building and training neural network models.
-*   **Julia Language**: High-performance computing for numerical simulations.
-*   **CERN ROOT**: Data analysis framework used extensively in high-energy physics.
-*   **LaTeX**: The standard for professional scientific documentation.
+| Tool | Application | Key Libraries |
+| :--- | :--- | :--- |
+| **Python** | Data Analysis & ML | PyTorch, NumPy, SciPy |
+| **Julia** | Numerical Simulations | DifferentialEquations.jl |
+| **C++/ROOT** | Particle Physics | CERN ROOT Framework |
+| **LaTeX** | Scientific Writing | Overleaf, BibTeX |
 
-## Open Access & Preprints
+## <i class="fas fa-book"></i> Open Science & Literatures
 
-Stay updated with the latest in the field via these platforms:
-*   [arXiv.org](https://arxiv.org/)
-*   [NASA ADS](https://ui.adsabs.harvard.edu/)
-*   [Google Scholar](https://scholar.google.com)
+Essential platforms for staying updated with the latest physical and computational research:
+
+*   [**arXiv.org**](https://arxiv.org/): Open-access archive for 2 million+ scholarly articles.
+*   [**NASA ADS**](https://ui.adsabs.harvard.edu/): The SAO/NASA Astrophysics Data System.
+*   [**Google Scholar**](https://scholar.google.com): Broadly search for scholarly literature.
+*   [**Papers with Code**](https://paperswithcode.com/): ML papers with their corresponding implementation.

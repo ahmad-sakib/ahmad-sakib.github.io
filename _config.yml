@@ -6,8 +6,8 @@ description: "A scholarly archive dedicated to Nonlinear Optics, Machine Learnin
 url: "https://ahmad-sakib.github.io"
 baseurl: "/discuss-physics-with-sakib.github.io" # Correct baseurl for project sites
 repository: "ahmad-sakib/discuss-physics-with-sakib.github.io"
-teaser: "/assets/images/teaser.jpg" # Default teaser for social sharing
-logo: "/assets/images/logo.png" # Site logo in masthead
+teaser: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80" # Professional space/tech teaser
+logo: # Leave empty if no local logo exists for a cleaner masthead
 locale: "en-US"
 keywords: "Computational Physics, Nonlinear Optics, Machine Learning, Physics Scholar, SUST, AI in Physics, Ahmad Hasan Sakib"
 
@@ -17,7 +17,7 @@ keywords: "Computational Physics, Nonlinear Optics, Machine Learning, Physics Sc
 author:
   name: "Ahmad Hasan Sakib"
   avatar: "/assets/images/sakib.jpeg"
-  bio: "Physics Scholar at SUST. Specializing in Nonlinear Optics and Machine Learning. Exploring the intersection of computational physics and philosophical rigor."
+  bio: "Physics Researcher at SUST | Nonlinear Optics & Machine Learning"
   location: "Sylhet, Bangladesh"
   email: "ahmadhasansakib7@gmail.com"
   links:
@@ -38,14 +38,25 @@ author:
 # Theme Settings
 # -----------------------------------------------------------------------------
 theme: minimal-mistakes-jekyll
-minimal_mistakes_skin: "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin: "dark" # Professional academic dark theme
 
 # Search Settings
 search: true
 search_full_content: true
+search_provider: lunr
 
 # Breadcrumbs
 breadcrumbs: true
+
+# Footer
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/ahmad-sakib"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/ahmad-hasan-sakib"
 
 # -----------------------------------------------------------------------------
 # Plugins

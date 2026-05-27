@@ -12,24 +12,28 @@ $text-light: #ffffff;        /* Crisp white for main text */
 $text-muted: #dbe1e8;        /* Soft off-white for intros/descriptions */
 $btn-bg: #ffffff;            /* Solid white for buttons */
 $btn-text: #17406d;          /* Slate/blue text inside buttons */
-$font-primary: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-primary: 'Montserrat', sans-serif;
+$font-secondary: 'Lora', serif;
 
 /* 1. Global Dark Background */
 body {
   background-color: $bg-dark; 
   color: $text-light;
+  font-family: $font-secondary; /* Use Serif for body text for academic feel */
+}
+
+h1, h2, h3, h4, h5, h6 {
   font-family: $font-primary;
 }
 
 /* 2. Hero Section Container */
 .hero-section-container {
-  padding: 6em 0;
-  /* Add your space background image path here */
-  background-image: url('/assets/images/space-background.jpg'); 
+  padding: 8em 0;
+  background: linear-gradient(rgba(10, 15, 24, 0.8), rgba(10, 15, 24, 0.8)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  border-bottom: none; /* Removed solid border */
+  background-attachment: fixed;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* The Grid Layout */
@@ -52,20 +56,66 @@ body {
 
 /* Image Styling */
 .hero-image-wrapper {
-  flex: 1.2 ;
-  max-width: 1000px;
-  margin-top: -80px;
+  flex: 1 ;
+  max-width: 400px;
 }
 
 .hero-image-wrapper img.hero-profile-img {
   width: 100%;
   height: auto;
-  border-radius: 16px; /* Smooth, moderate rounding */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Soft drop shadow */
-  border: none; /* Removed solid border for cleaner look */
-  position: relative;
-  top: -96px; /* Pulls the image up by 30 pixels */
-  /* Keep your other styles like border-radius and box-shadow */
+  border-radius: 50%; /* Circular profile for a modern look */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.hero-image-wrapper img.hero-profile-img:hover {
+  transform: scale(1.02);
+}
+
+/* Contact links in About page */
+.contact-links {
+  margin: 2em 0;
+  display: flex;
+  gap: 15px;
+}
+
+/* Latest Posts Grid */
+.entries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.archive__item {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.archive__item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #6a9bd8;
+}
+
+/* Footer Refinement */
+.page__footer {
+  background-color: #05080d;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 3rem 0;
 }
 
 /* Text Styling */
