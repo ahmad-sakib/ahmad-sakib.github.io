@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ahmad-sakib.github.io/discuss-physics-with-sakib.github.io/sitemap.xml

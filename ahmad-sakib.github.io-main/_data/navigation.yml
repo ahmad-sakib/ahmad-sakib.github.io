@@ -1,0 +1,15 @@
+main:
+  - title: "Home"
+    url: /
+  - title: "Blog"
+    url: /blog/
+  - title: "Nonlinear Optics"
+    url: /nlo/
+  - title: "Machine Learning"
+    url: /machine-learning/
+  - title: "Philosophy"
+    url: /philosophy/
+  - title: "About"
+    url: /about/
+  - title: "Resources"
+    url: /resources/
