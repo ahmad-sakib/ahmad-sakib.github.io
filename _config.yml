@@ -5,7 +5,7 @@ title: "Ahmad Hasan Sakib | Computational Physics & Nonlinear Optics"
 description: "Official website of Ahmad Hasan Sakib, a Physics Researcher specializing in Nonlinear Optics, Machine Learning, and Computational Physics. Explore research, blog posts, and publications on the intersection of AI and physical sciences."
 url: "https://ahmad-sakib.github.io"
 baseurl: "" # Correct baseurl for project sites
-repository: "ahmad-sakib/discuss-physics-with-sakib.github.io"
+repository: "ahmad-sakib/ahmad-sakib.github.io"
 teaser: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80" # Professional space/tech teaser
 logo: # Leave empty if no local logo exists for a cleaner masthead
 locale: "en-US"
@@ -30,9 +30,7 @@ author:
     - label: "Google Scholar"
       icon: "fas fa-fw fa-graduation-cap"
       url: "https://scholar.google.com" # Placeholder, update when available
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter"
-      url: "https://twitter.com/AhmadSakib"
+   
 
 # -----------------------------------------------------------------------------
 # Theme Settings
@@ -78,7 +76,7 @@ facebook:
   publisher: "AhmadHasanSakib"
   app_id: 
   publisher_id: 
-og_image: "/assets/images/teaser.jpg"
+og_image: "/assets/images/sakib.jpeg"
 
 # -----------------------------------------------------------------------------
 # Pagination

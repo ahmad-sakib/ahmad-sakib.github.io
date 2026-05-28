@@ -3,7 +3,7 @@ layout: single
 title: "Creating a GitHub Page Using Jekyll (Static Site Generator)"
 date: 2025-12-26 23:00:00 +0600
 categories: [Personal]
-tags: [friends, life]
+tags: [jekyll, tutorial, linux]
 description: "A beginner-friendly, step-by-step guide to creating a GitHub Pages blog using the Jekyll static site generator on Arch Linux. This post covers setting up a Ruby environment, configuring local gem paths, installing Jekyll and Bundler, resolving common pitfalls (including the `webrick` requirement for Ruby 3+), running the site locally, and pushing your project to GitHub with fully explained bash command snippets for self-documentation."
 
 ---
