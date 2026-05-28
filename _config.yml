@@ -1,19 +1,19 @@
-# -----------------------------------------------------------------------------
+# =============================================================================
 # Site Information
-# -----------------------------------------------------------------------------
+# =============================================================================
 title: "Ahmad Hasan Sakib | Computational Physics & Nonlinear Optics"
-description: "Official website of Ahmad Hasan Sakib, a Physics Researcher specializing in Nonlinear Optics, Machine Learning, and Computational Physics. Explore research, blog posts, and publications on the intersection of AI and physical sciences."
+description: "Official website of Ahmad Hasan Sakib, a Physics Researcher specializing in Nonlinear Optics, Machine Learning, and Computational Physics."
 url: "https://ahmad-sakib.github.io"
-baseurl: "" # Correct baseurl for project sites
+baseurl: ""
 repository: "ahmad-sakib/ahmad-sakib.github.io"
-teaser: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80" # Professional space/tech teaser
-logo: # Leave empty if no local logo exists for a cleaner masthead
+teaser: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80"
+logo:
 locale: "en-US"
 keywords: "Computational Physics, Nonlinear Optics, Machine Learning, Physics Scholar, SUST, AI in Physics, Ahmad Hasan Sakib"
 
-# -----------------------------------------------------------------------------
+# =============================================================================
 # Author Information
-# -----------------------------------------------------------------------------
+# =============================================================================
 author:
   name: "Ahmad Hasan Sakib"
   avatar: "/assets/images/sakib.jpeg"
@@ -29,24 +29,29 @@ author:
       url: "https://linkedin.com/in/ahmad-hasan-sakib"
     - label: "Google Scholar"
       icon: "fas fa-fw fa-graduation-cap"
-      url: "https://scholar.google.com" # Placeholder, update when available
-   
+      url: "https://scholar.google.com"
 
-# -----------------------------------------------------------------------------
-# Theme Settings
-# -----------------------------------------------------------------------------
+# =============================================================================
+# Theme
+# =============================================================================
 theme: minimal-mistakes-jekyll
-minimal_mistakes_skin: "dark" # Professional academic dark theme
+minimal_mistakes_skin: "dark"
 
-# Search Settings
+# =============================================================================
+# Search
+# =============================================================================
 search: true
 search_full_content: true
 search_provider: lunr
 
+# =============================================================================
 # Breadcrumbs
-breadcrumbs: true
+# =============================================================================
+breadcrumbs: false
 
+# =============================================================================
 # Footer
+# =============================================================================
 footer:
   links:
     - label: "GitHub"
@@ -56,9 +61,9 @@ footer:
       icon: "fab fa-fw fa-linkedin"
       url: "https://linkedin.com/in/ahmad-hasan-sakib"
 
-# -----------------------------------------------------------------------------
+# =============================================================================
 # Plugins
-# -----------------------------------------------------------------------------
+# =============================================================================
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
@@ -66,35 +71,35 @@ plugins:
   - jekyll-include-cache
   - jekyll-paginate
 
-# --------------------------------------------------------
-# SEO & Social Sharing (Enhanced)
-# --------------------------------------------------------
+# =============================================================================
+# SEO & Social
+# =============================================================================
 twitter:
   username: "AhmadSakib"
   card: summary_large_image
 facebook:
   publisher: "AhmadHasanSakib"
-  app_id: 
-  publisher_id: 
+  app_id:
+  publisher_id:
 og_image: "/assets/images/sakib.jpeg"
 
-# -----------------------------------------------------------------------------
+# =============================================================================
 # Pagination
-# -----------------------------------------------------------------------------
+# =============================================================================
 paginate: 5
 paginate_path: /blog/page:num/
 
-# -----------------------------------------------------------------------------
+# =============================================================================
 # Collections
-# -----------------------------------------------------------------------------
+# =============================================================================
 collections:
   pages:
     output: true
     permalink: /:path/
 
-# -----------------------------------------------------------------------------
-# Markdown / Kramdown
-# -----------------------------------------------------------------------------
+# =============================================================================
+# Markdown & Syntax Highlighting
+# =============================================================================
 markdown: kramdown
 kramdown:
   math_engine: mathjax
@@ -104,9 +109,9 @@ kramdown:
     block:
       line_numbers: true
 
-# -----------------------------------------------------------------------------
+# =============================================================================
 # Defaults
-# --------------------------------------------------------
+# =============================================================================
 defaults:
   # _posts
   - scope:
@@ -114,27 +119,31 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: true
-      read_time: true
+      author_profile: false
+      read_time: false
       comments: true
       share: true
       related: true
       mathjax: true
       show_date: true
-      toc: true          # ← add this
-      toc_sticky: true   # ← and this
+      toc: true
+      toc_sticky: true
   # _pages
   - scope:
       path: ""
       type: pages
     values:
       layout: single
-      author_profile: true
+      author_profile: false
+      read_time: false
+      related: false
       mathjax: true
+      toc: true
+      toc_sticky: true
 
-# -----------------------------------------------------------------------------
+# =============================================================================
 # Exclusions
-# -----------------------------------------------------------------------------
+# =============================================================================
 exclude:
   - .sass-cache/
   - .jekyll-cache/
