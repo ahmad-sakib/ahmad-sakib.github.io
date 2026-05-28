@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: null
 title: "The Geometry of Variance: A Physics-Informed Perspective on Principal Component Analysis"
 date: 2026-05-28
 categories: ML
@@ -29,6 +29,8 @@ excerpt: "An exploration of the isomorphisms between statistical variance maximi
             color: var(--ink-black);
             line-height: 1.8;
             font-size: 1.15rem;
+            margin: 0;
+            padding: 0;
         }
 
         .academic-page {
@@ -38,6 +40,7 @@ excerpt: "An exploration of the isomorphisms between statistical variance maximi
             padding: 4rem 5rem;
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
             border-radius: 2px;
+            transition: all 0.3s ease;
         }
 
         h1, h2, h3, h4 {
@@ -125,20 +128,59 @@ excerpt: "An exploration of the isomorphisms between statistical variance maximi
         }
         input[type=range] { accent-color: var(--accent-oxford); }
 
+        /* Responsiveness */
+        @media (max-width: 1024px) {
+            .academic-page {
+                margin: 1rem;
+                padding: 3rem 4rem;
+            }
+        }
+
         @media (max-width: 768px) {
-            .academic-page { padding: 2rem; margin: 0; }
+            .academic-page { 
+                padding: 2.5rem 2rem; 
+                margin: 0; 
+                box-shadow: none;
+                border-radius: 0;
+            }
+            body {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .academic-page {
+                padding: 2rem 1.25rem;
+            }
+            body {
+                font-size: 1.05rem;
+            }
+            h1 {
+                font-size: 1.85rem !important;
+                line-height: 1.3 !important;
+            }
+            .abstract {
+                font-size: 1rem;
+                padding: 1rem 0;
+            }
+            .lab-card {
+                padding: 1.25rem;
+            }
         }
     </style>
 </head>
 <body>
+    <nav class="max-w-[850px] mx-auto pt-6 px-4 sm:px-0">
+        <a href="/" class="text-slate-400 hover:text-slate-600 transition-colors text-xs uppercase tracking-widest font-bold">&larr; Return to Portal</a>
+    </nav>
 
     <div class="academic-page">
         <header class="text-center mb-12">
-            <div class="uppercase tracking-widest text-sm text-slate-500 mb-4 font-semibold">Technical Monograph • May 2026</div>
-            <h1 class="text-4xl md:text-5xl mb-6">Principal Component Analysis: <br><span class="italic font-light">A Geometric and Statistical Perspective</span></h1>
-            <div class="flex justify-center space-x-6 text-lg text-slate-700">
+            <div class="uppercase tracking-widest text-xs text-slate-500 mb-4 font-semibold">Technical Monograph • May 2026</div>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl mb-6">Principal Component Analysis: <br><span class="italic font-light">A Geometric and Statistical Perspective</span></h1>
+            <div class="flex flex-col sm:flex-row justify-center items-center sm:space-x-6 text-lg text-slate-700">
                 <span class="font-semibold">Ahmad Hasan Sakib</span>
-                <span>•</span>
+                <span class="hidden sm:inline">•</span>
                 <span>Department of Physics</span>
             </div>
         </header>
@@ -282,7 +324,7 @@ print(<span class="str">"Explained Variance:"</span>, pca.explained_variance_rat
                     </div>
                 </div>
 
-                <div class="mt-8 flex gap-4">
+                <div class="mt-8 flex flex-col sm:flex-row gap-4">
                     <button id="generateBtn" class="flex-1 py-3 bg-slate-800 text-white font-bold rounded hover:bg-black transition text-xs uppercase tracking-widest">
                         Resample Distribution
                     </button>
