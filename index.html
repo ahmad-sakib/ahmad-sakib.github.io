@@ -1,59 +1,68 @@
 ---
 layout: splash
 title: "Ahmad Hasan Sakib | Computational Physics & Machine Learning"
-header:
-  overlay_color: "#151816"
-  overlay_filter: "0.5"
-  overlay_image: /assets/images/teaser.jpg
-excerpt: "Bridging the gap between Theoretical Physics and Artificial Intelligence."
 ---
 
 <div class="hero-section-container">
   <div class="hero-grid">
-    <div class="hero-image-wrapper">
-      <img src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name }}" class="hero-profile-img">
-    </div>
-    
-    <div class="hero-content">
-      <h1 class="hero-title">Advancing Physics through Computational Intelligence</h1>
-      
-      <p class="hero-text-intro">Physics researcher at SUST, investigating the intersection of <strong>Nonlinear Optics</strong> and <strong>Machine Learning</strong>. Dedicated to uncovering fundamental physical laws through rigorous computational modeling.</p>
 
+    <div class="hero-image-wrapper">
+      <img src="{{ site.author.avatar | relative_url }}"
+           alt="{{ site.author.name }}"
+           class="hero-profile-img">
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow">Physics Researcher · SUST · Bangladesh</div>
+      <h1 class="hero-title">Nonlinear Optics &amp; Machine Learning</h1>
+      <p class="hero-text-intro">
+        Investigating how <strong>deep learning</strong> can decode the complex
+        dynamics of light-matter interaction in nonlinear media. I build
+        physics-informed models that bridge classical optical theory and
+        data-driven discovery.
+      </p>
       <div class="hero-buttons">
-        <a href="/blog/" class="btn btn--primary btn--large">Research Blog</a>
-        <a href="/about/" class="btn btn--light btn--large">Academic Profile</a>
+        <a href="/blog/" class="btn btn--primary">Research Blog</a>
+        <a href="/about/" class="btn btn--light">Academic Profile</a>
+        <a href="/assets/files/resume.pdf" class="btn btn--light" target="_blank">Download CV</a>
       </div>
     </div>
+
   </div>
 </div>
 
 <div class="featured-section-container">
-   <div class="featured-grid">
-     <div class="featured-text-content">
-        <h2 class="featured-subtitle">Current Focus</h2>
-        <h3 class="featured-title">Neural Networks in Photonics</h3>
-        <p class="featured-description">Exploring how deep learning architectures can predict and optimize light-matter interactions in nonlinear media. My current research focuses on accelerating numerical simulations using physics-informed neural networks.</p>
-        <div class="category-links">
-            <a href="/nlo/" class="btn btn--info">Optics Archive</a>
-            <a href="/machine-learning/" class="btn btn--info">ML Research</a>
-        </div>
-     </div>
-      <div class="featured-media-wrapper">
-        <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=800&q=80" alt="Photonics Visualization" class="featured-img-tilted">
-     </div>
-   </div>
+  <div class="featured-grid">
+    <div class="featured-text-content">
+      <p class="featured-subtitle">Current Focus</p>
+      <h3 class="featured-title">Neural Networks in Photonics</h3>
+      <p class="featured-description">
+        Exploring how physics-informed neural network (PINN) architectures can
+        predict and optimize soliton dynamics in nonlinear fiber optics —
+        accelerating simulations that would otherwise require days of numerical
+        integration.
+      </p>
+      <div class="category-links">
+        <a href="/nlo/" class="btn btn--info">Optics Archive</a>
+        <a href="/machine-learning/" class="btn btn--info">ML Research</a>
+      </div>
+    </div>
+    <div class="featured-media-wrapper">
+      <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=800&q=80"
+           alt="Photonics visualization"
+           class="featured-img-tilted">
+    </div>
+  </div>
 </div>
 
-<hr>
-
 <div class="latest-posts-section">
-  <h2 class="section-title">Latest From The Blog</h2>
+  <h2 class="section-title">Latest from the Blog</h2>
   <div class="entries-grid">
     {% for post in site.posts limit:3 %}
       {% include archive-single.html %}
     {% endfor %}
   </div>
-  <div style="text-align: center; margin-top: 2rem;">
-    <a href="/blog/" class="btn btn--outline">View All Publications</a>
+  <div style="text-align:center; margin-top:2.5rem;">
+    <a href="/blog/" class="btn btn--outline">View all posts</a>
   </div>
 </div>

@@ -2,186 +2,308 @@
 ---
 @import "minimal-mistakes";
 
-/* =========================================
-   MODERN SPACE THEME STYLES
-   ========================================= */
+/*
+ * ============================================================
+ *  DESIGN SYSTEM — Ahmad Hasan Sakib Academic Portfolio
+ *  Built on: Minimal Mistakes (dark skin)
+ *  Fonts:    DM Serif Display / IBM Plex Sans / IBM Plex Mono
+ *  Accent:   Electric teal (#00d4c8) on deep navy-black
+ * ============================================================
+ */
 
-/* Theme Variables for easy tweaking */
-$bg-dark: #0a0f18;           /* Deep space blue/black fallback */
-$text-light: #ffffff;        /* Crisp white for main text */
-$text-muted: #dbe1e8;        /* Soft off-white for intros/descriptions */
-$btn-bg: #ffffff;            /* Solid white for buttons */
-$btn-text: #17406d;          /* Slate/blue text inside buttons */
-$font-primary: 'Montserrat', sans-serif;
-$font-secondary: 'Lora', serif;
+/* ── 0. CSS CUSTOM PROPERTIES ──────────────────────────────
+   Define all colors and values ONCE here.
+   To change the accent color site-wide, only edit --accent.
+   ────────────────────────────────────────────────────────── */
+:root {
+  --bg-base:       #080c10;   /* page background */
+  --bg-surface:    #0e1520;   /* slightly lighter surface */
+  --bg-elevated:   #141d2b;   /* cards, code blocks */
+  --bg-card:       #111827;
 
-/* 1. Global Dark Background */
+  --accent:        #00d4c8;   /* teal — primary action color */
+  --accent-dim:    #00b8ad;
+  --accent-glow:   rgba(0, 212, 200, 0.15);
+  --accent-subtle: rgba(0, 212, 200, 0.07);
+
+  --text-primary:  #edf2f7;
+  --text-secondary:#94a3b8;
+  --text-muted:    #64748b;
+
+  --border:        rgba(255, 255, 255, 0.07);
+  --border-accent: rgba(0, 212, 200, 0.3);
+
+  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-sans:  'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono:  'IBM Plex Mono', 'Courier New', monospace;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
+  --duration:  0.25s;
+}
+
+/* ── 1. GLOBAL BASE ─────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
 body {
-  background-color: $bg-dark; 
-  color: $text-light;
-  font-family: $font-secondary; /* Use Serif for body text for academic feel */
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
 }
 
+/* Headings use the display serif */
 h1, h2, h3, h4, h5, h6 {
-  font-family: $font-primary;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  color: var(--text-primary);
+  line-height: 1.2;
 }
 
-/* 2. Hero Section Container */
+h1 { font-size: clamp(2rem,   5vw, 3.25rem); }
+h2 { font-size: clamp(1.5rem, 3.5vw, 2.25rem); }
+h3 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); }
+
+p  { color: var(--text-secondary); margin-bottom: 1rem; }
+
+a  {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--duration) var(--ease-out);
+}
+a:hover { color: var(--accent-dim); }
+
+code, pre { font-family: var(--font-mono) !important; }
+
+strong { color: var(--text-primary); font-weight: 600; }
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 3rem 0;
+}
+
+/* ── 2. MASTHEAD / NAV ──────────────────────────────────── */
+.masthead {
+  background: rgba(8, 12, 16, 0.92) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border) !important;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.masthead__inner-wrap { padding: 0 2rem; }
+
+/* Site title in nav */
+.masthead__menu a.site-title {
+  font-family: var(--font-serif) !important;
+  font-size: 1.1rem !important;
+  color: var(--text-primary) !important;
+}
+
+/* Nav links */
+.greedy-nav a {
+  font-family: var(--font-sans) !important;
+  font-size: 0.8rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.07em !important;
+  text-transform: uppercase !important;
+  color: var(--text-secondary) !important;
+  padding: 0.5rem 0.7rem !important;
+  border-radius: var(--radius-sm);
+  transition: color var(--duration), background var(--duration);
+}
+
+.greedy-nav a:hover {
+  color: var(--accent) !important;
+  background: var(--accent-subtle) !important;
+}
+
+/* Hidden overflow dropdown */
+.greedy-nav .hidden-links {
+  background: var(--bg-elevated) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-md) !important;
+}
+
+/* ── 3. BUTTONS ─────────────────────────────────────────── */
+.btn {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-sans) !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  padding: 0.6rem 1.3rem !important;
+  border-radius: var(--radius-sm) !important;
+  border: 1px solid transparent !important;
+  text-decoration: none !important;
+  transition: all var(--duration) var(--ease-out) !important;
+}
+
+/* Solid teal — primary action */
+.btn--primary {
+  background: var(--accent) !important;
+  color: var(--bg-base) !important;
+  border-color: var(--accent) !important;
+  font-weight: 600 !important;
+}
+.btn--primary:hover {
+  background: var(--accent-dim) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 212, 200, 0.25) !important;
+  color: var(--bg-base) !important;
+}
+
+/* Ghost — secondary action */
+.btn--light, .btn--outline, .btn--inverse {
+  background: transparent !important;
+  color: var(--text-secondary) !important;
+  border-color: var(--border) !important;
+}
+.btn--light:hover, .btn--outline:hover, .btn--inverse:hover {
+  border-color: var(--border-accent) !important;
+  color: var(--accent) !important;
+  background: var(--accent-subtle) !important;
+}
+
+/* Info buttons (used in category links) */
+.btn--info {
+  background: var(--accent-subtle) !important;
+  color: var(--accent) !important;
+  border-color: var(--border-accent) !important;
+}
+.btn--info:hover {
+  background: var(--accent-glow) !important;
+  color: var(--accent) !important;
+}
+
+/* ── 4. HERO SECTION (homepage) ─────────────────────────── */
 .hero-section-container {
-  padding: 8em 0;
-  background: linear-gradient(rgba(10, 15, 24, 0.8), rgba(10, 15, 24, 0.8)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 7rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  /* Replaced Unsplash URL with a pure CSS gradient — faster & offline-safe */
+  background: linear-gradient(135deg, var(--bg-base) 0%, var(--bg-surface) 100%);
 }
 
-/* The Grid Layout */
+/* Subtle animated grid overlay — physics graph-paper feel */
+.hero-section-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 212, 200, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 200, 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  animation: grid-drift 35s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes grid-drift {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(56px, 56px); }
+}
+
 .hero-grid {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 50px;
-  max-width: 1200px;
+  gap: 4rem;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 20px;
+  position: relative; /* sit above the grid overlay */
+  z-index: 1;
 }
 
-@media (max-width: 800px) {
-  .hero-grid {
-    flex-direction: column;
-    text-align: center;
-  }
+/* Stack on mobile */
+@media (max-width: 768px) {
+  .hero-grid       { flex-direction: column; text-align: center; gap: 2rem; }
+  .hero-buttons    { justify-content: center; }
+  .hero-section-container { padding: 4rem 1.5rem; }
 }
 
-/* Image Styling */
 .hero-image-wrapper {
-  flex: 1 ;
-  max-width: 400px;
+  flex-shrink: 0;
+  width: 240px;
 }
 
+/* Profile photo — rounded rectangle with teal border glow */
 .hero-image-wrapper img.hero-profile-img {
   width: 100%;
   height: auto;
-  border-radius: 50%; /* Circular profile for a modern look */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  border: 4px solid rgba(255, 255, 255, 0.1);
-  transition: transform 0.3s ease;
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--border-accent);
+  box-shadow: 0 0 32px var(--accent-glow);
+  display: block;
+  /* Removed the negative top offset that caused mobile clipping */
+  transition: transform var(--duration) var(--ease-out);
 }
-
 .hero-image-wrapper img.hero-profile-img:hover {
   transform: scale(1.02);
 }
 
-/* Contact links in About page */
-.contact-links {
-  margin: 2em 0;
-  display: flex;
-  gap: 15px;
-}
+.hero-content { flex: 1; max-width: 580px; }
 
-/* Latest Posts Grid */
-.entries-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 2rem 0;
-}
-
-.archive__item {
-  background: rgba(255, 255, 255, 0.03);
-  padding: 1.5rem;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: all 0.3s ease;
-}
-
-.archive__item:hover {
-  background: rgba(255, 255, 255, 0.05);
-  transform: translateY(-5px);
-  border-color: rgba(255, 255, 255, 0.15);
-}
-
-.section-title {
-  text-align: center;
-  font-size: 2em;
-  margin-bottom: 2rem;
+/* Small label above the main title */
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #6a9bd8;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--accent);
 }
 
-/* Footer Refinement */
-.page__footer {
-  background-color: #05080d;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 3rem 0;
+.hero-title {
+  font-family: var(--font-serif) !important;
+  font-size: clamp(2rem, 5vw, 3rem) !important;
+  color: var(--text-primary) !important;
+  line-height: 1.15 !important;
+  margin-bottom: 1rem !important;
+  font-weight: 400 !important;
+  /* Removed uppercase transform — serif looks better in title case */
+  text-transform: none !important;
+  letter-spacing: -0.01em !important;
 }
 
-/* Text Styling */
-.hero-content {
-  flex: 1.2;
+.hero-text-intro {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 2rem;
 }
 
-.hero-content h1.hero-title {
-  font-size: 2em;
-  font-weight: 700;
-  color: $text-light; 
-  line-height: 1.3;
-  margin-bottom: 20px;
-  font-family: "Montserrat", sans-serif;
-  text-transform: uppercase; /* Match the screenshot's all-caps header */
-  letter-spacing: 1px;
-}
-
-.hero-content p.hero-text-intro {
-  font-size: 1.2em;
-  color: $text-muted; 
-  line-height: 1.6;
-  margin-bottom: 35px;
-  font-family: $font-primary;
-}
-
-/* Buttons Area */
 .hero-buttons {
   display: flex;
-  gap: 13px;
+  gap: 0.75rem;
   flex-wrap: wrap;
 }
 
-@media (max-width: 800px) {
-  .hero-buttons {
-    justify-content: center;
-  }
-}
-
-/* Unified Button Styling (Pill Shape) */
-.hero-buttons .btn { 
-  margin-right: 0; 
-  background-color: $btn-bg;
-  color: $btn-text;
-  font-family: $font-primary;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 12px 28px;
-  border-radius: 30px; /* Heavily rounded corners for pill shape */
-  border: none;
-  text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.hero-buttons .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.25);
-  background-color: #f1f3f5; /* Slight dim on hover */
-  color: $btn-text;
-}
-
-/* 3. Featured Section (Updated to match new theme) */
+/* ── 5. FEATURED / CURRENT RESEARCH SECTION ─────────────── */
 .featured-section-container {
-  background-color: $bg-dark; 
-  padding: 5em 0;
+  background-color: var(--bg-surface);
+  padding: 5rem 1.5rem;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .featured-grid {
@@ -190,49 +312,280 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: space-between;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 20px;
-  gap: 50px;
+  gap: 4rem;
 }
 
-@media (max-width: 800px) {
-  .featured-grid {
-    flex-direction: column-reverse;
-    text-align: center;
-  }
+@media (max-width: 768px) {
+  .featured-grid { flex-direction: column-reverse; text-align: center; }
 }
 
 .featured-text-content { flex: 1.5; }
 .featured-media-wrapper { flex: 1; }
 
 .featured-subtitle {
-  color: #6a9bd8; /* Lighter space-blue accent */
-  font-size: 1.1em;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 5px;
-  font-family: $font-primary;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
 }
 
 .featured-title {
-  color: $text-light;
-  font-size: 2em;
-  font-weight: 700;
-  margin-top: 0;
-  font-family: $font-primary;
+  font-family: var(--font-serif) !important;
+  font-size: clamp(1.5rem, 3vw, 2rem) !important;
+  color: var(--text-primary) !important;
+  margin-top: 0 !important;
+  font-weight: 400 !important;
 }
 
 .featured-description {
-  color: $text-muted;
-  font-size: 1.1em;
-  line-height: 1.6;
-  margin-bottom: 25px;
-  font-family: $font-primary;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
 }
 
-/* Cleaned up image formatting (removed tilt and thick border) */
 img.featured-img-tilted {
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   max-width: 100%;
   height: auto;
+  box-shadow: var(--shadow-md);
 }
+
+/* ── 6. LATEST POSTS SECTION (homepage) ─────────────────── */
+.latest-posts-section {
+  padding: 5rem 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: var(--font-serif) !important;
+  font-size: clamp(1.5rem, 3vw, 2rem) !important;
+  color: var(--text-primary) !important;
+  margin-bottom: 2.5rem !important;
+  font-weight: 400 !important;
+  text-align: left !important;
+  /* Removed uppercase + letter-spacing — too aggressive for a section title */
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+/* Grid for post cards */
+.entries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Each post card */
+.archive__item {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-md) !important;
+  padding: 1.5rem !important;
+  transition: border-color var(--duration), transform var(--duration);
+}
+.archive__item:hover {
+  border-color: var(--border-accent) !important;
+  transform: translateY(-3px);
+}
+
+.archive__item-title a {
+  font-family: var(--font-serif) !important;
+  color: var(--text-primary) !important;
+  font-weight: 400 !important;
+  font-size: 1.1rem !important;
+}
+.archive__item-title a:hover { color: var(--accent) !important; }
+
+.archive__item-excerpt {
+  color: var(--text-muted) !important;
+  font-size: 0.875rem !important;
+}
+
+/* ── 7. SIDEBAR / AUTHOR PROFILE ────────────────────────── */
+.author__avatar img {
+  border-radius: var(--radius-md) !important;
+  border: 2px solid var(--border-accent) !important;
+  box-shadow: 0 0 20px var(--accent-glow) !important;
+}
+
+.author__name {
+  font-family: var(--font-serif) !important;
+  font-size: 1.05rem !important;
+  color: var(--text-primary) !important;
+}
+
+.author__bio {
+  font-size: 0.82rem !important;
+  color: var(--text-secondary) !important;
+  line-height: 1.5 !important;
+}
+
+.author__urls a {
+  color: var(--text-secondary) !important;
+  font-size: 0.82rem !important;
+  transition: color var(--duration);
+}
+.author__urls a:hover { color: var(--accent) !important; }
+
+/* ── 8. PAGE CONTENT (inner pages & posts) ──────────────── */
+.page__title {
+  font-family: var(--font-serif) !important;
+  font-weight: 400 !important;
+  color: var(--text-primary) !important;
+  font-size: clamp(1.8rem, 4vw, 2.75rem) !important;
+}
+
+.page__content p,
+.page__content li { color: var(--text-secondary); }
+
+.page__content h2,
+.page__content h3,
+.page__content h4 {
+  color: var(--text-primary);
+  margin-top: 2.5rem;
+}
+
+.page__meta {
+  font-family: var(--font-mono) !important;
+  font-size: 0.75rem !important;
+  color: var(--text-muted) !important;
+}
+
+/* ── 9. CODE BLOCKS ─────────────────────────────────────── */
+.highlight {
+  background: var(--bg-elevated) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-md) !important;
+  margin: 1.5rem 0 !important;
+  overflow: hidden;
+}
+
+.highlight pre {
+  margin: 0 !important;
+  padding: 1.25rem !important;
+  background: transparent !important;
+  font-size: 0.875rem !important;
+  line-height: 1.65 !important;
+}
+
+/* Inline code */
+code {
+  background: var(--bg-elevated) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-sm) !important;
+  font-size: 0.85em !important;
+  padding: 0.15em 0.4em !important;
+  color: var(--accent) !important;
+}
+
+/* Code inside a block — reset the inline styles */
+pre code {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  color: var(--text-primary) !important;
+}
+
+/* Line numbers */
+.highlight .lineno {
+  color: var(--text-muted) !important;
+  border-right: 1px solid var(--border) !important;
+  padding-right: 0.75rem !important;
+  margin-right: 0.75rem !important;
+  user-select: none;
+}
+
+/* ── 10. MATH (KaTeX) ───────────────────────────────────── */
+.katex-display {
+  overflow-x: auto;
+  padding: 0.5rem 0;
+  color: var(--text-primary);
+}
+.katex { font-size: 1.05em; }
+
+/* ── 11. TABLE OF CONTENTS ──────────────────────────────── */
+.toc {
+  background: var(--bg-surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-md) !important;
+  font-size: 0.85rem !important;
+}
+.toc__menu a {
+  color: var(--text-secondary) !important;
+  transition: color var(--duration), padding-left var(--duration);
+}
+.toc__menu a:hover { color: var(--accent) !important; padding-left: 0.2rem; }
+
+/* ── 12. BLOCKQUOTES ────────────────────────────────────── */
+blockquote {
+  border-left: 3px solid var(--accent) !important;
+  background: var(--bg-surface) !important;
+  padding: 1rem 1.5rem !important;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0 !important;
+  margin: 1.5rem 0 !important;
+}
+blockquote p { color: var(--text-secondary) !important; font-style: italic; margin: 0; }
+
+/* ── 13. TABLES ─────────────────────────────────────────── */
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 1.5rem 0; }
+th {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 1px solid var(--border-accent);
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+}
+td {
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+tr:hover td { background: var(--bg-elevated); }
+
+/* ── 14. FOOTER ─────────────────────────────────────────── */
+.page__footer {
+  background: var(--bg-surface) !important;
+  border-top: 1px solid var(--border) !important;
+  margin-top: 4rem;
+}
+.page__footer-follow a {
+  font-family: var(--font-mono) !important;
+  font-size: 0.75rem !important;
+  color: var(--text-muted) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.page__footer-follow a:hover { color: var(--accent) !important; }
+.page__footer-copyright {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* ── 15. SEARCH ─────────────────────────────────────────── */
+#search-form input {
+  background: var(--bg-elevated) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-sm) !important;
+  color: var(--text-primary) !important;
+}
+#search-form input:focus {
+  border-color: var(--border-accent) !important;
+  outline: none;
+  box-shadow: 0 0 0 3px var(--accent-subtle) !important;
+}
+
+/* ── 16. SPLASH LAYOUT FIX ──────────────────────────────── */
+/* Hide the default Minimal Mistakes hero image overlay on index.html */
+.page__hero--overlay { display: none !important; }
+#main { background: transparent !important; }

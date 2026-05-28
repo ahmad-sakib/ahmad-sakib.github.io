@@ -121,6 +121,8 @@ defaults:
       related: true
       mathjax: true
       show_date: true
+      toc: true          # ← add this
+      toc_sticky: true   # ← and this
   # _pages
   - scope:
       path: ""
