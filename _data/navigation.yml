@@ -1,17 +1,15 @@
 main:
-  - title: "Home"
-    url: /
+  - title: "Research"
+    url: /research/
   - title: "Publications"
     url: /publications/
-  - title: "Blog"
+  - title: "Projects"
+    url: /projects/
+  - title: "Notes"
     url: /blog/
-  - title: "Nonlinear Optics"
-    url: /nlo/
-  - title: "Machine Learning"
-    url: /machine-learning/
-  - title: "Philosophy"
-    url: /philosophy/
+  - title: "CV"
+    url: /cv/
   - title: "About"
     url: /about/
-  - title: "Resources"
-    url: /resources/
+  - title: "Contact"
+    url: /contact/
