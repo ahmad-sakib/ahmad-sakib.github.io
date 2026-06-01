@@ -21,6 +21,9 @@ about my work. The best way to reach me is by email.
 **LinkedIn:** [linkedin.com/in/ahmad-hasan-sakib](https://linkedin.com/in/ahmad-hasan-sakib)
 *Professional background and updates.*
 
+**ORCID:** [0009-0004-7754-1056](https://orcid.org/0009-0004-7754-1056)
+*Verified researcher identifier.*
+
 ---
 
 ## Research Collaboration
