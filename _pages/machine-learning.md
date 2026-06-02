@@ -2,11 +2,16 @@
 layout: single
 title: "Machine Learning"
 permalink: /machine-learning/
-excerpt: "Exploring the convergence of artificial intelligence and physical sciences."
+excerpt: "Ahmad Hasan Sakib's research on machine learning for physics — neural networks, gradient descent, PCA, and ML applications in nonlinear optics."
+  ---
 author_profile: true
 ---
 
-The integration of **Machine Learning** into the physical sciences is revolutionizing how we process data and model reality. This archive contains my work on neural network architectures, optimization strategies, and their specific applications in computational physics and data analysis.
+# Machine Learning in Physics — Ahmad Hasan Sakib
+  
+  This archive collects my research at the intersection of machine learning and 
+  computational physics. My focus: applying neural network architectures to model 
+  nonlinear optical phenomena that resist classical analytical solutions.
 
 ---
 

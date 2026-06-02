@@ -1,29 +1,23 @@
 ---
-layout: null
+layout: single
 title: "Interactive Gradient Descent: Visualizing f(x) = x² + x + 1"
 date: 2026-03-09
 categories: ML
 tags: [gradient-descent, optimization, neural-networks]
-
+author: Ahmad Hasan Sakib
 excerpt: "Watch the algorithm converge in real-time as red dots find the minimum of the cost function."
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gradient Descent Lab</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Poppins', sans-serif; background-color: #0f172a; color: #f8fafc; }
         .slide-card { background: #1e293b; border-radius: 12px; border: 1px solid #334155; }
         input[type=range] { accent-color: #ef4444; }
     </style>
-</head>
-<body class="p-6 md:p-12">
 
     <nav class="max-w-4xl mx-auto mb-8">
         <a href="{{ site.baseurl }}/" class="text-slate-400 hover:text-sky-400 transition-colors text-sm uppercase tracking-widest font-semibold">&larr; Back to Home</a>
@@ -165,5 +159,3 @@ excerpt: "Watch the algorithm converge in real-time as red dots find the minimum
 
         reset(); // Initial state
     </script>
-</body>
-</html>

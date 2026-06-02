@@ -7,6 +7,7 @@ tags: [nonlinear-optics, NLO, photonics, physics, laser-physics, SHG, Kerr-effec
 description: "The ultimate beginner's guide to Nonlinear Optics (NLO). Learn what NLO is, why it happens, key phenomena like SHG and Kerr effect, with interactive simulations, intuitive analogies, and curated resources — everything you need to get started."
 keywords: "nonlinear optics, what is NLO, nonlinear optics explained, second harmonic generation, Kerr effect, chi2, chi3, photonics beginner, Boyd nonlinear optics"
 author_profile: false
+author: Ahmad Hasan Sakib
 mathjax: true
 toc: true
 toc_sticky: true

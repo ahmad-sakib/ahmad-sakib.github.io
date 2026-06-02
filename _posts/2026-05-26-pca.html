@@ -1,13 +1,12 @@
 ---
-layout: null
+layout: single
 title: "The Geometry of Variance: A Physics-Informed Perspective on Principal Component Analysis"
 date: 2026-05-28
 categories: ML
+author: Ahmad Hasan Sakib
 excerpt: "An exploration of the isomorphisms between statistical variance maximization and the principal axes of rotation in classical mechanics."
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -21,16 +20,6 @@ excerpt: "An exploration of the isomorphisms between statistical variance maximi
             --accent-oxford: #002147;
             --accent-crimson: #a50034;
             --code-bg: #f8f9fa;
-        }
-
-        body {
-            font-family: 'Crimson Pro', serif;
-            background-color: #f4f4f5;
-            color: var(--ink-black);
-            line-height: 1.8;
-            font-size: 1.15rem;
-            margin: 0;
-            padding: 0;
         }
 
         .academic-page {
@@ -143,17 +132,11 @@ excerpt: "An exploration of the isomorphisms between statistical variance maximi
                 box-shadow: none;
                 border-radius: 0;
             }
-            body {
-                font-size: 1.1rem;
-            }
         }
 
         @media (max-width: 480px) {
             .academic-page {
                 padding: 2rem 1.25rem;
-            }
-            body {
-                font-size: 1.05rem;
             }
             h1 {
                 font-size: 1.85rem !important;
@@ -168,8 +151,7 @@ excerpt: "An exploration of the isomorphisms between statistical variance maximi
             }
         }
     </style>
-</head>
-<body>
+
     <nav class="max-w-[850px] mx-auto pt-6 px-4 sm:px-0">
         <a href="/" class="text-slate-400 hover:text-slate-600 transition-colors text-xs uppercase tracking-widest font-bold">&larr; Return to Portal</a>
     </nav>
@@ -481,5 +463,3 @@ print(<span class="str">"Explained Variance:"</span>, pca.explained_variance_rat
         // Initial Run
         update();
     </script>
-</body>
-</html>
