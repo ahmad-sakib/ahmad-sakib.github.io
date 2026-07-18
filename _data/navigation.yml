@@ -1,12 +1,12 @@
 main:
   - title: "Research"
     url: /research/
-  - title: "Publications"
-    url: /publications/
   - title: "Projects"
     url: /projects/
   - title: "Notes"
-    url: /blog/
+    url: /notes/
+  - title: "Publications"
+    url: /publications/
   - title: "CV"
     url: /cv/
   - title: "About"

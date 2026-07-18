@@ -86,7 +86,7 @@ og_image: "/assets/images/sakib.jpeg"
 # Pagination
 # =============================================================================
 paginate: 5
-paginate_path: /blog/page:num/
+paginate_path: /notes/page:num/
 
 # =============================================================================
 # Collections
@@ -116,9 +116,10 @@ defaults:
       path: ""
       type: posts
     values:
+      permalink: /notes/:title/
       layout: single
       author_profile: false
-      read_time: false
+      read_time: true
       comments: false
       share: true
       related: true

@@ -12,22 +12,4 @@ Physics is not just about equations; it is about the conceptual frameworks we us
 
 ### Philosophical Reflections
 
-<ul>
-  {% for post in site.categories.philosophy %}
-    <li>
-      <article>
-        <header>
-          <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-          <p style="color: #666; font-size: 0.85em">Published on {{ post.date | date: "%B %d, %Y" }}</p>
-        </header>
-        {% if post.excerpt %}
-          <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-        {% endif %}
-      </article>
-    </li>
-  {% endfor %}
-</ul>
-
-{% if site.categories.philosophy.size == 0 %}
-  <p>Exploring the works of Popper, Kuhn, and Feyerabend. Essays coming soon.</p>
-{% endif %}
+{% include topic-archive.html category="Meta" empty_message="Exploring the works of Popper, Kuhn, and Feyerabend. Essays coming soon." %}

@@ -30,7 +30,7 @@ learning rate, momentum, and several benchmark loss functions.
 
 - **Stack:** JavaScript · Chart.js · HTML/CSS
 - **Status:** Complete
-- [Read the blog post](/blog/)
+- [Read the technical note](/notes/)
 
 ---
 
