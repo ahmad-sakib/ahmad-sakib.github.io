@@ -35,7 +35,6 @@ author:
 # Theme
 # =============================================================================
 theme: minimal-mistakes-jekyll
-minimal_mistakes_skin: "dark"
 
 # =============================================================================
 # Search
@@ -102,7 +101,6 @@ collections:
 # =============================================================================
 markdown: kramdown
 kramdown:
-  math_engine: mathjax
   input: GFM
   syntax_highlighter: rouge
   syntax_highlighter_opts:
@@ -121,10 +119,10 @@ defaults:
       layout: single
       author_profile: false
       read_time: false
-      comments: true
+      comments: false
       share: true
       related: true
-      mathjax: true
+      mathjax: false
       show_date: true
       toc: true
       toc_sticky: true
@@ -137,7 +135,7 @@ defaults:
       author_profile: false
       read_time: false
       related: false
-      mathjax: true
+      mathjax: false
       toc: true
       toc_sticky: true
 

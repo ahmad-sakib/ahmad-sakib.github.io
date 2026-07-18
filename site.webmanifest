@@ -1,0 +1,20 @@
+{
+  "name": "Ahmad Hasan Sakib | Computational Physics & Nonlinear Optics",
+  "short_name": "Sakib",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#0b0e14",
+  "background_color": "#0b0e14",
+  "display": "standalone",
+  "start_url": "/"
+}

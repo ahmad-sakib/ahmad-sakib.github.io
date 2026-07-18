@@ -1,0 +1,29 @@
+:root {
+  --bg: #ffffff;
+  --bg-subtle: #f7f8fa;
+  --surface: #ffffff;
+  --border: #e5e7eb;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --accent: #4338ca;
+  --accent-strong: #312e81;
+  --accent-warm: #b45309;
+  --radius: 12px;
+  --font-serif: "Source Serif 4", Georgia, serif;
+  --font-sans: "IBM Plex Sans", -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+html[data-theme="dark"] {
+  --bg: #0b0e14;
+  --bg-subtle: #11151d;
+  --surface: #151a23;
+  --border: #262c38;
+  --text-primary: #e6e9ef;
+  --text-secondary: #9aa4b2;
+  --text-muted: #5b6472;
+  --accent: #818cf8;
+  --accent-strong: #a5b4fc;
+  --accent-warm: #f0b429;
+}
