@@ -1,0 +1,85 @@
+{% if site.footer_scripts %}
+  {% for script in site.footer_scripts %}
+    <script src="{{ script | relative_url }}"></script>
+  {% endfor %}
+{% else %}
+  <script src="{{ '/assets/js/main.min.js' | relative_url }}"></script>
+{% endif %}
+
+{% if site.search == true or page.layout == "search" %}
+  {%- assign search_provider = site.search_provider | default: "lunr" -%}
+  {%- case search_provider -%}
+    {%- when "lunr" -%}
+      {% include_cached search/lunr-search-scripts.html %}
+    {%- when "google" -%}
+      {% include_cached search/google-search-scripts.html %}
+    {%- when "algolia" -%}
+      {% include_cached search/algolia-search-scripts.html %}
+  {%- endcase -%}
+{% endif %}
+
+{% include analytics.html %}
+{% include /comments-providers/scripts.html %}
+
+{% if site.after_footer_scripts %}
+  {% for script in site.after_footer_scripts %}
+    <script src="{{ script | relative_url }}"></script>
+  {% endfor %}
+{% endif %}
+
+<!-- Custom Code Blocks Enhancer: Language Labels and Copy to Clipboard -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var codeBlocks = document.querySelectorAll('div.highlight');
+  codeBlocks.forEach(function(codeBlock) {
+    if (codeBlock.querySelector('.code-header')) return;
+
+    var header = document.createElement('div');
+    header.className = 'code-header';
+
+    var lang = 'code';
+    var pre = codeBlock.querySelector('pre');
+    if (pre) {
+      var code = pre.querySelector('code');
+      if (code) {
+        var classes = code.className.split(' ');
+        for (var i = 0; i < classes.length; i++) {
+          if (classes[i].startsWith('language-')) {
+            lang = classes[i].replace('language-', '');
+            break;
+          }
+        }
+      }
+    }
+    
+    var langLabel = document.createElement('span');
+    langLabel.className = 'code-lang-label';
+    langLabel.textContent = lang.toUpperCase();
+    header.appendChild(langLabel);
+
+    var copyBtn = document.createElement('button');
+    copyBtn.className = 'code-copy-btn';
+    copyBtn.type = 'button';
+    copyBtn.ariaLabel = 'Copy code to clipboard';
+    copyBtn.innerHTML = '<i class="far fa-copy"></i> Copy';
+    
+    copyBtn.addEventListener('click', function() {
+      var codeText = '';
+      if (pre) {
+        codeText = pre.textContent;
+      }
+      navigator.clipboard.writeText(codeText).then(function() {
+        copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        setTimeout(function() {
+          copyBtn.innerHTML = '<i class="far fa-copy"></i> Copy';
+        }, 2000);
+      }).catch(function(err) {
+        console.error('Failed to copy: ', err);
+      });
+    });
+    header.appendChild(copyBtn);
+
+    codeBlock.insertBefore(header, codeBlock.firstChild);
+  });
+});
+</script>

@@ -1,0 +1,121 @@
+<header class="site-header">
+  <div class="site-header-container">
+    <a href="{{ '/' | relative_url }}" class="site-title-link">
+      <span class="site-title-text">{{ site.title }}</span>
+    </a>
+
+    <div class="header-right">
+      <nav class="desktop-nav">
+        <ul class="nav-links">
+          {%- for link in site.data.navigation.main -%}
+            {% assign link_path = link.url | relative_url %}
+            {% assign current_page = page.url | relative_url %}
+            <li class="nav-item">
+              <a href="{{ link_path }}" class="nav-link{% if current_page == link_path %} active{% endif %}">
+                {{ link.title }}
+              </a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </nav>
+
+      <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark/light theme">
+        <!-- Sun Icon -->
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <!-- Moon Icon -->
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+
+      <button id="menu-toggle" class="menu-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div id="mobile-drawer" class="mobile-drawer">
+  <div class="mobile-drawer-header">
+    <span class="mobile-title">{{ site.title }}</span>
+    <button id="close-drawer" class="close-drawer-btn" aria-label="Close menu">&times;</button>
+  </div>
+  <nav class="mobile-nav">
+    <ul class="mobile-nav-links">
+      {%- for link in site.data.navigation.main -%}
+        {% assign link_path = link.url | relative_url %}
+        {% assign current_page = page.url | relative_url %}
+        <li class="mobile-nav-item">
+          <a href="{{ link_path }}" class="mobile-nav-link{% if current_page == link_path %} active{% endif %}">
+            {{ link.title }}
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </nav>
+</div>
+<div id="drawer-overlay" class="drawer-overlay"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Theme toggle logic
+  var toggleBtn = document.getElementById('theme-toggle');
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', function() {
+      var currentTheme = document.documentElement.getAttribute('data-theme');
+      var newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+  }
+
+  // Mobile drawer logic
+  var menuToggle = document.getElementById('menu-toggle');
+  var closeDrawer = document.getElementById('close-drawer');
+  var mobileDrawer = document.getElementById('mobile-drawer');
+  var drawerOverlay = document.getElementById('drawer-overlay');
+
+  function openMenu() {
+    mobileDrawer.classList.add('open');
+    drawerOverlay.classList.add('active');
+    menuToggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    mobileDrawer.classList.remove('open');
+    drawerOverlay.classList.remove('active');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  if (menuToggle) {
+    menuToggle.addEventListener('click', openMenu);
+  }
+  if (closeDrawer) {
+    closeDrawer.addEventListener('click', closeMenu);
+  }
+  if (drawerOverlay) {
+    drawerOverlay.addEventListener('click', closeMenu);
+  }
+
+  // Close drawer on link click
+  var mobileLinks = document.querySelectorAll('.mobile-nav-link');
+  mobileLinks.forEach(function(link) {
+    link.addEventListener('click', closeMenu);
+  });
+});
+</script>

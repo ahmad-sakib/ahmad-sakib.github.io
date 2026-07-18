@@ -1,0 +1,40 @@
+<footer class="site-footer">
+  <div class="site-footer-container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h4 class="footer-title">{{ site.title }}</h4>
+        <p class="footer-desc">{{ site.author.bio }}</p>
+      </div>
+      <div class="footer-links-group">
+        <h5 class="footer-heading">Navigation</h5>
+        <ul class="footer-links">
+          {%- for link in site.data.navigation.main -%}
+            <li><a href="{{ link.url | relative_url }}">{{ link.title }}</a></li>
+          {%- endfor -%}
+        </ul>
+      </div>
+      <div class="footer-links-group">
+        <h5 class="footer-heading">Other Links</h5>
+        <ul class="footer-links">
+          <li><a href="{{ '/philosophy/' | relative_url }}">Philosophy</a></li>
+          <li><a href="{{ '/resources/' | relative_url }}">Resources</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-group">
+        <h5 class="footer-heading">Connect</h5>
+        <ul class="footer-social">
+          {% if site.author.email %}
+            <li><a href="mailto:{{ site.author.email }}" aria-label="Email"><i class="fas fa-envelope"></i> Email</a></li>
+          {% endif %}
+          {% for link in site.author.links %}
+            <li><a href="{{ link.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ link.label }}"><i class="{{ link.icon }}"></i> {{ link.label }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="copyright">&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. All rights reserved.</p>
+      <p class="powered-by">Built with Jekyll &amp; Minimal Mistakes (Redesigned).</p>
+    </div>
+  </div>
+</footer>

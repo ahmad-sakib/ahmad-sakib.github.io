@@ -1,75 +1,141 @@
 ---
 layout: splash
-title: "Ahmad Hasan Sakib | Computational Physics & Machine Learning"
-description: "Ahmad Hasan Sakib is a Physics Researcher at SUST specializing in Nonlinear Optics and Machine Learning."
+title: "Ahmad Hasan Sakib | Computational Physics & Nonlinear Optics"
+description: "Research portfolio of Ahmad Hasan Sakib, specializing in Nonlinear Optics, Machine Learning in Physics, and Computational Electrodynamics."
 ---
 
 <div class="hero-section-container">
   <div class="hero-grid">
-
-    <div class="hero-image-wrapper">
-      <img src="{{ site.author.avatar | relative_url }}"
-           alt="{{ site.author.name }}"
-           class="hero-profile-img">
-    </div>
-
     <div class="hero-content">
       <div class="hero-eyebrow">Physics Researcher · SUST · Bangladesh</div>
-      <h1 class="hero-title">Nonlinear Optics &amp; Machine Learning</h1>
+      <h1 class="hero-title">Decoding Light-Matter Dynamics</h1>
       <p class="hero-text-intro">
-        Investigating how <strong>deep learning</strong> can decode the complex
-        dynamics of light-matter interaction in nonlinear media. 
+        Investigating nonlinear optics, metamaterials, and computational physics. Developing <strong>Physics-Informed Neural Networks (PINNs)</strong> to simulate complex electromagnetic phenomena.
       </p>
       <div class="hero-buttons">
-        <a href="/blog/" class="btn btn--primary">Research Blog</a>
-        <a href="/about/" class="btn btn--light">Academic Profile</a>
-        <a href="/assets/files/resume.pdf" class="btn btn--light" target="_blank">Download CV</a>
+        <a href="{{ '/research/' | relative_url }}" class="btn btn--primary">Explore Research</a>
+        <a href="{{ '/notes/' | relative_url }}" class="btn btn--outline">Technical Notes</a>
+        <a href="{{ '/about/' | relative_url }}" class="btn btn--outline">About Me</a>
       </div>
     </div>
+    
+    <div class="hero-image-wrapper">
+      <!-- Generative Wave-Interference & FDTD Grid SVG Visual -->
+      <svg class="hero-generative-visual" viewBox="0 0 500 500" width="100%" height="auto" aria-hidden="true">
+        <defs>
+          <linearGradient id="wave-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.8"/>
+            <stop offset="100%" stop-color="var(--accent-strong)" stop-opacity="0.2"/>
+          </linearGradient>
+          <linearGradient id="wave-grad-2" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="var(--accent-warm)" stop-opacity="0.7"/>
+            <stop offset="100%" stop-color="var(--accent)" stop-opacity="0.1"/>
+          </linearGradient>
+          <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.15"/>
+            <stop offset="100%" stop-color="var(--bg)" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
 
+        <!-- Background glow -->
+        <circle cx="250" cy="250" r="220" fill="url(#glow)"/>
+
+        <!-- FDTD Grid Motif -->
+        <g stroke="var(--border)" stroke-width="0.5" opacity="0.3">
+          <path d="M 50 0 L 50 500 M 100 0 L 100 500 M 150 0 L 150 500 M 200 0 L 200 500 M 250 0 L 250 500 M 300 0 L 300 500 M 350 0 L 350 500 M 400 0 L 400 500 M 450 0 L 450 500"/>
+          <path d="M 0 50 L 500 50 M 0 100 L 500 100 M 0 150 L 500 150 M 0 200 L 500 200 M 0 250 L 500 250 M 0 300 L 500 300 M 0 350 L 500 350 M 0 400 L 500 400 M 0 450 L 500 450"/>
+        </g>
+
+        <!-- Wave Interference Patterns -->
+        <circle cx="150" cy="200" r="10" fill="var(--accent)" opacity="0.6"/>
+        <circle cx="150" cy="200" r="30" fill="none" stroke="url(#wave-grad-1)" stroke-width="1.5"/>
+        <circle cx="150" cy="200" r="60" fill="none" stroke="url(#wave-grad-1)" stroke-width="2"/>
+        <circle cx="150" cy="200" r="100" fill="none" stroke="url(#wave-grad-1)" stroke-width="2.5" stroke-dasharray="4 4"/>
+        <circle cx="150" cy="200" r="150" fill="none" stroke="url(#wave-grad-1)" stroke-width="3"/>
+        <circle cx="150" cy="200" r="210" fill="none" stroke="url(#wave-grad-1)" stroke-width="2" stroke-dasharray="8 4"/>
+
+        <circle cx="330" cy="280" r="10" fill="var(--accent-warm)" opacity="0.6"/>
+        <circle cx="330" cy="280" r="40" fill="none" stroke="url(#wave-grad-2)" stroke-width="1.5"/>
+        <circle cx="330" cy="280" r="80" fill="none" stroke="url(#wave-grad-2)" stroke-width="2"/>
+        <circle cx="330" cy="280" r="130" fill="none" stroke="url(#wave-grad-2)" stroke-width="2.5" stroke-dasharray="6 3"/>
+        <circle cx="330" cy="280" r="190" fill="none" stroke="url(#wave-grad-2)" stroke-width="3"/>
+
+        <!-- Intersection Nodes -->
+        <circle cx="240" cy="180" r="4" fill="var(--text-primary)" opacity="0.8"/>
+        <circle cx="210" cy="260" r="4" fill="var(--text-primary)" opacity="0.8"/>
+        <circle cx="280" cy="220" r="5" fill="#ffffff" stroke="var(--accent)" stroke-width="2"/>
+        <circle cx="190" cy="140" r="3" fill="var(--accent)"/>
+        <circle cx="310" cy="360" r="3" fill="var(--accent-warm)"/>
+      </svg>
+    </div>
   </div>
 </div>
 
 <div class="featured-section-container">
   <div class="featured-grid">
     <div class="featured-text-content">
-      <p class="featured-subtitle">Current Focus</p>
-      <h3 class="featured-title">Machine Learning in Nonlinear Optics</h3>
+      <p class="featured-subtitle">Research Pillars</p>
+      <h2 class="featured-title">Core Scientific Focus Areas</h2>
       <p class="featured-description">
-      Leveraging machine learning frameworks to predict and 
-      optimize the nonlinear refractive index $(n_2)$ 
-      of advanced optical materials.
+        Explore my technical archives, numerical solvers, and research logs organized by physical domain.
       </p>
-      <div class="category-links">
-        <a href="/nlo/" class="btn btn--info">Optics Archive</a>
-        <a href="/machine-learning/" class="btn btn--info">ML Research</a>
+      
+      <div class="topic-archive-grid" style="margin-top: 2rem;">
+        <article class="topic-archive-card">
+          <a href="{{ '/research/nonlinear-optics/' | relative_url }}"><h3>Nonlinear Optics</h3></a>
+          <p>Modeling light-matter interactions, soliton dynamics, and predicting nonlinear response functions $(n_2)$ in physical media.</p>
+        </article>
+
+        <article class="topic-archive-card">
+          <a href="{{ '/research/metamaterials/' | relative_url }}"><h3>Metamaterials</h3></a>
+          <p>Investigating engineered electromagnetic structures, negative-index optics, and photonic crystal waveguides.</p>
+        </article>
+
+        <article class="topic-archive-card">
+          <a href="{{ '/research/electrodynamics-optics/' | relative_url }}"><h3>Electrodynamics &amp; Optics</h3></a>
+          <p>Classical electrodynamics, Maxwell's equations propagation, optical path length formulations, and wave mechanics.</p>
+        </article>
+
+        <article class="topic-archive-card">
+          <a href="{{ '/research/computational-electromagnetics/' | relative_url }}"><h3>Computational Electromagnetics</h3></a>
+          <p>FDTD simulators, numerical dispersion relations, and scientific simulation toolkits for Maxwell solvers.</p>
+        </article>
+
+        <article class="topic-archive-card">
+          <a href="{{ '/research/computational-physics/' | relative_url }}"><h3>Computational Physics</h3></a>
+          <p>Numerical integration techniques, high-order ODE/PDE solvers (RK4), Monte Carlo models, and physical simulations.</p>
+        </article>
+
+        <article class="topic-archive-card">
+          <a href="{{ '/machine-learning/' | relative_url }}"><h3>Machine Learning</h3></a>
+          <p>Physics-Informed Neural Networks (PINNs), gradient descent theory, dimensionality reduction, and ML in physical sciences.</p>
+        </article>
       </div>
-    </div>
-    <div class="featured-media-wrapper">
-      <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=800&q=80"
-           alt="Photonics visualization"
-           class="featured-img-tilted">
     </div>
   </div>
 </div>
 
 <div class="latest-posts-section">
-  <h2 class="section-title">Latest from the Blog</h2>
+  <h2 class="section-title">Latest Technical Notes</h2>
   <div class="entries-grid">
     {% for post in site.posts limit:3 %}
-      {% include archive-single.html %}
+      <article class="topic-archive-card">
+        <a href="{{ post.url | relative_url }}"><h3>{{ post.title }}</h3></a>
+        <p class="topic-archive-meta">{{ post.date | date: "%B %d, %Y" }}</p>
+        {% if post.excerpt %}
+          <p>{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+        {% endif %}
+      </article>
     {% endfor %}
   </div>
-  <div style="text-align:center; margin-top:2.5rem;">
-    <a href="/blog/" class="btn btn--outline">View all posts</a>
+  <div style="text-align:center; margin-top:3rem;">
+    <a href="{{ '/notes/' | relative_url }}" class="btn btn--outline">View All Notes</a>
   </div>
 </div>
 
-<section class="max-w-4xl mx-auto px-6 py-12 text-center">
-  <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">
-    About the Lab
-  </h2>
-  <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-8">
-    Welcome to my digital laboratory. Here, I break down complex topics in artificial intelligence, machine learning algorithms, and mathematical optimization. Whether we are exploring the calculus behind gradient descent or the architecture of neural networks, the goal is to make advanced computer science intuitive and accessible.
+<div class="about-lab-section">
+  <h2>The Digital Physics Lab</h2>
+  <p>
+    Welcome to my technical workspace. This portal documents my undergraduate physics research at Shahjalal University of Science and Technology (SUST), Sylhet, Bangladesh. It provides both rigorous derivations and interactive simulations to make complex physical phenomena intuitive and computational electromagnetics accessible.
   </p>
-</section>
+</div>

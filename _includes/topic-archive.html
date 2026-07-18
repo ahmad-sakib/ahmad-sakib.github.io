@@ -1,0 +1,13 @@
+{% assign topic_posts = site.categories[include.category] %}
+<div class="topic-archive-grid">
+  {% for post in topic_posts %}
+    <article class="topic-archive-card">
+      <a href="{{ post.url | relative_url }}"><h3>{{ post.title }}</h3></a>
+      <p class="topic-archive-meta">{{ post.date | date: "%B %d, %Y" }}</p>
+      {% if post.excerpt %}<p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>{% endif %}
+    </article>
+  {% endfor %}
+  {% if topic_posts.size == 0 %}
+    <p>{{ include.empty_message | default: "New articles in this area are coming soon." }}</p>
+  {% endif %}
+</div>

@@ -1,0 +1,10 @@
+<div class="interactive-figure-wrapper">
+  <div class="interactive-figure-card">
+    {{ include.content }}
+  </div>
+  {% if include.caption %}
+    <div class="interactive-figure-caption">
+      <span class="caption-label">{{ include.label | default: "Figure" }}</span> {{ include.caption }}
+    </div>
+  {% endif %}
+</div>
