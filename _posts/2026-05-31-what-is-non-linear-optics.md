@@ -509,7 +509,7 @@ details.faq summary {
 }
 
 /* ── Math visibility ─────────────────────────────────────────── */
-.mjx-chtml, .MathJax { color: var(--nlo-text) !important; }
+.katex, .katex-display { color: var(--nlo-text) !important; }
 </style>
 
 <!-- ============================================================
@@ -550,7 +550,7 @@ Now fire a femtosecond laser pulse at that same glass. The electric field inside
 Every material is made of atoms: a heavy, positive nucleus with a cloud of negative electrons around it. When a light wave's electric field sweeps through, it pushes those electrons back and forth. This is exactly what happens in any dielectric material — and in the linear regime it behaves like a mass on a spring (Hooke's law): push harder, displace proportionally.
 
 <div class="eq-box">
-  Linear spring: \( F = -kx \) &nbsp;&nbsp;&nbsp; → &nbsp;&nbsp;&nbsp; \( P = \epsilon_0 \chi^{(1)} E \)
+  Linear spring: $ F = -kx $ &nbsp;&nbsp;&nbsp; → &nbsp;&nbsp;&nbsp; $ P = \epsilon_0 \chi^{(1)} E $
 </div>
 
 The macroscopic sum of all these tiny displacements is the **Polarization** $\mathbf{P}$ — an oscillating dipole moment per unit volume. In the linear case, $P$ faithfully copies the frequency of the driving field $E$.
@@ -619,7 +619,7 @@ When the electron reaches the anharmonic part of the well, its oscillation **dis
 For significant NLO effects, you need electric fields comparable to the *atomic* electric field binding electrons to the nucleus. This is roughly:
 
 <div class="eq-box">
-\( E_{\text{atomic}} \approx \frac{e}{4\pi\epsilon_0 a_0^2} \approx 5 \times 10^{11} \text{ V/m} \)
+$ E_{\text{atomic}} \approx \frac{e}{4\pi\epsilon_0 a_0^2} \approx 5 \times 10^{11} \text{ V/m} $
 </div>
 
 A 100 W lightbulb at arm's length produces ~200 V/m. A focused 1 mJ, 100 fs laser pulse produces ~10¹⁰ V/m — getting into the territory where NLO starts mattering.

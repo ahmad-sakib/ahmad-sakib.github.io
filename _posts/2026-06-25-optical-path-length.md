@@ -561,7 +561,7 @@ details.faq summary {
 }
 
 /* ── Math visibility ─────────────────────────────────────────── */
-.mjx-chtml, .MathJax { color: var(--opl-text) !important; }
+.katex, .katex-display { color: var(--opl-text) !important; }
 </style>
 
 <!-- ============================================================
@@ -608,20 +608,20 @@ In a perfect vacuum, light travels at its absolute maximum speed, a fundamental 
 
 But when light enters a transparent material like glass, water, or air, it is no longer traveling in empty space. The electromagnetic field of the light wave drives the electrons of the material, causing them to oscillate. These oscillating charges radiate their own light waves, which interfere with the original wave. 
 
-The net result of this complex dance is that the wave's phase fronts propagate at a slower phase velocity, \(v\), inside the material.
+The net result of this complex dance is that the wave's phase fronts propagate at a slower phase velocity, $v$, inside the material.
 
-To measure how much a material hinders light's progress, we define the **refractive index** (\(n\)) as the ratio of the speed of light in vacuum to its speed in the material:
+To measure how much a material hinders light's progress, we define the **refractive index** ($n$) as the ratio of the speed of light in vacuum to its speed in the material:
 
 <div class="eq-box">
 \[ n = \frac{c}{v} \]
 </div>
 
-Since light always travels slower in a physical medium than in a vacuum, \(v\) is smaller than \(c\), making the refractive index \(n\) greater than or equal to 1 for all ordinary materials:
-- **Vacuum:** \(n = 1.0000\)
-- **Air:** \(n \approx 1.0003\) (virtually identical to vacuum for most purposes)
-- **Water:** \(n \approx 1.33\)
-- **Window Glass:** \(n \approx 1.50\)
-- **Diamond:** \(n \approx 2.42\)
+Since light always travels slower in a physical medium than in a vacuum, $v$ is smaller than $c$, making the refractive index $n$ greater than or equal to 1 for all ordinary materials:
+- **Vacuum:** $n = 1.0000$
+- **Air:** $n \approx 1.0003$ (virtually identical to vacuum for most purposes)
+- **Water:** $n \approx 1.33$
+- **Window Glass:** $n \approx 1.50$
+- **Diamond:** $n \approx 2.42$
 
 We can rewrite this relation to define the actual speed of light inside any material:
 
@@ -630,10 +630,10 @@ We can rewrite this relation to define the actual speed of light inside any mate
 ### 1.2 The Obstacle Course Analogy
 
 Think of light as a runner.
-- **Vacuum** is a pristine, empty running track. The runner dashes at their top speed, \(c\).
-- **Glass** is the same track, but flooded with water. The runner is forced to slow down to velocity \(v = c/n\).
+- **Vacuum** is a pristine, empty running track. The runner dashes at their top speed, $c$.
+- **Glass** is the same track, but flooded with water. The runner is forced to slow down to velocity $v = c/n$.
 
-If the water-flooded section of the track has a physical length \(L\), the runner spends more time struggling through it than they would on an empty track. 
+If the water-flooded section of the track has a physical length $L$, the runner spends more time struggling through it than they would on an empty track. 
 
 If we want to compare different tracks fairly, we shouldn't just ask "how long is the track?" We must ask "how long did the run take?" The Optical Path Length is the length of an empty track that would take the exact same time to run.
 
@@ -651,16 +651,16 @@ Let's derive the formula for Optical Path Length step-by-step using light's "sto
 ### 2.1 Step-by-Step Derivation
 
 Suppose a photon travels through a block of material with:
-- A physical thickness \(L\) (measured with a ruler)
-- A refractive index \(n\)
+- A physical thickness $L$ (measured with a ruler)
+- A refractive index $n$
 
-We want to calculate the time \(t\) it takes the photon to cross this block.
+We want to calculate the time $t$ it takes the photon to cross this block.
 
 From basic kinematics, time is physical distance divided by speed:
 
 \[ t = \frac{\text{Distance}}{\text{Speed}} = \frac{L}{v} \]
 
-Now substitute the speed of light inside the material, \(v = c/n\), into the formula:
+Now substitute the speed of light inside the material, $v = c/n$, into the formula:
 
 \[ t = \frac{L}{\frac{c}{n}} \]
 
@@ -672,17 +672,17 @@ Simplifying this fraction by multiplying the numerator by the reciprocal of the 
 
 This is the exact duration the photon spends traversing the block.
 
-Now, let's ask the defining question of OPL: **If a second photon had been flying through a pure, empty vacuum for that exact same amount of time (\(t\)), how much physical distance would it have covered?**
+Now, let's ask the defining question of OPL: **If a second photon had been flying through a pure, empty vacuum for that exact same amount of time ($t$), how much physical distance would it have covered?**
 
-Distance equals speed multiplied by time. In a vacuum, the speed is \(c\). Let's calculate this vacuum-equivalent distance (\(d_{\text{vac}}\)):
+Distance equals speed multiplied by time. In a vacuum, the speed is $c$. Let's calculate this vacuum-equivalent distance ($d_{\text{vac}}$):
 
 \[ d_{\text{vac}} = c \cdot t \]
 
-Now, substitute the time \(t\) we calculated for the material block:
+Now, substitute the time $t$ we calculated for the material block:
 
 \[ d_{\text{vac}} = c \cdot \left(\frac{n \cdot L}{c}\right) \]
 
-The speed of light \(c\) in the numerator and denominator cancels out perfectly:
+The speed of light $c$ in the numerator and denominator cancels out perfectly:
 
 <div class="eq-box">
 \[ d_{\text{vac}} = n \cdot L \]
@@ -696,41 +696,41 @@ This is the **Optical Path Length (OPL)**. We define it as:
 
 What if the refractive index changes continuously along the path? For example, the Earth's atmosphere is denser near the surface than in the upper atmosphere, causing the index of refraction to vary continuously with altitude.
 
-To find the OPL in a material where \(n\) is a function of position \(s\), we divide the path into infinitesimally small segments \(ds\) and integrate:
+To find the OPL in a material where $n$ is a function of position $s$, we divide the path into infinitesimally small segments $ds$ and integrate:
 
 <div class="eq-box">
 \[ \text{OPL} = \int_{A}^{B} n(s) \, ds \]
 </div>
 
-Here, \(ds\) is the physical differential path element along the ray path from point \(A\) to point \(B\).
+Here, $ds$ is the physical differential path element along the ray path from point $A$ to point $B$.
 
 ### 2.3 Optical Path Difference (OPD) and Phase Shift
 
 In wave optics, we care about whether waves interfere constructively (adding together to become brighter) or destructively (canceling each other out). 
 
-When light splits and travels along two different paths, the differences in their journeys are measured by the **Optical Path Difference (OPD)**, denoted by \(\Delta\) or \(\text{OPD}\):
+When light splits and travels along two different paths, the differences in their journeys are measured by the **Optical Path Difference (OPD)**, denoted by $\Delta$ or $\text{OPD}$:
 
 \[ \text{OPD} = \text{OPL}_2 - \text{OPL}_1 = n_2 L_2 - n_1 L_1 \]
 
-Why is OPD so critical? Because it is directly proportional to the **phase difference** (\(\Delta \phi\)) between the two waves when they recombine. 
+Why is OPD so critical? Because it is directly proportional to the **phase difference** ($\Delta \phi$) between the two waves when they recombine. 
 
-A wave completes one full cycle of \(2\pi\) radians (360°) when it covers a distance equal to its vacuum wavelength \(\lambda_0\). Therefore, the phase shift accumulated due to path difference is:
+A wave completes one full cycle of $2\pi$ radians (360°) when it covers a distance equal to its vacuum wavelength $\lambda_0$. Therefore, the phase shift accumulated due to path difference is:
 
 <div class="eq-box">
 \[ \Delta \phi = \frac{2\pi}{\lambda_0} \cdot \text{OPD} = \frac{2\pi}{\lambda_0} (n_2 L_2 - n_1 L_1) \]
 </div>
 
-| Phase Difference (\(\Delta \phi\)) | Equivalent OPD | Interference Result | Visual Appearance |
+| Phase Difference ($\Delta \phi$) | Equivalent OPD | Interference Result | Visual Appearance |
 |:---|:---|:---|:---|
-| \(0, 2\pi, 4\pi, \dots\) | \(0, \lambda_0, 2\lambda_0, \dots\) | Constructive | Peak aligns with Peak (Bright) |
-| \(\pi, 3\pi, 5\pi, \dots\) | \(\frac{\lambda_0}{2}, \frac{3\lambda_0}{2}, \dots\) | Destructive | Peak aligns with Trough (Dark) |
+| $0, 2\pi, 4\pi, \dots$ | $0, \lambda_0, 2\lambda_0, \dots$ | Constructive | Peak aligns with Peak (Bright) |
+| $\pi, 3\pi, 5\pi, \dots$ | $\frac{\lambda_0}{2}, \frac{3\lambda_0}{2}, \dots$ | Destructive | Peak aligns with Trough (Dark) |
 | Intermediate | Intermediate | Partial | Dimmed / Shifted |
 
 ---
 
 ## 3. Interactive Lab 1: The Photon Race {#interactive-race}
 
-Use the sliders to adjust the refractive index (\(n\)) and physical length (\(L\)) of the medium block. Watch in real-time how the speed and wavelength change, and how the lag creates an Optical Path Difference.
+Use the sliders to adjust the refractive index ($n$) and physical length ($L$) of the medium block. Watch in real-time how the speed and wavelength change, and how the lag creates an Optical Path Difference.
 
 <div class="ilab">
   <h3>🔬 Photon Race & Wave Compression Lab</h3>
@@ -748,7 +748,7 @@ Use the sliders to adjust the refractive index (\(n\)) and physical length (\(L\
   </div>
   <div class="ctrl-row" style="flex-direction: row; align-items: center; gap: 10px;">
     <input id="show_waves" type="checkbox" checked style="width: 18px; height: 18px; cursor: pointer;">
-    <label for="show_waves" style="cursor: pointer; text-transform: none; font-size: 0.95rem; font-weight: 500;">Show Wave Cycles (\(\lambda_m = \lambda_0 / n\))</label>
+    <label for="show_waves" style="cursor: pointer; text-transform: none; font-size: 0.95rem; font-weight: 500;">Show Wave Cycles ($\lambda_m = \lambda_0 / n$)</label>
   </div>
 
   <div style="margin: 1.5rem 0 1rem; display: flex; gap: 10px;">
@@ -763,7 +763,7 @@ Use the sliders to adjust the refractive index (\(n\)) and physical length (\(L\
   <div style="margin-top: 1.5rem; padding: 1.5rem; background: #f8fafc; border: 1px solid var(--opl-border); border-radius: var(--radius-md);">
     <p style="font-family: var(--mono); font-size: 0.95rem; margin: 0; line-height: 1.6; color: var(--opl-text);">
       <strong>Live Calculation:</strong><br>
-      • Travel time through block: \(t = L / v = n \cdot L / c\)<br>
+      • Travel time through block: $t = L / v = n \cdot L / c$<br>
       • Optical Path Length: <span style="color: var(--opl-accent2); font-weight: 700;">OPL = n × L = <span id="opl_val">180.0 px</span></span><br>
       • Physical Length: <span style="color: var(--opl-purple); font-weight: 700;">L = <span id="opl_phy_val">120 px</span></span>
     </p>
@@ -977,7 +977,7 @@ Use the sliders to adjust the refractive index (\(n\)) and physical length (\(L\
 </script>
 
 **Key observations from the simulator:**
-1. **Wave compression:** Notice that inside the green block, the spatial distance between wave crests (the wavelength) shrinks. This matches the equation: \(\lambda_m = \lambda_0 / n\). 
+1. **Wave compression:** Notice that inside the green block, the spatial distance between wave crests (the wavelength) shrinks. This matches the equation: $\lambda_m = \lambda_0 / n$. 
 2. **The Lag:** Because light propagates slower inside the medium, the photon on Track 2 drops behind the vacuum photon. The physical distance between them continues to grow until the photon exits the medium.
 3. **OPL Visualization:** The dotted orange block on Track 1 represents the OPL. Notice how it shows exactly where the vacuum photon is at the exact moment the medium photon exits the block.
 
@@ -989,7 +989,7 @@ How does nature choose the path of a light ray? In 1662, the French mathematicia
 
 > **Fermat's Principle of Least Time:** Light traveling between two points will always follow the path that requires the least amount of time.
 
-Since travel time is directly proportional to the Optical Path Length (\(t = \text{OPL}/c\)), we can restate this in terms of OPL:
+Since travel time is directly proportional to the Optical Path Length ($t = \text{OPL}/c$), we can restate this in terms of OPL:
 
 <div class="eq-box">
 Light follows the path that **minimizes the Optical Path Length**.
@@ -1001,7 +1001,7 @@ Light follows the path that **minimizes the Optical Path Length**.
 
 Let's see how this principle explains why light bends when passing from air into glass.
 
-Suppose light wants to travel from point \(A\) in air (\(n_1\)) to point \(B\) in glass (\(n_2\)).
+Suppose light wants to travel from point $A$ in air ($n_1$) to point $B$ in glass ($n_2$).
 
 <div style="text-align:center; margin: 3rem 0;">
 <svg width="100%" viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg" role="img">
@@ -1040,11 +1040,11 @@ Suppose light wants to travel from point \(A\) in air (\(n_1\)) to point \(B\) i
 </svg>
 </div>
 
-The total Optical Path Length of the ray from \(A\) to \(B\) is the sum of the OPLs in both media:
+The total Optical Path Length of the ray from $A$ to $B$ is the sum of the OPLs in both media:
 
 \[ \text{OPL} = n_1 d_1 + n_2 d_2 = n_1 \sqrt{h_1^2 + x^2} + n_2 \sqrt{h_2^2 + (d - x)^2} \]
 
-To find the path that minimizes the travel time, we take the derivative of OPL with respect to the interface coordinate \(x\) and set it to zero:
+To find the path that minimizes the travel time, we take the derivative of OPL with respect to the interface coordinate $x$ and set it to zero:
 
 \[ \frac{d(\text{OPL})}{dx} = n_1 \frac{x}{\sqrt{h_1^2 + x^2}} - n_2 \frac{d - x}{\sqrt{h_2^2 + (d - x)^2}} = 0 \]
 
@@ -1070,21 +1070,21 @@ When light hits a thin film, it splits:
 1. **Ray 1** reflects off the front surface of the film.
 2. **Ray 2** refracts into the film, travels through it, reflects off the back surface, and refracts back out.
 
-Because Ray 2 travels through the film of thickness \(d\) twice, it accumulates an optical path difference:
+Because Ray 2 travels through the film of thickness $d$ twice, it accumulates an optical path difference:
 
 \[ \text{OPD} = 2 \cdot n_{\text{film}} \cdot d \]
 
 Additionally, we must account for **reflection phase shifts**:
-- When light reflects off a boundary with a *higher* refractive index, it undergoes a phase flip of \(\pi\) (180°).
+- When light reflects off a boundary with a *higher* refractive index, it undergoes a phase flip of $\pi$ (180°).
 - When light reflects off a boundary with a *lower* refractive index, there is no phase shift (0°).
 
 ### Anti-Reflection Coating (Constructing the Math)
 To make a lens anti-reflective, we want Ray 1 and Ray 2 to interfere destructively so they cancel each other out completely.
-If both reflections undergo a \(\pi\) phase shift (e.g., Air to Film to Glass substrate), the phase difference is solely due to the path difference:
+If both reflections undergo a $\pi$ phase shift (e.g., Air to Film to Glass substrate), the phase difference is solely due to the path difference:
 
 \[ \Delta \phi = \frac{2\pi}{\lambda_0} (2 n d) \]
 
-For complete cancellation, we need the phase shift to equal \(\pi\) (half a cycle):
+For complete cancellation, we need the phase shift to equal $\pi$ (half a cycle):
 
 \[ \frac{4\pi n d}{\lambda_0} = \pi \implies d = \frac{\lambda_0}{4n} \]
 
@@ -1097,7 +1097,7 @@ Use the sliders below to explore how thickness, refractive index, and wavelength
   <p class="lab-desc">Adjust the parameters to see the two reflected waves (Orange and Purple) interfere. Watch the combined wave (Green for constructive, Red for destructive) change amplitude.</p>
 
   <div class="ctrl-row">
-    <label>Wavelength (\(\lambda_0\))</label>
+    <label>Wavelength ($\lambda_0$)</label>
     <input id="film_lambda" type="range" min="400" max="750" step="5" value="550">
     <span class="val" id="film_lambda_val">550 nm</span>
   </div>
@@ -1119,7 +1119,7 @@ Use the sliders below to explore how thickness, refractive index, and wavelength
   <div style="margin-top: 1.5rem; padding: 1.5rem; background: #f8fafc; border: 1px solid var(--opl-border); border-radius: var(--radius-md);">
     <p style="font-family: var(--mono); font-size: 0.95rem; margin: 0; line-height: 1.6; color: var(--opl-text);">
       • Optical Path Difference: <span style="color: var(--opl-accent); font-weight: 700;">OPD = 2 × n × d = <span id="film_opd_val">276.0 nm</span></span><br>
-      • Phase Shift: \(\Delta \phi = \frac{4\pi nd}{\lambda_0}\)<br>
+      • Phase Shift: $\Delta \phi = \frac{4\pi nd}{\lambda_0}$<br>
       • State: <span id="film_state" style="font-weight: 700;">Destructive Interference</span>
     </p>
   </div>
@@ -1360,13 +1360,13 @@ Optical Path Length isn't just an abstract theory — it is the engineering driv
 </tr>
 <tr>
   <td><strong>Anti-reflection Coatings</strong></td>
-  <td>Exploits quarter-wave path differences (\(d = \lambda/4n\)) in thin coatings to cause complete destructive interference for reflected light.</td>
+  <td>Exploits quarter-wave path differences ($d = \lambda/4n$) in thin coatings to cause complete destructive interference for reflected light.</td>
   <td>Increases transmission in glasses, solar panels, and camera elements from ~92% to over 99.5%.</td>
 </tr>
 <tr>
   <td><strong>LIGO (Gravitational Waves)</strong></td>
   <td>Measures tiny changes in the OPL of laser beams traveling down two 4 km arms in a Michelson interferometer.</td>
-  <td>Can detect path length changes smaller than \(10^{-19}\) meters — a fraction of a proton's width — caused by passing gravitational waves.</td>
+  <td>Can detect path length changes smaller than $10^{-19}$ meters — a fraction of a proton's width — caused by passing gravitational waves.</td>
 </tr>
 <tr>
   <td><strong>Optical Coherence Tomography (OCT)</strong></td>
@@ -1375,7 +1375,7 @@ Optical Path Length isn't just an abstract theory — it is the engineering driv
 </tr>
 <tr>
   <td><strong>Waveplates (Retarders)</strong></td>
-  <td>Birefringent materials have different refractive indices (\(n_o\) and \(n_e\)) depending on light's polarization, creating polarization-dependent OPLs.</td>
+  <td>Birefringent materials have different refractive indices ($n_o$ and $n_e$) depending on light's polarization, creating polarization-dependent OPLs.</td>
   <td>Allows engineers to rotate the polarization of light or convert between linear and circular polarizations.</td>
 </tr>
 </tbody>
@@ -1428,7 +1428,7 @@ The concept of path length and propagation speed has deep historical roots, mapp
 <dl class="glossary-grid">
   <div class="gterm">
     <dt>Optical Path Length (OPL)</dt>
-    <dd>The product of the physical path length \(L\) and the refractive index \(n\). It represents the equivalent vacuum distance traveled in the same time.</dd>
+    <dd>The product of the physical path length $L$ and the refractive index $n$. It represents the equivalent vacuum distance traveled in the same time.</dd>
   </div>
   <div class="gterm">
     <dt>Optical Path Difference (OPD)</dt>
@@ -1448,7 +1448,7 @@ The concept of path length and propagation speed has deep historical roots, mapp
   </div>
   <div class="gterm">
     <dt>Quarter-Wave Layer</dt>
-    <dd>A thin film of thickness \(d = \lambda_0 / 4n\) that creates a relative phase difference of \(\pi\) (180°) between reflections, widely used in anti-reflection coatings.</dd>
+    <dd>A thin film of thickness $d = \lambda_0 / 4n$ that creates a relative phase difference of $\pi$ (180°) between reflections, widely used in anti-reflection coatings.</dd>
   </div>
 </dl>
 
@@ -1459,21 +1459,21 @@ The concept of path length and propagation speed has deep historical roots, mapp
 <details class="faq">
 <summary>Can the Optical Path Length ever be shorter than the physical path length?</summary>
 <div class="faq-body">
-For ordinary materials, no. Since the speed of light in a medium is less than in vacuum, the refractive index \(n\) is always \(\ge 1\). Thus, \(\text{OPL} = nL \ge L\). However, in specialized research fields, materials with "negative refractive index" (metamaterials) or phase velocities faster than \(c\) (giving \(n < 1\)) exist. But for physical propagation carrying energy/information (group velocity), the travel time is always bounded, maintaining relativistic causality.
+For ordinary materials, no. Since the speed of light in a medium is less than in vacuum, the refractive index $n$ is always $\ge 1$. Thus, $\text{OPL} = nL \ge L$. However, in specialized research fields, materials with "negative refractive index" (metamaterials) or phase velocities faster than $c$ (giving $n < 1$) exist. But for physical propagation carrying energy/information (group velocity), the travel time is always bounded, maintaining relativistic causality.
 </div>
 </details>
 
 <details class="faq">
 <summary>Does light actually slow down in glass, or does it just take a longer path bouncing between atoms?</summary>
 <div class="faq-body">
-This is a common misconception! Light does not "bounce" between atoms like a pinball. Classically, the incoming light wave drives electrons into oscillation, which in turn emit their own waves. The superposition of the original wave and these secondary waves yields a single, coherent wave moving forward with a slower phase velocity. Quantum mechanically, the photons remain at speed \(c\), but they exist in a superposition of electromagnetic energy and atomic excitations (forming a quasiparticle called a polariton), which travels slower.
+This is a common misconception! Light does not "bounce" between atoms like a pinball. Classically, the incoming light wave drives electrons into oscillation, which in turn emit their own waves. The superposition of the original wave and these secondary waves yields a single, coherent wave moving forward with a slower phase velocity. Quantum mechanically, the photons remain at speed $c$, but they exist in a superposition of electromagnetic energy and atomic excitations (forming a quasiparticle called a polariton), which travels slower.
 </div>
 </details>
 
 <details class="faq">
 <summary>Why do we use the vacuum wavelength to calculate the phase shift from OPL?</summary>
 <div class="faq-body">
-Because OPL is defined in terms of vacuum equivalence. By scaling the physical path \(L\) to its vacuum equivalent \(nL\), we can treat the phase accumulation as if the wave was traveling through vacuum at its standard vacuum wavelength \(\lambda_0\). This allows us to easily combine different paths (some in air, some in glass, some in water) under a single, unified wavelength scale.
+Because OPL is defined in terms of vacuum equivalence. By scaling the physical path $L$ to its vacuum equivalent $nL$, we can treat the phase accumulation as if the wave was traveling through vacuum at its standard vacuum wavelength $\lambda_0$. This allows us to easily combine different paths (some in air, some in glass, some in water) under a single, unified wavelength scale.
 </div>
 </details>
 

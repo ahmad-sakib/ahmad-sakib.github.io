@@ -5,6 +5,7 @@ date: 2026-03-09
 categories: ML
 tags: [gradient-descent, optimization, neural-networks]
 author: Ahmad Hasan Sakib
+mathjax: true
 excerpt: "An interactive guide to supervised learning, featuring live visualizations of gradient descent."
 ---
 
@@ -12,7 +13,6 @@ excerpt: "An interactive guide to supervised learning, featuring live visualizat
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
     <style>
         h1, h2 { font-family: 'Poppins', sans-serif; color: #38bdf8; }
@@ -34,7 +34,7 @@ excerpt: "An interactive guide to supervised learning, featuring live visualizat
 
         <section class="slide-card p-6 md:p-10">
             <h2 class="text-2xl font-bold mb-4">Interactive: The Hypothesis Line</h2>
-            <p class="text-slate-400 mb-6 text-sm">This chart visualizes the best fit line \(h_\theta(x) = \theta_0 + \theta_1x\) against a sample dataset.</p>
+            <p class="text-slate-400 mb-6 text-sm">This chart visualizes the best fit line $h_\theta(x) = \theta_0 + \theta_1x$ against a sample dataset.</p>
             
             <div class="bg-slate-900 p-4 rounded-lg mb-6">
                 <canvas id="regressionChart"></canvas>
@@ -42,11 +42,11 @@ excerpt: "An interactive guide to supervised learning, featuring live visualizat
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                    <label class="block text-sm font-bold text-sky-400 mb-2">Bias (\(\theta_0\)): <span id="val0">5</span></label>
+                    <label class="block text-sm font-bold text-sky-400 mb-2">Bias ($\theta_0$): <span id="val0">5</span></label>
                     <input id="theta0" type="range" min="0" max="20" step="0.5" value="5" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer">
                 </div>
                 <div>
-                    <label class="block text-sm font-bold text-sky-400 mb-2">Weight (\(\theta_1\)): <span id="val1">1.5</span></label>
+                    <label class="block text-sm font-bold text-sky-400 mb-2">Weight ($\theta_1$): <span id="val1">1.5</span></label>
                     <input id="theta1" type="range" min="0" max="5" step="0.1" value="1.5" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer">
                 </div>
             </div>

@@ -21,7 +21,6 @@ header:
     };
 </script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
@@ -255,8 +254,8 @@ blockquote p {
         <table>
             <thead>
                 <tr>
-                    <th>Hours Studied (\(x\))</th>
-                    <th>Exam Score (\(y\))</th>
+                    <th>Hours Studied ($x$)</th>
+                    <th>Exam Score ($y$)</th>
                 </tr>
             </thead>
             <tbody>
@@ -278,7 +277,7 @@ blockquote p {
 
     <h2>2. The Hypothesis</h2>
     <p>
-        To model this relationship, we assume it is roughly linear. We make a mathematical guess called the <strong>hypothesis function</strong>, denoted as \(h_\theta(x)\):
+        To model this relationship, we assume it is roughly linear. We make a mathematical guess called the <strong>hypothesis function</strong>, denoted as $h_\theta(x)$:
     </p>
     <div class="equation-box text-center">
         $$h_\theta(x) = \theta_0 + \theta_1 x$$
@@ -287,11 +286,11 @@ blockquote p {
         In this equation:
     </p>
     <ul>
-        <li><strong>\(\theta_1\) (Weight / Slope)</strong>: Determines the impact of study hours on the predicted score.</li>
-        <li><strong>\(\theta_0\) (Bias / Intercept)</strong>: The predicted score if study hours were zero.</li>
+        <li><strong>$\theta_1$ (Weight / Slope)</strong>: Determines the impact of study hours on the predicted score.</li>
+        <li><strong>$\theta_0$ (Bias / Intercept)</strong>: The predicted score if study hours were zero.</li>
     </ul>
     <p>
-        Our goal is to adjust the model's parameters \(\boldsymbol{\theta} = [\theta_0, \theta_1]^T\) so that the predictions close the gap with the real targets.
+        Our goal is to adjust the model's parameters $\boldsymbol{\theta} = [\theta_0, \theta_1]^T$ so that the predictions close the gap with the real targets.
     </p>
 
     <h2>3. Measuring Error: The Cost Function</h2>
@@ -305,7 +304,7 @@ blockquote p {
         $$J(\theta_0, \theta_1) = \frac{1}{2m}\sum_{i=1}^{m} \left(h_\theta(x^{(i)}) - y^{(i)}\right)^2$$
     </div>
     <p>
-        Where \(m\) is the number of training examples, \(x^{(i)}\) is the input feature of the \(i\)-th example, and \(y^{(i)}\) is its corresponding true label. The coefficient \(\frac{1}{2}\) is a convenience factor that cancels out during differentiation.
+        Where $m$ is the number of training examples, $x^{(i)}$ is the input feature of the $i$-th example, and $y^{(i)}$ is its corresponding true label. The coefficient $\frac{1}{2}$ is a convenience factor that cancels out during differentiation.
     </p>
     <p>
         Because this is a quadratic function, its shape is a bowl (a convex paraboloid). This convex shape is highly desirable: it guarantees that there is only one minimum point—the <strong>global minimum</strong>—and no local traps.
@@ -325,10 +324,10 @@ blockquote p {
         Let's unpack each component of this equation:
     </p>
     <ul>
-        <li><strong>\(\theta_j\)</strong>: The parameter we are updating.</li>
-        <li><strong>\(:=\)</strong>: The assignment operator, meaning the parameter is overwritten in place.</li>
-        <li><strong>\(\alpha\) (Alpha)</strong>: The <strong>Learning Rate</strong>. This hyperparameter controls how large a step we take.</li>
-        <li><strong>\(\frac{\partial J}{\partial \theta_j}\)</strong>: The partial derivative of the cost function with respect to \(\theta_j\). This derivative represents the slope of the cost function in that parameter's dimension.</li>
+        <li><strong>$\theta_j$</strong>: The parameter we are updating.</li>
+        <li><strong>$:=$</strong>: The assignment operator, meaning the parameter is overwritten in place.</li>
+        <li><strong>$\alpha$ (Alpha)</strong>: The <strong>Learning Rate</strong>. This hyperparameter controls how large a step we take.</li>
+        <li><strong>$\frac{\partial J}{\partial \theta_j}$</strong>: The partial derivative of the cost function with respect to $\theta_j$. This derivative represents the slope of the cost function in that parameter's dimension.</li>
     </ul>
 
     <blockquote>
@@ -340,34 +339,34 @@ blockquote p {
         As a physicist, this optimization process has a beautiful isomorphism in classical mechanics. 
     </p>
     <p>
-        In physical systems, conservative forces drive objects towards states of minimum potential energy. The force \(\mathbf{F}\) acting on a particle is defined as the negative gradient of the potential energy field \(U(\mathbf{r})\):
+        In physical systems, conservative forces drive objects towards states of minimum potential energy. The force $\mathbf{F}$ acting on a particle is defined as the negative gradient of the potential energy field $U(\mathbf{r})$:
     </p>
     <div class="equation-box text-center">
         $$\mathbf{F} = -\nabla U(\mathbf{r})$$
     </div>
     <p>
-        If we place a marble in a bowl, gravity acts as the force driving it to the bottom. In a highly viscous fluid (an <strong>overdamped physical system</strong>), the inertial effects (acceleration) are negligible, and the velocity \(\mathbf{v} = \frac{d\mathbf{r}}{dt}\) is directly proportional to the force:
+        If we place a marble in a bowl, gravity acts as the force driving it to the bottom. In a highly viscous fluid (an <strong>overdamped physical system</strong>), the inertial effects (acceleration) are negligible, and the velocity $\mathbf{v} = \frac{d\mathbf{r}}{dt}$ is directly proportional to the force:
     </p>
     <div class="equation-box text-center">
         $$\gamma \frac{d\mathbf{r}}{dt} = \mathbf{F} = -\nabla U(\mathbf{r})$$
     </div>
     <p>
-        This continuous-time system is known as <strong>gradient flow</strong>. When discretized into computer steps, it becomes exactly the Gradient Descent algorithm! The potential energy field \(U\) corresponds to our cost function \(J\), the position coordinates \(\mathbf{r}\) correspond to our parameters \(\boldsymbol{\theta}\), and the damping factor \(\gamma^{-1}\) acts as the learning rate \(\alpha\).
+        This continuous-time system is known as <strong>gradient flow</strong>. When discretized into computer steps, it becomes exactly the Gradient Descent algorithm! The potential energy field $U$ corresponds to our cost function $J$, the position coordinates $\mathbf{r}$ correspond to our parameters $\boldsymbol{\theta}$, and the damping factor $\gamma^{-1}$ acts as the learning rate $\alpha$.
     </p>
 
-    <h2>6. Choosing the Learning Rate (\(\alpha\))</h2>
+    <h2>6. Choosing the Learning Rate ($\alpha$)</h2>
     <p>
-        The velocity and stability of convergence depend heavily on our choice of the learning rate \(\alpha\):
+        The velocity and stability of convergence depend heavily on our choice of the learning rate $\alpha$:
     </p>
     <ul>
         <li>
-            <strong>\(\alpha\) is too small:</strong> The algorithm takes tiny, cautious steps. It will eventually find the minimum, but it will take a massive amount of computation time.
+            <strong>$\alpha$ is too small:</strong> The algorithm takes tiny, cautious steps. It will eventually find the minimum, but it will take a massive amount of computation time.
         </li>
         <li>
-            <strong>\(\alpha\) is just right:</strong> The algorithm converges steadily and efficiently to the minimum.
+            <strong>$\alpha$ is just right:</strong> The algorithm converges steadily and efficiently to the minimum.
         </li>
         <li>
-            <strong>\(\alpha\) is too large (Overshooting):</strong> The steps overshoot the valley. Because the gradient is steeper further up the other side, the next step becomes even larger, causing the system to oscillate wildly and diverge towards infinity.
+            <strong>$\alpha$ is too large (Overshooting):</strong> The steps overshoot the valley. Because the gradient is steeper further up the other side, the next step becomes even larger, causing the system to oscillate wildly and diverge towards infinity.
         </li>
     </ul>
 
@@ -404,10 +403,10 @@ blockquote p {
                 </tr>
                 <tr>
                     <td><strong>Mini-Batch GD</strong></td>
-                    <td>Subset (batch size \(B\))</td>
+                    <td>Subset (batch size $B$)</td>
                     <td>Moderately smooth</td>
                     <td>Exploits GPU parallelism, stable</td>
-                    <td>Requires tuning the batch size \(B\)</td>
+                    <td>Requires tuning the batch size $B$</td>
                 </tr>
             </tbody>
         </table>
@@ -438,7 +437,7 @@ blockquote p {
                 
                 <div>
                     <div class="flex justify-between mb-2">
-                        <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Learning Rate (\(\alpha\))</label>
+                        <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Learning Rate ($\alpha$)</label>
                         <span id="lrVal" class="text-sky-400 font-mono font-bold">0.150</span>
                     </div>
                     <input id="learningRate" type="range" min="0.005" max="0.8" step="0.005" value="0.15">
@@ -446,7 +445,7 @@ blockquote p {
 
                 <div>
                     <div class="flex justify-between mb-2">
-                        <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Start Position (\(x_0\))</label>
+                        <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Start Position ($x_0$)</label>
                         <span id="xVal" class="text-sky-400 font-mono font-bold">2.5</span>
                     </div>
                     <input id="initialX" type="range" min="-3.0" max="3.0" step="0.1" value="2.5">
@@ -480,15 +479,15 @@ blockquote p {
                     <span id="stepCount" class="text-lg font-mono font-bold text-slate-100">0</span>
                 </div>
                 <div class="bg-[#111827]/40 border border-white/5 p-3 rounded-lg text-center">
-                    <span class="block text-[10px] font-bold uppercase text-slate-500">Current position \(x\)</span>
+                    <span class="block text-[10px] font-bold uppercase text-slate-500">Current position $x$</span>
                     <span id="currX" class="text-lg font-mono font-bold text-slate-100">0.0000</span>
                 </div>
                 <div class="bg-[#111827]/40 border border-white/5 p-3 rounded-lg text-center">
-                    <span class="block text-[10px] font-bold uppercase text-slate-500">Cost \(f(x)\)</span>
+                    <span class="block text-[10px] font-bold uppercase text-slate-500">Cost $f(x)$</span>
                     <span id="currCost" class="text-lg font-mono font-bold text-slate-100">0.0000</span>
                 </div>
                 <div class="bg-[#111827]/40 border border-white/5 p-3 rounded-lg text-center">
-                    <span class="block text-[10px] font-bold uppercase text-slate-500">Slope \(f'(x)\)</span>
+                    <span class="block text-[10px] font-bold uppercase text-slate-500">Slope $f'(x)$</span>
                     <span id="currGrad" class="text-lg font-mono font-bold text-slate-100">0.0000</span>
                 </div>
             </div>

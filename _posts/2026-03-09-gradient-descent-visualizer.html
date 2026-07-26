@@ -5,6 +5,7 @@ date: 2026-03-09
 categories: ML
 tags: [gradient-descent, optimization, neural-networks]
 author: Ahmad Hasan Sakib
+mathjax: true
 excerpt: "Watch the algorithm converge in real-time as red dots find the minimum of the cost function."
 ---
 
@@ -12,7 +13,6 @@ excerpt: "Watch the algorithm converge in real-time as red dots find the minimum
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         .slide-card { background: #1e293b; border-radius: 12px; border: 1px solid #334155; }
@@ -26,7 +26,7 @@ excerpt: "Watch the algorithm converge in real-time as red dots find the minimum
     <main class="max-w-4xl mx-auto space-y-8">
         <header class="text-center">
             <h1 class="text-4xl font-bold text-sky-400 mb-2">Gradient Descent Visualizer</h1>
-            <p class="text-slate-400">Optimization of the Cost Function: \(f(x) = x^2 + x + 1\)</p>
+            <p class="text-slate-400">Optimization of the Cost Function: $f(x) = x^2 + x + 1$</p>
         </header>
 
         <section class="slide-card p-6">
@@ -36,11 +36,11 @@ excerpt: "Watch the algorithm converge in real-time as red dots find the minimum
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-end">
                 <div>
-                    <label class="block text-sm font-bold text-sky-400 mb-2">Initial Guess (\(x_0\)): <span id="xVal">2.5</span></label>
+                    <label class="block text-sm font-bold text-sky-400 mb-2">Initial Guess ($x_0$): <span id="xVal">2.5</span></label>
                     <input id="initialX" type="range" min="-3" max="3" step="0.1" value="2.5" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer">
                 </div>
                 <div>
-                    <label class="block text-sm font-bold text-sky-400 mb-2">Learning Rate (\(\alpha\)): <span id="lrVal">0.1</span></label>
+                    <label class="block text-sm font-bold text-sky-400 mb-2">Learning Rate ($\alpha$): <span id="lrVal">0.1</span></label>
                     <input id="learningRate" type="range" min="0.01" max="0.9" step="0.01" value="0.1" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer">
                 </div>
                 <button id="runBtn" class="bg-sky-500 hover:bg-sky-400 text-white font-bold py-2 px-6 rounded-lg transition-colors">Run Simulation</button>
@@ -52,14 +52,14 @@ excerpt: "Watch the algorithm converge in real-time as red dots find the minimum
                 <h2 class="text-xl font-bold text-sky-400 mb-4">Current Status</h2>
                 <div class="space-y-2 text-lg">
                     <p>Step: <span id="stepCount" class="text-white font-mono">0</span></p>
-                    <p>Current \(x\): <span id="currX" class="text-white font-mono">2.50</span></p>
-                    <p>Cost \(f(x)\): <span id="currCost" class="text-white font-mono">9.75</span></p>
+                    <p>Current $x$: <span id="currX" class="text-white font-mono">2.50</span></p>
+                    <p>Cost $f(x)$: <span id="currCost" class="text-white font-mono">9.75</span></p>
                 </div>
             </div>
             <div class="slide-card p-6 text-sm text-slate-400">
                 <h2 class="text-xl font-bold text-sky-400 mb-4">The Algorithm</h2>
-                <p class="mb-2">1. Calculate Gradient: \(f'(x) = 2x + 1\)</p>
-                <p>2. Update Rule: \(x_{new} = x - \alpha \cdot f'(x)\)</p>
+                <p class="mb-2">1. Calculate Gradient: $f'(x) = 2x + 1$</p>
+                <p>2. Update Rule: $x_{new} = x - \alpha \cdot f'(x)$</p>
             </div>
         </section>
     </main>
