@@ -117,5 +117,44 @@ document.addEventListener('DOMContentLoaded', function() {
   mobileLinks.forEach(function(link) {
     link.addEventListener('click', closeMenu);
   });
+
+  // Auto-hide header on scroll down, show on scroll up
+  var header = document.querySelector('.site-header');
+  if (header) {
+    var lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+    var scrollThreshold = 8;
+
+    window.addEventListener('scroll', function() {
+      var currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+      // Keep header visible if mobile drawer is open
+      if (mobileDrawer && mobileDrawer.classList.contains('open')) {
+        header.classList.remove('nav-hidden');
+        return;
+      }
+
+      // Always show header near top of page
+      if (currentScrollY <= 50) {
+        header.classList.remove('nav-hidden');
+        lastScrollY = currentScrollY;
+        return;
+      }
+
+      // Ignore tiny scroll movements
+      if (Math.abs(currentScrollY - lastScrollY) < scrollThreshold) {
+        return;
+      }
+
+      if (currentScrollY > lastScrollY) {
+        // Scrolling down -> hide top bar
+        header.classList.add('nav-hidden');
+      } else {
+        // Scrolling up -> show top bar
+        header.classList.remove('nav-hidden');
+      }
+
+      lastScrollY = currentScrollY;
+    }, { passive: true });
+  }
 });
 </script>

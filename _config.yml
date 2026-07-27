@@ -124,10 +124,11 @@ defaults:
       comments: false
       share: true
       related: true
-      mathjax: false
+      mathjax: true
       show_date: true
-      toc: true
-      toc_sticky: true
+      toc: false
+      toc_sticky: false
+      classes: wide
   # _pages
   - scope:
       path: ""
@@ -137,9 +138,10 @@ defaults:
       author_profile: false
       read_time: false
       related: false
-      mathjax: false
-      toc: true
-      toc_sticky: true
+      mathjax: true
+      toc: false
+      toc_sticky: false
+      classes: wide
 
 # =============================================================================
 # Exclusions

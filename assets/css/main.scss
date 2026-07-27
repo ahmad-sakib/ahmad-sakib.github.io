@@ -52,7 +52,12 @@ hr {
   background-color: var(--bg);
   opacity: 0.98;
   border-bottom: 1px solid var(--border);
-  transition: background-color 0.3s, border-color 0.3s;
+  transition: transform 0.3s ease, background-color 0.3s, border-color 0.3s;
+  will-change: transform;
+}
+
+.site-header.nav-hidden {
+  transform: translateY(-100%);
 }
 
 .site-header-container {
@@ -403,20 +408,37 @@ html:not([data-theme="dark"]) .moon-icon {
    Page Layout & Typography Overrides
    ========================================================================== */
 
-/* Hide theme header/footer since we replace them */
-.masthead, .page__footer {
+/* Hide theme header/footer since we replace them, hide TOC/sidebar */
+.masthead, .page__footer, .sidebar__right, .toc {
   display: none !important;
+}
+
+#main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  width: 100%;
+}
+
+.page {
+  width: 100% !important;
+  max-width: 100% !important;
+  float: none !important;
+  padding-right: 0 !important;
 }
 
 .page__inner-wrap {
   background-color: var(--bg) !important;
+  width: 100% !important;
+  max-width: 100% !important;
 }
 
 .page__content {
-  max-width: 72ch;
+  max-width: 100% !important;
+  width: 100% !important;
   margin: 0 auto;
   font-size: 1.05rem;
-  line-height: 1.65;
+  line-height: 1.7;
   color: var(--text-secondary);
 }
 
@@ -593,47 +615,9 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   color: var(--text-primary);
 }
 
-/* Sticky TOC Override */
-.sidebar__right {
-  display: block;
-  
-  .toc {
-    background-color: var(--surface) !important;
-    border: 1px solid var(--border) !important;
-    border-radius: var(--radius) !important;
-    padding: 1.25rem !important;
-    font-family: var(--font-sans) !important;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-    
-    .toc__title {
-      font-family: var(--font-serif) !important;
-      font-weight: 600 !important;
-      color: var(--text-primary) !important;
-      border-bottom: 1px solid var(--border) !important;
-      padding-bottom: 0.5rem !important;
-      margin-top: 0 !important;
-    }
-    
-    a {
-      color: var(--text-secondary) !important;
-      font-size: 0.9rem !important;
-      transition: color 0.2s;
-      
-      &:hover {
-        color: var(--accent) !important;
-      }
-    }
-  }
-}
-
-@media (max-width: 1024px) {
-  .sidebar__right {
-    display: block !important;
-    position: static !important;
-    float: none !important;
-    width: 100% !important;
-    margin-bottom: 2rem;
-  }
+/* Sticky TOC Override - Hidden */
+.sidebar__right, .toc {
+  display: none !important;
 }
 
 /* Rouge Code blocks Styling */

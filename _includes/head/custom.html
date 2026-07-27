@@ -3,22 +3,26 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,600;1,8..60,600&display=swap" rel="stylesheet">
 
-{% if page.mathjax %}
+{% if page.mathjax != false %}
 <!-- KaTeX — fast LaTeX math rendering -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" crossorigin="anonymous"
-  onload="document.addEventListener('DOMContentLoaded', function() {
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" crossorigin="anonymous" onload="renderKaTeX();"></script>
+<script>
+function renderKaTeX() {
+  if (typeof renderMathInElement === 'function') {
     renderMathInElement(document.body, {
       delimiters: [
         {left: '$$', right: '$$', display: true},
         {left: '$',  right: '$',  display: false},
-        {left: '\\[', right: '\\]', display: true},
-        {left: '\\(', right: '\\)', display: false}
+        {left: '\\(', right: '\\)', display: false},
+        {left: '\\[', right: '\\]', display: true}
       ],
       throwOnError: false
     });
-  });">
+  }
+}
+document.addEventListener('DOMContentLoaded', renderKaTeX);
 </script>
 {% endif %}
 
