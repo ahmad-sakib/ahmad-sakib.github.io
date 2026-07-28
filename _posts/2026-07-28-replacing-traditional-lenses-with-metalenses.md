@@ -7,7 +7,7 @@ tags: [metalens, flat-optics, optics, imaging, lens]
 description: "A clear comparison of how metalenses can replace bulky conventional lenses by encoding optical phase on a flat metasurface."
 mathjax: true
 toc: true
-toc_sticky: true
+toc_sticky: false
 classes: wide
 ---
 
