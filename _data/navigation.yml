@@ -11,3 +11,63 @@ main:
     url: /notes/
   - title: "About"
     url: /about/
+
+metalenses:
+  - title: "METALENSES"
+    children:
+      - title: "01 — What Is a Metalens?"
+        url: /metaoptics/metalenses/what-is-a-metalens/
+      - title: "02 — What Does a Lens Do?"
+        url: /metaoptics/metalenses/what-does-a-lens-do/
+      - title: "03 — Phase & Wavefronts"
+        url: /metaoptics/metalenses/phase-and-wavefronts/
+      - title: "04 — Conventional Lens Phase Profile"
+        url: /metaoptics/metalenses/conventional-lens-phase-profile/
+      - title: "05 — Metalens Phase Profile"
+        url: /metaoptics/metalenses/metalens-phase-profile/
+  - title: "META-ATOM PHYSICS"
+    children:
+      - title: "06 — Meta-Atom"
+        url: /metaoptics/metalenses/meta-atom/
+      - title: "07 — Propagation Phase"
+        url: /metaoptics/metalenses/propagation-phase/
+      - title: "08 — Resonant Phase"
+        url: /metaoptics/metalenses/resonant-phase/
+      - title: "09 — Geometric Phase"
+        url: /metaoptics/metalenses/geometric-phase/
+      - title: "10 — Meta-Atom Library"
+        url: /metaoptics/metalenses/meta-atom-library/
+  - title: "DESIGN"
+    children:
+      - title: "11 — Metalens Design"
+        url: /metaoptics/metalenses/metalens-design/
+  - title: "SIMULATION"
+    children:
+      - title: "12 — Electromagnetic Simulation"
+        url: /metaoptics/metalenses/electromagnetic-simulation/
+      - title: "13 — FDTD"
+        url: /metaoptics/metalenses/fdtd/
+      - title: "14 — RCWA"
+        url: /metaoptics/metalenses/rcwa/
+  - title: "PERFORMANCE"
+    children:
+      - title: "15 — Metalens Performance"
+        url: /metaoptics/metalenses/metalens-performance/
+      - title: "16 — Efficiency"
+        url: /metaoptics/metalenses/efficiency/
+      - title: "17 — Numerical Aperture"
+        url: /metaoptics/metalenses/numerical-aperture/
+      - title: "18 — Chromaticity"
+        url: /metaoptics/metalenses/chromaticity/
+  - title: "INVERSE DESIGN"
+    children:
+      - title: "19 — Inverse Design"
+        url: /metaoptics/metalenses/inverse-design/
+      - title: "20 — Adjoint Optimization"
+        url: /metaoptics/metalenses/adjoint-optimization/
+      - title: "21 — Machine Learning for Metalens Design"
+        url: /metaoptics/metalenses/machine-learning-for-metalens-design/
+  - title: "FRONTIERS"
+    children:
+      - title: "22 — Next-Generation Metalenses"
+        url: /metaoptics/metalenses/next-generation-metalenses/

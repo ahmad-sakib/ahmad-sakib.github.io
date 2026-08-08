@@ -8,6 +8,11 @@ description: "A comprehensive introduction to metaoptics, metasurfaces, and meta
 
 Welcome to the central hub for **Metaoptics** research and knowledge. This platform explores how engineered subwavelength structures—metasurfaces—control light at the nanoscale, breaking the limits of conventional optics.
 
+## Research Topics & Series
+
+### [Metalenses](/metaoptics/metalenses/)
+A progressive learning series covering the physics, design, simulation, and inverse design of metalenses. Start here to build a comprehensive understanding of metaoptics.
+
 ## What is Metaoptics?
 
 Metaoptics is the science and engineering of manipulating light using **metasurfaces**—two-dimensional arrays of subwavelength optical antennas known as **meta-atoms**. Unlike conventional optics, which rely on the gradual accumulation of phase through macroscopic curved glass lenses (bulk refraction), metaoptics introduces abrupt, localized phase changes directly at a flat interface.
