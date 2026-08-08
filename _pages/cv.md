@@ -2,7 +2,7 @@
 layout: single
 title: "Curriculum Vitae"
 permalink: /cv/
-author_profile: true
+author_profile: false
 ---
 
 <div style="margin-bottom:1.5rem;">
