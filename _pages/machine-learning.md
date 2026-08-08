@@ -3,7 +3,7 @@ layout: single
 title: "Machine Learning"
 permalink: /machine-learning/
 excerpt: "Ahmad Hasan Sakib's research on machine learning for physics — neural networks, gradient descent, PCA, and ML applications in nonlinear optics."
-author_profile: true
+author_profile: false
 ---
 
 # Machine Learning in Physics
