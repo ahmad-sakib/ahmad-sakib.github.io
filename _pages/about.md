@@ -3,10 +3,10 @@ layout: single
 title: "About Me"
 permalink: /about/
 author_profile: true
-excerpt: "Undergraduate Researcher at Shahjalal University of Science and Technology specializing in Nonlinear Optics, Machine Learning, and Computational Physics."
+excerpt: "Undergraduate Researcher at SUST specializing in Metaoptics, Computational Photonics, and Machine Learning for Physics."
 ---
 
-Welcome to my digital laboratory. I am an undergraduate physics student and researcher driven by a fascination with how computational systems can model and solve complex physical phenomena. My work sits at the intersection of **optical physics**, **mathematical optimization**, and **machine learning**.
+Welcome to my digital laboratory. I am an undergraduate physics student and researcher driven by a fascination with how engineered subwavelength structures control light at the nanoscale. My primary research identity is centered on **Metaoptics**, **Computational Photonics**, and the intersection of flat optics with **Machine Learning**.
 
 Currently, I serve as an Undergraduate Researcher at the **Nonlinear Optics Laboratory** within the Department of Physics at Shahjalal University of Science and Technology (SUST). 
 
@@ -14,11 +14,11 @@ Currently, I serve as an Undergraduate Researcher at the **Nonlinear Optics Labo
 
 ## Research Focus & Interests
 
-My research focuses on leveraging modern computational tools to explore and predict optical behaviors that are traditionally difficult or resource-intensive to measure experimentally.
+My research focuses on leveraging modern computational tools to design, simulate, and understand advanced optical phenomena, replacing bulky conventional optics with ultra-compact metasurfaces.
 
-*   **Nonlinear Optics:** Investigating wave propagation, laser-matter interactions, and designing waveguide simulations.
-*   **Machine Learning in Physics:** Developing data-driven frameworks (specifically using Python) to predict the physical properties of advanced materials, such as the nonlinear refractive index of specialized glasses.
-*   **Computational Physics:** Utilizing numerical methods—including iterative root-finding and differential equation solvers—to model complex physical systems.
+*   **Metaoptics & Metasurfaces:** Engineering meta-atoms to control the phase, amplitude, and polarization of light for applications like metalenses.
+*   **Computational Photonics:** Utilizing Finite-Difference Time-Domain (FDTD) methods and numerical solvers to model complex electromagnetic fields and nanostructures.
+*   **Machine Learning for Optics:** Developing data-driven frameworks and inverse design techniques to accelerate the discovery of novel photonic structures and nonlinear optical materials.
 
 ---
 
@@ -90,9 +90,13 @@ If you are interested in collaboration, research partnerships, or simply want to
       "https://scholar.google.com"
     ],
     "knowsAbout": [
+      "Metaoptics",
+      "Metasurfaces",
+      "Metalenses",
+      "Computational Photonics",
+      "FDTD Simulation",
       "Nonlinear Optics", 
-      "Machine Learning", 
-      "Computational Physics"
+      "Machine Learning"
     ]
   }
 }

@@ -1,15 +1,13 @@
 main:
+  - title: "Metaoptics"
+    url: /metaoptics/
   - title: "Research"
     url: /research/
+  - title: "Computing"
+    url: /computing/
   - title: "Projects"
     url: /projects/
   - title: "Notes"
     url: /notes/
-  - title: "Publications"
-    url: /publications/
-  - title: "CV"
-    url: /cv/
   - title: "About"
     url: /about/
-  - title: "Contact"
-    url: /contact/

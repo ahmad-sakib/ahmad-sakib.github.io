@@ -5,7 +5,7 @@ permalink: /research/
 author_profile: true
 ---
 
-My scientific work sits at the intersection of **Nonlinear Optics**, **Machine Learning**, and **Computational Physics**. I am particularly interested in how data-driven methods can augment and accelerate our numerical models of physical systems.
+My scientific work sits at the intersection of **Metaoptics**, **Computational Photonics**, and **Machine Learning**. I am particularly interested in how subwavelength structures (metasurfaces) can be engineered to control light at the nanoscale, and how data-driven inverse design can accelerate this process.
 
 ---
 
@@ -13,33 +13,33 @@ My scientific work sits at the intersection of **Nonlinear Optics**, **Machine L
 
 <div class="topic-archive-grid">
   <article class="topic-archive-card">
-    <a href="{{ '/research/nonlinear-optics/' | relative_url }}"><h3>Nonlinear Optics</h3></a>
-    <p>Modeling light-matter interactions, soliton dynamics, and predicting nonlinear refractive indices in optical systems.</p>
+    <a href="{{ '/metaoptics/' | relative_url }}"><h3>Metaoptics &amp; Metasurfaces</h3></a>
+    <p>Designing engineered subwavelength optical antennas to control phase, amplitude, and wavefronts.</p>
   </article>
 
   <article class="topic-archive-card">
-    <a href="{{ '/research/metamaterials/' | relative_url }}"><h3>Metamaterials</h3></a>
-    <p>Designing engineered electromagnetic materials with specific refractive and dispersive characteristics.</p>
+    <a href="{{ '/metaoptics/#metalenses' | relative_url }}"><h3>Metalenses</h3></a>
+    <p>Flat optics replacing bulky lenses through precise phase mapping and geometric phase engineering.</p>
+  </article>
+
+  <article class="topic-archive-card">
+    <a href="{{ '/metaoptics/#computational-metaoptics' | relative_url }}"><h3>Computational Electromagnetics</h3></a>
+    <p>FDTD simulations, near-field/far-field optics, and numerical modeling of Maxwell's equations.</p>
+  </article>
+
+  <article class="topic-archive-card">
+    <a href="{{ '/research/nonlinear-optics/' | relative_url }}"><h3>Nonlinear Optics</h3></a>
+    <p>Modeling light-matter interactions, harmonic generation, and predicting nonlinear refractive indices.</p>
+  </article>
+
+  <article class="topic-archive-card">
+    <a href="{{ '/machine-learning/' | relative_url }}"><h3>Machine Learning for Physics</h3></a>
+    <p>Inverse design of photonic structures, Physics-Informed Neural Networks (PINNs), and optimization.</p>
   </article>
 
   <article class="topic-archive-card">
     <a href="{{ '/research/electrodynamics-optics/' | relative_url }}"><h3>Electrodynamics &amp; Optics</h3></a>
-    <p>Formulating classical wave theories, refractive equations, and path calculations in optical media.</p>
-  </article>
-
-  <article class="topic-archive-card">
-    <a href="{{ '/research/computational-electromagnetics/' | relative_url }}"><h3>Computational Electromagnetics</h3></a>
-    <p>Implementing finite-difference time-domain (FDTD) solvers and scientific optics simulations.</p>
-  </article>
-
-  <article class="topic-archive-card">
-    <a href="{{ '/research/computational-physics/' | relative_url }}"><h3>Computational Physics</h3></a>
-    <p>Deploying numerical algorithms (RK4) and Monte Carlo simulations for physical problems.</p>
-  </article>
-
-  <article class="topic-archive-card">
-    <a href="{{ '/machine-learning/' | relative_url }}"><h3>Machine Learning</h3></a>
-    <p>Formulating Physics-Informed Neural Networks (PINNs) and analyzing optimization landscapes.</p>
+    <p>Classical wave theories, diffraction, scattering, optical path length, and analytical formulations.</p>
   </article>
 </div>
 

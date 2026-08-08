@@ -2,7 +2,7 @@
 layout: single
 title: "Replacing Traditional Lenses with Metalenses: Flat Optics for Compact Imaging"
 date: 2026-07-28 12:00:00 +0600
-categories: [Physics, Metamaterials]
+categories: [Metaoptics, Metalenses]
 tags: [metalens, flat-optics, optics, imaging, lens]
 description: "A clear comparison of how metalenses can replace bulky conventional lenses by encoding optical phase on a flat metasurface."
 mathjax: true
@@ -13,7 +13,7 @@ classes: wide
 
 Traditional lenses rely on curved glass to steer and focus light. Each surface changes the optical path length gradually, and multiple lens elements are often stacked to reduce aberrations and deliver a sharp image.
 
-**Metalenses** take a different route: they eliminate curved geometry by engineering a flat surface with subwavelength structures that impose the same phase changes locally. This means a thin planar element can perform focusing, field correction, and dispersion control where a stack of conventional lenses would otherwise be required.
+**[Metalenses](/metaoptics/#metalenses)** take a different route: they eliminate curved geometry by engineering a flat surface with subwavelength structures that impose the same phase changes locally. This means a thin planar element can perform focusing, field correction, and dispersion control where a stack of conventional lenses would otherwise be required.
 
 This article explains:
 1. How a conventional lens uses geometry and refractive index to focus light.

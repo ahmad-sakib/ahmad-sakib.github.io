@@ -1,15 +1,15 @@
 # =============================================================================
 # Site Information
 # =============================================================================
-title: "Ahmad Hasan Sakib | Computational Physics & Nonlinear Optics"
-description: "Official website of Ahmad Hasan Sakib, a Physics Researcher specializing in Nonlinear Optics, Machine Learning, and Computational Physics."
+title: "Ahmad Hasan Sakib | Metaoptics & Computational Photonics"
+description: "Research platform of Ahmad Hasan Sakib, focusing on Metaoptics, Metasurfaces, Metalenses, and Computational Electromagnetics."
 url: "https://ahmad-sakib.github.io"
 baseurl: ""
 repository: "ahmad-sakib/ahmad-sakib.github.io"
 teaser: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80"
 logo:
 locale: "en-US"
-keywords: "Computational Physics, Nonlinear Optics, Machine Learning, Physics Scholar, SUST, AI in Physics, Ahmad Hasan Sakib"
+keywords: "Metaoptics, Metasurfaces, Metalenses, Computational Photonics, FDTD, Inverse Design, Ahmad Hasan Sakib"
 
 # =============================================================================
 # Author Information
@@ -17,7 +17,7 @@ keywords: "Computational Physics, Nonlinear Optics, Machine Learning, Physics Sc
 author:
   name: "Ahmad Hasan Sakib"
   avatar: "/assets/images/sakib.jpeg"
-  bio: "Physics Researcher at SUST | Nonlinear Optics & Machine Learning"
+  bio: "Physics Researcher | Metaoptics, Metasurfaces & Computational Photonics"
   location: "Sylhet, Bangladesh"
   email: "ahmadhasansakib7@gmail.com"
   links:

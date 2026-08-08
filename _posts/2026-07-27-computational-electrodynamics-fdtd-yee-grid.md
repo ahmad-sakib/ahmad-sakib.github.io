@@ -2,7 +2,7 @@
 layout: single
 title: "Breaking the Infinite Loop in Computational Electrodynamics: Maxwell's Equations, FDTD, and the Yee Grid"
 date: 2026-07-27 19:30:00 +0600
-categories: [Physics, Computational Electrodynamics]
+categories: [Computational Photonics, FDTD]
 tags: [fdtd, yee-grid, maxwell-equations, computational-physics, numerical-methods]
 description: "An intuitive deep dive into Maxwell's curl equations, the circular dependency dilemma of E and H fields, and Kane Yee's brilliant spatial and temporal staggering solution that powers the Finite-Difference Time-Domain (FDTD) method."
 mathjax: true
@@ -13,7 +13,7 @@ classes: wide
 
 When we first study classical electrodynamics, Maxwell’s equations look remarkably symmetric, elegant, and unified. They describe how electric ($\mathbf{E}$) and magnetic ($\mathbf{H}$ or $\mathbf{B}$) fields dynamically create and sustain one another in space and time.
 
-However, when we attempt to translate these continuous partial differential equations into a computer algorithm to solve complex real-world problems—such as optical wave propagation, antenna design, or photonic crystals—we immediately hit a major mathematical roadblock: **a circular recursive loop**.
+However, when we attempt to translate these continuous partial differential equations into a computer algorithm to solve complex real-world problems—such as optical wave propagation, antenna design, or [computational metaoptics](/metaoptics/#computational-metaoptics)—we immediately hit a major mathematical roadblock: **a circular recursive loop**.
 
 In this post, we will explore:
 1. Maxwell’s curl equations and the need for numerical discretization.
