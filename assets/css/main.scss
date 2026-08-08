@@ -677,6 +677,77 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   color: var(--text-primary);
 }
 
+.wavefront-visual-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.wavefront-visual {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: var(--radius);
+}
+
+.wavefront-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.wavefront-controls label {
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  color: var(--text-primary);
+}
+
+.wavefront-controls input[type="range"] {
+  width: 100%;
+  margin-bottom: 0.85rem;
+}
+
+.wavefront-controls p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+.phase-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.legend-swatch {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 999px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.35rem;
+}
+
+.legend-swatch.edge {
+  background: #7ca1ff;
+}
+
+.legend-swatch.center {
+  background: #364bdd;
+}
+
+@media (max-width: 760px) {
+  .wavefront-visual-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Sticky TOC Override - Hidden */
 .sidebar__right, .toc {
   display: none !important;
