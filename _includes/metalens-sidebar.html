@@ -1,0 +1,20 @@
+{% if page.sidebar and page.sidebar.nav == "metalenses" %}
+<aside id="metalens-sidebar" class="metalens-sidebar">
+  <div class="metalens-sidebar__inner">
+    {% for section in site.data.navigation.metalenses %}
+      <div class="metalens-sidebar__section">
+        <h3 class="metalens-sidebar__section-title">{{ section.title }}</h3>
+        {% if section.children %}
+          <ul class="metalens-sidebar__links">
+            {% for child in section.children %}
+              <li>
+                <a href="{{ child.url | relative_url }}" class="metalens-sidebar__link{% if child.url == page.url %} active{% endif %}">{{ child.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</aside>
+{% endif %}
