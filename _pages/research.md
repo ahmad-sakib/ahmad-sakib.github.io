@@ -2,7 +2,7 @@
 layout: single
 title: "Research Portfolio"
 permalink: /research/
-author_profile: true
+author_profile: false
 ---
 
 My scientific work sits at the intersection of **Metaoptics**, **Computational Photonics**, and **Machine Learning**. I am particularly interested in how subwavelength structures (metasurfaces) can be engineered to control light at the nanoscale, and how data-driven inverse design can accelerate this process.
