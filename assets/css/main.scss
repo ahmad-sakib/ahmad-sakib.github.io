@@ -77,9 +77,70 @@ hr {
   color: var(--text-primary) !important;
   text-decoration: none;
   transition: opacity 0.2s;
-  
+
   &:hover {
     opacity: 0.85;
+  }
+}
+
+/* ==========================================================================
+   Compact header for all non-home pages
+   - Uses the body class produced by Minimal Mistakes: `layout--splash` for the
+     homepage. We target all pages that are NOT the splash layout to make the
+     header compact without altering the homepage appearance.
+   ========================================================================== */
+
+body:not(.layout--splash) .site-header {
+  /* target compact header height between ~50-65px */
+  padding: 0.35rem 1rem;
+  border-bottom-width: 1px;
+}
+
+body:not(.layout--splash) .site-header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.25rem 1rem;
+  align-items: center;
+  min-height: 56px;
+}
+
+body:not(.layout--splash) .site-title-link {
+  font-size: 1rem;
+}
+
+body:not(.layout--splash) .header-right {
+  gap: 0.75rem;
+}
+
+body:not(.layout--splash) .nav-links {
+  gap: 1rem;
+}
+
+/* Reduce desktop nav padding so links are tighter */
+@media (min-width: 769px) {
+  body:not(.layout--splash) .nav-link {
+    padding: 0.15rem 0;
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile: keep header compact but usable */
+@media (max-width: 768px) {
+  body:not(.layout--splash) .site-header-container {
+    padding: 0.25rem 0.75rem;
+    min-height: 50px;
+  }
+
+  body:not(.layout--splash) .site-title-link {
+    font-size: 0.98rem;
+  }
+
+  /* ensure hamburger and theme toggle remain visible and accessible */
+  body:not(.layout--splash) .menu-toggle-btn,
+  body:not(.layout--splash) .theme-toggle-btn,
+  body:not(.layout--splash) .metalens-sidebar-toggle {
+    width: 36px;
+    height: 36px;
   }
 }
 
