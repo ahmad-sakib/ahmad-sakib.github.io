@@ -2,7 +2,7 @@
 layout: single
 title: "Projects"
 permalink: /projects/
-author_profile: true
+author_profile: false
 ---
 
 A selection of computational and research projects. Source code is available
