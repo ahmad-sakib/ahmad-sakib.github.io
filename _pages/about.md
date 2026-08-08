@@ -2,7 +2,7 @@
 layout: single
 title: "About Me"
 permalink: /about/
-author_profile: true
+author_profile: false
 excerpt: "Undergraduate Researcher at SUST specializing in Metaoptics, Computational Photonics, and Machine Learning for Physics."
 ---
 
