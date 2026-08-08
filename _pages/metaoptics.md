@@ -46,6 +46,9 @@ $$ \Phi(r) = -\frac{2\pi}{\lambda_0} \left( \sqrt{r^2 + f^2} - f \right) $$
 Where $r$ is the radial coordinate, $f$ is the focal length, and $\lambda_0$ is the design wavelength.
 
 **Deep Dives into Metalenses:**
+*   [What Is a Metalens?](/notes/what-is-a-metalens/)
+*   [From Conventional Lenses to Metalenses](/notes/from-conventional-lenses-to-metalenses/)
+*   [What Does a Lens Actually Do to Light?](/notes/what-does-a-lens-actually-do-to-light/)
 *   [Replacing Traditional Lenses with Metalenses](/notes/replacing-traditional-lenses-with-metalenses/)
 *   [Flat Optics & Metalenses: Tailoring Light at the Subwavelength Scale](/notes/metalens/)
 
