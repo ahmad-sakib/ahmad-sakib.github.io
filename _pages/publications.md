@@ -2,7 +2,7 @@
 layout: single
 title: "Publications & Research"
 permalink: /publications/
-author_profile: true
+author_profile: false
 excerpt: "A list of academic publications, conference papers, and research projects by Ahmad Hasan Sakib."
 ---
 
