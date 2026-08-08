@@ -1,5 +1,5 @@
 ---
-title: "RCWA"
+title: "RCWA for Metalens Electromagnetic Simulation"
 layout: single
 permalink: /metaoptics/metalenses/rcwa/
 author_profile: false

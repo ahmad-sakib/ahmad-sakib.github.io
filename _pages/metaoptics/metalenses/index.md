@@ -1,5 +1,5 @@
 ---
-title: "Metalenses"
+title: "Metalenses | From Wavefronts to Inverse Design"
 layout: single
 permalink: /metaoptics/metalenses/
 author_profile: false
