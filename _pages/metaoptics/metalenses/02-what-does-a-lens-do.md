@@ -6,17 +6,35 @@ author_profile: false
 sidebar:
   nav: "metalenses"
 ---
+A lens does something quite simple:
 
-A lens does one simple but powerful thing: it changes the shape of a light wavefront so the light converges or diverges. Fundamentally, this happens through phase: different parts of the wave accumulate different phase delays as they pass through the lens.
+Depending on its shape, a lens can make light rays **converge** toward a point or **diverge** away from a point.
 
-For a concave lens, the edges are thinner than the center. Light that goes through the edge experiences a smaller phase accumulation, while light through the thicker center accumulates more phase. This variation in phase across the lens changes a flat incoming wavefront into a curved one.
+![Concave and convex lenses](https://upload.wikimedia.org/wikipedia/commons/b/b7/Lens_types.svg)
 
-That change in wavefront shape is what makes the lens focus. In the case of a concave lens, the wavefront becomes more diverging, as if the light came from a virtual focus behind the lens. The thickness profile of the lens is what sets the phase differences: small phase delay at the edge, large phase delay at the center.
+Image source: Wikimedia Commons, "Lens types" (Public domain)
 
-So while lens geometry and thickness are important, the real physical player is the phase shift. The optical path through the lens determines how much phase each ray picks up, and the phase profile across the aperture controls whether the light is focused, spread out, or redirected.
+By controlling how light travels, a lens allows us to form images, see objects more clearly, or make them appear larger or smaller.
 
-In short:
-- A lens changes the wavefront shape.
-- A concave lens does this by giving the center more phase delay than the edge.
-- Thickness controls the phase accumulation.
-- Fundamentally, phase is the main thing that makes focusing possible.
+That simple ability to **control light** is what makes lenses so useful. Cameras, microscopes, telescopes, eyeglasses, and many other optical instruments all rely on this basic idea.
+
+But what do we actually mean when we say that a device *controls light*?
+
+Light is not just something that travels from one place to another. It has several fundamental properties that describe how it behaves. Among them are its **amplitude, frequency, wavelength, and phase**.
+
+So, in a broader sense, **controlling light means controlling one or more of these properties**.
+
+And we do this all the time, often without thinking about it.
+
+| Optical device | What it controls | What it does |
+|---|---|---|
+| **Lens** | Direction, phase | Bends and reshapes the wavefront, allowing light to be focused or diverged. |
+| **Polarizer** | Polarization | Allows light with a particular polarization direction to pass through. |
+| **Optical filter** | Wavelength | Selects or blocks specific ranges of wavelengths (colors) of light. |
+| **Mirror** | Direction, phase | Reflects light and changes the direction of its propagation. |
+| **Optical modulator** | Amplitude, phase, frequency | Dynamically changes one or more properties of an optical wave. |
+| **Prism** | Wavelength, direction | Separates different wavelengths because the refractive index depends on wavelength. |
+
+In other words, controlling light does not mean doing just one thing to it. We can control its direction, phase, amplitude, polarization, or wavelength depending on what we want the light to do.
+
+

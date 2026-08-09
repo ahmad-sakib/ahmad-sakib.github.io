@@ -15,7 +15,7 @@ Welcome to the Metalenses roadmap. This hub organizes the 22-part series into a 
 
 - [01 — What Is a Metalens?](/metaoptics/metalenses/what-is-a-metalens/)
 - [02 — What Does a Lens Do?](/metaoptics/metalenses/what-does-a-lens-do/)
-- [03 — Phase & Wavefronts](/metaoptics/metalenses/phase-and-wavefronts/)
+- [03 — How Does a Lens Focus Light?](/metaoptics/metalenses/how-does-a-lens-focus-light/)
 - [04 — Conventional Lens Phase Profile](/metaoptics/metalenses/conventional-lens-phase-profile/)
 - [05 — Metalens Phase Profile](/metaoptics/metalenses/metalens-phase-profile/)
 

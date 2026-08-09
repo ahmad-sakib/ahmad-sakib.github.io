@@ -17,12 +17,14 @@ main:
 metalenses:
   - title: "METALENSES"
     children:
+      - title: "Explore the Metalens Series"
+        url: /metaoptics/metalenses/
       - title: "01 — What Is a Metalens?"
         url: /metaoptics/metalenses/what-is-a-metalens/
       - title: "02 — What Does a Lens Do?"
         url: /metaoptics/metalenses/what-does-a-lens-do/
-      - title: "03 — Phase & Wavefronts"
-        url: /metaoptics/metalenses/phase-and-wavefronts/
+      - title: "03 — How Does a Lens Focus Light?"
+        url: /metaoptics/metalenses/how-does-a-lens-focus-light/
       - title: "04 — Conventional Lens Phase Profile"
         url: /metaoptics/metalenses/conventional-lens-phase-profile/
       - title: "05 — Metalens Phase Profile"
