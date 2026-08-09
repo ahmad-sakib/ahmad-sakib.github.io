@@ -1,5 +1,5 @@
 ---
-title: "Phase & Wavefronts"
+title: "How Does a Lens Focus Light?"
 layout: single
 permalink: /metaoptics/metalenses/how-does-a-lens-focus-light/
 author_profile: false
@@ -74,20 +74,49 @@ That bowl-shaped wavefront brings the light to a point. That point is the focus.
 
 This is the basic reason a lens can make an image.
 
----
+## Fermat’s Principle of Least Time
 
-## Why This Matters for Metalenses
+Another way to understand focusing is to think about the path light takes.
 
-Metalenses use the same idea as ordinary lenses, but they do it on a flat surface.
+Fermat’s principle says that light travels from one point to another along the path that takes the least time.
 
-Each tiny part of a metalens changes the phase of the passing light. Together, these changes shape the wavefront into the curve needed for focusing.
+For a lens, different rays travel different paths. A ray through the center of a convex lens goes through more glass than a ray near the edge. The extra glass slows the central ray down.
+
+So the lens makes the central ray take longer, while the edge rays take shorter paths. The result is that all the rays reach the focus at the same time.
+
+This is why the lens must shape the wavefront carefully. If the times are not matched, the light will not focus cleanly.
+
+### Optical Path Length
+
+The idea of time can also be expressed as an optical path length.
+
+Optical path length is the distance light travels weighted by the speed of light in the material. Glass slows light down compared to air, so a longer path inside glass can match a shorter path through air.
+
+A lens uses this effect to make the phase of the light line up at the focus.
+
+When the phase is lined up, the waves add together constructively, and the light is bright at the focus.
+
+When the phase is not lined up, the waves interfere and the focus becomes blurry.
+
+## Bringing It Back to Metalenses
+
+Metalenses use the same basic physics as a glass lens, but instead of bending light with thick glass, they shape the wavefront on a flat surface.
+
+Each tiny element on a metalens changes the phase of the light that passes through it. By choosing the right phase shift at each point, the metalens builds the same bowl-shaped wavefront needed for focusing.
 
 So the key idea is:
 
-- A lens works by shaping wavefronts.
-- Huygens’ Principle gives us a useful way to understand wavefronts.
-- Metalenses are a modern way to control wavefronts using engineered surfaces.
+- Huygens’ principle explains the wavefront picture.
+- Fermat’s principle explains why light takes the correct path and timing.
+- A lens focuses by shaping wavefronts so the light arrives together at a point.
+- A metalens does this with engineered surface structure instead of bulk glass.
 
-That is how a lens focuses light: by transforming a wavefront so that all the light adds up at the right place.
+## Summary
+
+A lens focuses light by changing the shape of a wavefront and matching the arrival time of many rays.
+
+This happens in ordinary lenses with curved glass and in metalenses with nano-scale surface patterns.
+
+Both are ways to control the phase of light so that it converges at the desired focus.
 
 
