@@ -37,4 +37,6 @@ And we do this all the time, often without thinking about it.
 
 In other words, controlling light does not mean doing just one thing to it. We can control its direction, phase, amplitude, polarization, or wavelength depending on what we want the light to do.
 
+In the preceding lessons, I will explain how optical devices work—for example, how a lens focuses light. To understand this, we need to know about the wave nature of light, as well as Huygens' principle and Fermat's principle.
+
 
