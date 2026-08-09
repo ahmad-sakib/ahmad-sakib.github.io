@@ -13,3 +13,7 @@ In a regular lens, light bends as it passes through curved glass or plastic. In 
 
 Metalenses are useful because they can be made thinner and lighter than traditional lenses. They may also be easier to combine with cameras, microscopes, and other optical devices. For beginners, the simplest idea is: a metalens is a flat, engineered surface that acts like a lens by using tiny patterned features instead of bulk curved glass.
 
+![Metalens with different focal length and deflection angles](https://upload.wikimedia.org/wikipedia/commons/1/1c/Metalens_with_different_focal_length_and_deflection_angles.png)
+
+Image source: Wikimedia Commons, "Metalens with different focal length and deflection angles" (CC BY-SA 4.0)
+
