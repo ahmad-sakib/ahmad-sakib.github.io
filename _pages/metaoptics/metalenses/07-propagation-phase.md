@@ -8,16 +8,6 @@ sidebar:
 ---
 
 <!-- Content will be added later. -->
----
-
-title: "Propagation Phase"
-layout: single
-permalink: /metaoptics/metalenses/propagation-phase/
-author_profile: false
-sidebar:
-nav: "metalenses"
------------------
-
 # Propagation Phase
 
 In the previous chapter, we saw that a dielectric meta-atom can be understood as a nanoscale optical waveguide. Its geometry determines the electromagnetic modes supported by the structure, and those modes acquire phase as they propagate through the meta-atom.
@@ -28,38 +18,21 @@ This leads to one of the simplest and most important mechanisms for controlling 
 
 The basic idea is remarkably simple.
 
-If light propagates through a structure with propagation constant (\beta) over a distance (H), it accumulates a phase
+If light propagates through a structure with propagation constant $\beta$ over a distance $H$, it accumulates a phase
 
-[
-\boxed{
-\Phi=\beta H.
-}
-]
+$$\boxed{\Phi=\beta H.}$$
 
-For a mode with effective refractive index (n_{\mathrm{eff}}),
+For a mode with effective refractive index $n_{\mathrm{eff}}$,
 
-[
-\beta=k_0n_{\mathrm{eff}},
-]
+$$\beta=k_0n_{\mathrm{eff}},$$
 
 where
 
-[
-k_0=\frac{2\pi}{\lambda_0}.
-]
+$$k_0=\frac{2\pi}{\lambda_0}.$$
 
 Therefore,
 
-[
-\boxed{
-\Phi_{\mathrm{prop}}
-====================
-
-# k_0n_{\mathrm{eff}}H
-
-\frac{2\pi}{\lambda_0}n_{\mathrm{eff}}H.
-}
-]
+$$\boxed{\Phi_{\mathrm{prop}}=k_0n_{\mathrm{eff}}H=\frac{2\pi}{\lambda_0}n_{\mathrm{eff}}H.}$$
 
 This equation is the foundation of propagation-phase metalenses.
 
@@ -69,63 +42,37 @@ But to understand why it works, we need to go one step deeper.
 
 # 1. Phase Is Accumulated During Propagation
 
-Consider a monochromatic plane wave propagating along the (z)-direction:
+Consider a monochromatic plane wave propagating along the $z$-direction:
 
-[
-E(z,t)
-======
-
-E_0e^{i(kz-\omega t)}.
-]
+$$E(z,t)=E_0e^{i(kz-\omega t)}.$$
 
 The phase of the wave is
 
-[
-\phi(z,t)=kz-\omega t.
-]
+$$\phi(z,t)=kz-\omega t.$$
 
 At a fixed time,
 
-[
-\phi(z)=kz.
-]
+$$\phi(z)=kz.$$
 
-Therefore, after traveling a distance (H),
+Therefore, after traveling a distance $H$,
 
-[
-\Delta\phi=kH.
-]
+$$\Delta\phi=kH.$$
 
-For propagation through a homogeneous material with refractive index (n),
+For propagation through a homogeneous material with refractive index $n$,
 
-[
-k=nk_0,
-]
+$$k=nk_0,$$
 
 so
 
-[
-\boxed{
-\Delta\phi=nk_0H.
-}
-]
+$$\boxed{\Delta\phi=nk_0H.}$$
 
 Using
 
-[
-k_0=\frac{2\pi}{\lambda_0},
-]
+$$k_0=\frac{2\pi}{\lambda_0},$$
 
 we obtain
 
-[
-\boxed{
-\Delta\phi
-==========
-
-\frac{2\pi nH}{\lambda_0}.
-}
-]
+$$\boxed{\Delta\phi=\frac{2\pi nH}{\lambda_0}.}$$
 
 This is the familiar optical-path-length result.
 
@@ -137,60 +84,35 @@ A larger refractive index means a larger phase accumulation over the same physic
 
 A dielectric nanopillar is not simply a slab of bulk material.
 
-Consider a cylindrical nanopillar of height (H), surrounded by a lower-index medium.
+Consider a cylindrical nanopillar of height $H$, surrounded by a lower-index medium.
 
 The electric field entering the pillar is confined by the high-index dielectric and forms a guided or quasi-guided mode.
 
 We can write the modal field approximately as
 
-[
-\mathbf E(x,y,z)
-================
-
-\mathbf E_t(x,y)e^{i\beta z}.
-]
+$$\mathbf{E}(x,y,z)=\mathbf{E}_t(x,y)e^{i\beta z}.$$
 
 The factor
 
-[
-e^{i\beta z}
-]
+$$e^{i\beta z}$$
 
 describes the phase evolution along the propagation direction.
 
-After traveling through the pillar height (H),
+After traveling through the pillar height $H$,
 
-[
-\mathbf E(H)
-============
-
-\mathbf E_t(x,y)e^{i\beta H}.
-]
+$$\mathbf{E}(H)=\mathbf{E}_t(x,y)e^{i\beta H}.$$
 
 Therefore, the phase accumulated inside the structure is
 
-[
-\boxed{
-\Phi_{\mathrm{prop}}=\beta H.
-}
-]
+$$\boxed{\Phi_{\mathrm{prop}}=\beta H.}$$
 
 Introducing the effective index,
 
-[
-\beta=k_0n_{\mathrm{eff}},
-]
+$$\beta=k_0n_{\mathrm{eff}},$$
 
 gives
 
-[
-\boxed{
-\Phi_{\mathrm{prop}}
-====================
-
-k_0n_{\mathrm{eff}}H.
-}
-]
+$$\boxed{\Phi_{\mathrm{prop}}=k_0n_{\mathrm{eff}}H.}$$
 
 This is the propagation-phase relation.
 
@@ -200,12 +122,7 @@ This is the propagation-phase relation.
 
 At first, one might expect the phase to be determined simply by the refractive index of the dielectric material:
 
-[
-\Phi
-====
-
-k_0n_{\mathrm{material}}H.
-]
+$$\Phi=k_0n_{\mathrm{material}}H.$$
 
 But this is generally not correct for a nanopillar.
 
@@ -215,34 +132,15 @@ The field therefore does not propagate as a plane wave in an infinite homogeneou
 
 Instead, it propagates as a **guided mode**.
 
-That mode has its own propagation constant,
-
-[
-\beta.
-]
+That mode has its own propagation constant, $\beta$.
 
 We define its effective index through
 
-[
-\boxed{
-n_{\mathrm{eff}}
-================
-
-\frac{\beta}{k_0}.
-}
-]
+$$\boxed{n_{\mathrm{eff}}=\frac{\beta}{k_0}.}$$
 
 Thus,
 
-[
-\boxed{
-\Phi_{\mathrm{prop}}
-====================
-
-\frac{2\pi}{\lambda_0}
-n_{\mathrm{eff}}H.
-}
-]
+$$\boxed{\Phi_{\mathrm{prop}}=\frac{2\pi}{\lambda_0}n_{\mathrm{eff}}H.}$$
 
 The effective index is therefore the quantity that connects the electromagnetic mode to the accumulated phase.
 
@@ -252,51 +150,28 @@ The effective index is therefore the quantity that connects the electromagnetic 
 
 The equation
 
-[
-\Phi_{\mathrm{prop}}
-====================
-
-k_0n_{\mathrm{eff}}H
-]
+$$\Phi_{\mathrm{prop}}=k_0n_{\mathrm{eff}}H$$
 
 has a simple physical interpretation.
 
 There are three quantities controlling the phase:
 
-[
-\boxed{
-\Phi_{\mathrm{prop}}
-\propto
-n_{\mathrm{eff}}H.
-}
-]
+$$\boxed{\Phi_{\mathrm{prop}}\propto n_{\mathrm{eff}}H.}$$
 
 Therefore, we can change the phase by changing either
 
-* the effective index (n_{\mathrm{eff}}), or
-* the propagation distance (H).
+* the effective index $n_{\mathrm{eff}}$, or
+* the propagation distance $H$.
 
-In a dielectric metalens, the height (H) is usually fixed across the entire metasurface.
+In a dielectric metalens, the height $H$ is usually fixed across the entire metasurface.
 
 The designer therefore controls the phase primarily by changing
 
-[
-\boxed{
-n_{\mathrm{eff}}.
-}
-]
+$$\boxed{n_{\mathrm{eff}}.}$$
 
-And since (n_{\mathrm{eff}}) depends on geometry,
+And since $n_{\mathrm{eff}}$ depends on geometry,
 
-[
-\boxed{
-\text{geometry}
-\rightarrow
-n_{\mathrm{eff}}
-\rightarrow
-\Phi.
-}
-]
+$$\boxed{\text{geometry}\rightarrow n_{\mathrm{eff}}\rightarrow \Phi.}$$
 
 This is the central idea behind propagation-phase meta-atoms.
 
@@ -304,53 +179,27 @@ This is the central idea behind propagation-phase meta-atoms.
 
 # 5. Geometry Becomes the Control Knob
 
-Consider a dielectric nanopillar whose diameter is (D).
+Consider a dielectric nanopillar whose diameter is $D$.
 
-Changing (D) changes the transverse electromagnetic boundary conditions.
+Changing $D$ changes the transverse electromagnetic boundary conditions.
 
 Therefore, the supported mode changes.
 
 Consequently,
 
-[
-\beta=\beta(D),
-]
+$$\beta=\beta(D),$$
 
 and hence
 
-[
-n_{\mathrm{eff}}
-================
-
-\frac{\beta(D)}{k_0}.
-]
+$$n_{\mathrm{eff}}=\frac{\beta(D)}{k_0}.$$
 
 The propagation phase becomes
 
-[
-\boxed{
-\Phi(D)
-=======
-
-k_0Hn_{\mathrm{eff}}(D).
-}
-]
+$$\boxed{\Phi(D)=k_0Hn_{\mathrm{eff}}(D).}$$
 
 We therefore obtain the complete chain
 
-[
-\boxed{
-D
-\rightarrow
-\text{mode profile}
-\rightarrow
-\beta
-\rightarrow
-n_{\mathrm{eff}}
-\rightarrow
-\Phi.
-}
-]
+$$\boxed{D\rightarrow \text{mode profile}\rightarrow \beta\rightarrow n_{\mathrm{eff}}\rightarrow \Phi.}$$
 
 This is why a metalens can use nanopillar diameter as a local phase-control parameter.
 
@@ -364,13 +213,7 @@ For a relatively small pillar, a significant fraction of the electromagnetic fie
 
 The mode is weakly confined.
 
-Therefore,
-
-[
-n_{\mathrm{eff}}
-]
-
-is relatively close to the refractive index of the surrounding medium.
+Therefore, $n_{\mathrm{eff}}$ is relatively close to the refractive index of the surrounding medium.
 
 As the diameter increases, the high-index region becomes larger.
 
@@ -378,34 +221,17 @@ The optical mode becomes more strongly confined.
 
 The effective index generally increases:
 
-[
-D\uparrow
-\quad\Rightarrow\quad
-n_{\mathrm{eff}}\uparrow.
-]
+$$D\uparrow\quad\Rightarrow\quad n_{\mathrm{eff}}\uparrow.$$
 
 Consequently,
 
-[
-\Phi_{\mathrm{prop}}
-====================
-
-k_0n_{\mathrm{eff}}H
-]
+$$\Phi_{\mathrm{prop}}=k_0n_{\mathrm{eff}}H$$
 
 also increases.
 
 Thus,
 
-[
-\boxed{
-D\uparrow
-\Rightarrow
-n_{\mathrm{eff}}\uparrow
-\Rightarrow
-\Phi_{\mathrm{prop}}\uparrow.
-}
-]
+$$\boxed{D\uparrow\Rightarrow n_{\mathrm{eff}}\uparrow\Rightarrow \Phi_{\mathrm{prop}}\uparrow.}$$
 
 This is the basic physical mechanism used to generate a range of propagation phases from geometrically different meta-atoms.
 

@@ -10,23 +10,12 @@ sidebar:
 <!-- Content will be added later. -->
 ---
 
-title: "Resonant Phase"
-layout: single
-permalink: /metaoptics/metalenses/resonant-phase/
-author_profile: false
-sidebar:
-nav: "metalenses"
------------------
-
 # Resonant Phase
 
 In the previous section, we discussed the **propagation phase**. The basic idea was simple: a dielectric nanopillar behaves approximately like a short waveguide, and the phase accumulated by light depends on the effective refractive index and the propagation length,
 
 $$
-\Phi \approx k_0 n_{\mathrm{eff}} H
-===================================
-
-\frac{2\pi}{\lambda}n_{\mathrm{eff}}H.
+\Phi_{\mathrm{prop}}=\frac{2\pi}{\lambda}n_{\mathrm{eff}}H.
 $$
 
 By changing the geometry of the nanopillar, we can change its effective index and therefore control the phase of the transmitted light.
@@ -59,9 +48,9 @@ $$
 
 where
 
-* $|t|$ is the transmission amplitude,
-* $\Phi$ is the transmission phase,
-* $\omega$ is the angular frequency.
+- $|t|$ is the transmission amplitude,
+- $\Phi$ is the transmission phase,
+- $\omega$ is the angular frequency.
 
 The important point is that the phase $\Phi$ is not necessarily determined only by the physical propagation distance inside the material.
 
@@ -75,12 +64,12 @@ Consider a high-index dielectric nanopillar placed on a substrate.
 
 A simplified geometry can be described by
 
-* diameter $D$,
-* height $H$,
-* lattice period $P$,
-* refractive index $n$.
+- diameter $D$,
+- height $H$,
+- lattice period $P$,
+- refractive index $n$.
 
-For example, TiO$_2$, Si, GaN, or SiN can be used depending on the operating wavelength.
+For example, $\mathrm{TiO_2}$, Si, GaN, or SiN can be used depending on the operating wavelength.
 
 The nanopillar confines the electromagnetic field because its refractive index is substantially higher than its surroundings.
 
@@ -93,13 +82,13 @@ Light enters the structure, interacts with the confined electromagnetic modes, a
 Therefore,
 
 $$
-t = t(D,H,P,\lambda),
+t=t(D,H,P,\lambda),
 $$
 
 and consequently,
 
 $$
-\Phi = \arg[t(D,H,P,\lambda)].
+\Phi=\arg[t(D,H,P,\lambda)].
 $$
 
 Changing the geometry changes the resonant modes and therefore changes the transmitted phase.
@@ -117,7 +106,7 @@ Along the vertical direction, the nanopillar can behave approximately like a sho
 Consider a pillar of height $H$. A wave propagating through the pillar accumulates a phase approximately given by
 
 $$
-\delta = k_0 n_{\mathrm{eff}}H,
+\delta=k_0n_{\mathrm{eff}}H,
 $$
 
 where
@@ -131,7 +120,7 @@ Because the top and bottom interfaces partially reflect light, the wave can unde
 Constructive interference occurs when the round-trip phase approximately satisfies
 
 $$
-2k_0n_{\mathrm{eff}}H \approx 2m\pi,
+2k_0n_{\mathrm{eff}}H\approx2m\pi,
 $$
 
 where $m$ is an integer.
@@ -195,17 +184,13 @@ In other words, the geometry becomes a control parameter for the phase.
 A library of simulated nanopillars can therefore provide a mapping such as
 
 $$
-D
-\rightarrow
-|t(D)|
+D\rightarrow|t(D)|
 $$
 
 and
 
 $$
-D
-\rightarrow
-\Phi(D).
+D\rightarrow\Phi(D).
 $$
 
 The metalens designer can then select the appropriate diameter at every position on the lens.
@@ -226,8 +211,8 @@ $$
 
 where
 
-* $\omega_0$ is the resonance frequency,
-* $\gamma$ describes the resonance linewidth.
+- $\omega_0$ is the resonance frequency,
+- $\gamma$ describes the resonance linewidth.
 
 The exact expression for a real nanopillar is more complicated, but this simple model captures an important physical idea.
 
@@ -320,7 +305,7 @@ covers the required phase range.
 At the same time, we want
 
 $$
-|t(D)|\approx 1
+|t(D)|\approx1
 $$
 
 throughout the usable phase range.
@@ -331,7 +316,7 @@ $$
 \boxed{
 \Phi(D)\rightarrow 2\pi
 \quad\text{while}\quad
-|t(D)|\rightarrow \text{high and uniform}.
+|t(D)|\rightarrow\text{high and uniform}.
 }
 $$
 
@@ -356,10 +341,7 @@ The phase is interpreted mainly as the phase accumulated while light propagates 
 In the resonant picture, we focus instead on the electromagnetic modes supported by the structure:
 
 $$
-\Phi_{\mathrm{res}}
-===================
-
-\arg[t(D,H,P,\lambda)].
+\Phi=\arg[t(D,H,P,\lambda)].
 $$
 
 Here the phase is determined by the complete scattering response of the resonator.
@@ -456,8 +438,7 @@ The desired lens phase is
 
 $$
 \Phi_{\mathrm{lens}}(r)
-=======================
-
+=
 -\frac{2\pi}{\lambda}
 \left(
 \sqrt{r^2+f^2}-f
@@ -466,9 +447,9 @@ $$
 
 where
 
-* $r$ is the radial distance from the optical axis,
-* $f$ is the focal length,
-* $\lambda$ is the operating wavelength.
+- $r$ is the radial distance from the optical axis,
+- $f$ is the focal length,
+- $\lambda$ is the operating wavelength.
 
 At every radial position $r$, we need a meta-atom that provides approximately
 
@@ -555,8 +536,7 @@ For a focusing metalens,
 
 $$
 \Phi_{\mathrm{lens}}(r)
-=======================
-
+=
 -\frac{2\pi}{\lambda}
 \left(
 \sqrt{r^2+f^2}-f
@@ -659,12 +639,12 @@ On the other hand, a broader response may provide greater bandwidth but usually 
 
 Therefore, meta-atom design involves balancing
 
-* phase range,
-* transmission efficiency,
-* bandwidth,
-* dispersion,
-* polarization response,
-* fabrication constraints.
+- phase range,
+- transmission efficiency,
+- bandwidth,
+- dispersion,
+- polarization response,
+- fabrication constraints.
 
 There is no universally optimal resonator.
 
@@ -702,10 +682,10 @@ $$
 
 This becomes especially important for
 
-* high-NA metalenses,
-* rapidly varying phase profiles,
-* abrupt phase transitions,
-* strongly coupled resonators.
+- high-NA metalenses,
+- rapidly varying phase profiles,
+- abrupt phase transitions,
+- strongly coupled resonators.
 
 Therefore, the resonant-phase library is an approximation to the final device response rather than a complete description of the entire metasurface.
 
@@ -829,16 +809,16 @@ Their geometry determines which modes they support, how strongly those modes int
 
 The two concepts can now be summarized as follows.
 
-| Property            | Propagation Phase                    | Resonant Phase                            |
-| ------------------- | ------------------------------------ | ----------------------------------------- |
-| Main picture        | Wave propagation through a structure | Electromagnetic resonance                 |
-| Important parameter | $n_{\mathrm{eff}}H$                  | Resonant modal response                   |
-| Phase               | $\Phi\approx k_0n_{\mathrm{eff}}H$   | $\Phi=\arg(t)$                            |
-| Geometry dependence | Changes effective index              | Changes modal/resonant response           |
-| Amplitude coupling  | Relatively weak in idealized picture | Often strongly coupled                    |
-| Dispersion          | Present                              | Often strong near resonance               |
-| Bandwidth           | Can be comparatively broad           | Often limited by resonance                |
-| Simulation          | Useful full-wave verification        | Full-wave simulation especially important |
+| Property | Propagation Phase | Resonant Phase |
+|---|---|---|
+| Main picture | Wave propagation through a structure | Electromagnetic resonance |
+| Important parameter | $n_{\mathrm{eff}}H$ | Resonant modal response |
+| Phase | $\Phi\approx k_0n_{\mathrm{eff}}H$ | $\Phi=\arg(t)$ |
+| Geometry dependence | Changes effective index | Changes modal/resonant response |
+| Amplitude coupling | Relatively weak in idealized picture | Often strongly coupled |
+| Dispersion | Present | Often strong near resonance |
+| Bandwidth | Can be comparatively broad | Often limited by resonance |
+| Simulation | Useful full-wave verification | Full-wave simulation especially important |
 
 The distinction should not be interpreted as two completely independent physical mechanisms.
 

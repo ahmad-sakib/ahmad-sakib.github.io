@@ -10,14 +10,6 @@ sidebar:
 <!-- Content will be added later. -->
 ---
 
-title: "Geometric Phase"
-layout: single
-permalink: /metaoptics/metalenses/geometric-phase/
-author_profile: false
-sidebar:
-nav: "metalenses"
------------------
-
 # Geometric Phase
 
 The **geometric phase**, also known as the **Pancharatnam–Berry (PB) phase**, provides another way of controlling the phase of light with a metasurface.
@@ -27,7 +19,7 @@ Unlike the propagation phase, where the phase accumulated by light depends prima
 This gives us a remarkably simple relationship:
 
 $$
-\boxed{\Phi_{\mathrm{PB}} = \pm 2\alpha}
+\boxed{\Phi_{\mathrm{PB}}=\pm 2\alpha}
 $$
 
 where $\alpha$ is the rotation angle of the meta-atom.
@@ -46,21 +38,17 @@ For example, the nanofin may be designed to behave approximately as a **half-wav
 
 If the nanofin is aligned along the $x$-axis, it has some fixed polarization response.
 
-Now rotate the nanofin by an angle $\alpha$:
-
-$$
-\alpha : 0 \rightarrow \alpha.
-$$
+Now rotate the nanofin by an angle $\alpha$.
 
 The remarkable result is that the phase of the **cross-polarized component** of the transmitted light changes by
 
 $$
-\boxed{\Phi_{\mathrm{PB}} = 2\alpha}.
+\boxed{\Phi_{\mathrm{PB}}=2\alpha}.
 $$
 
 Thus, rotating the same meta-atom allows us to continuously control the optical phase.
 
-For a complete rotation,
+For a complete rotation over the relevant orientation range,
 
 $$
 0\leq\alpha<\pi,
@@ -80,27 +68,33 @@ Therefore, simply rotating the nanofins gives us the full $2\pi$ phase range req
 
 The origin of the factor of two is easiest to understand using circular polarization.
 
-Let the incident field be circularly polarized. We can write the two circular polarization states as
+Let the incident field be circularly polarized. The two circular polarization states can be written as
 
 $$
-\mathbf{e}_{\pm}
-================
-
+\mathbf{e}_{\sigma}
+=
 \frac{1}{\sqrt{2}}
 \left(
 \hat{\mathbf{x}}
-\pm i\hat{\mathbf{y}}
++
+i\sigma\hat{\mathbf{y}}
 \right),
 $$
 
-where the signs correspond to the two opposite handednesses of circular polarization.
+where
+
+$$
+\sigma=\pm1
+$$
+
+represents the two opposite helicities.
 
 An anisotropic half-wave-plate-like meta-atom changes the polarization state of the incident light.
 
 For the converted, or **cross-polarized**, component, rotating the optical axis of the meta-atom by $\alpha$ produces a phase factor
 
 $$
-e^{\pm i2\alpha}.
+e^{i2\sigma\alpha}.
 $$
 
 Therefore,
@@ -109,7 +103,7 @@ $$
 \boxed{
 \mathbf{E}_{\mathrm{cross}}
 \propto
-e^{\pm i2\alpha}
+e^{i2\sigma\alpha}
 }
 $$
 
@@ -117,11 +111,19 @@ and hence
 
 $$
 \boxed{
+\Phi_{\mathrm{PB}}=2\sigma\alpha
+}
+$$
+
+or equivalently,
+
+$$
+\boxed{
 \Phi_{\mathrm{PB}}=\pm2\alpha.
 }
 $$
 
-The sign depends on the handedness of the incident circular polarization and the corresponding polarization conversion convention.
+The sign depends on the handedness of the incident circular polarization and on the convention used to define the polarization states.
 
 This is the fundamental mathematical origin of geometric-phase metasurfaces.
 
@@ -137,10 +139,7 @@ The phase is controlled by the optical path length:
 
 $$
 \Phi_{\mathrm{prop}}
-\sim
-k_0 n_{\mathrm{eff}}H
-=====================
-
+\approx
 \frac{2\pi}{\lambda}
 n_{\mathrm{eff}}H.
 $$
@@ -182,23 +181,22 @@ $$
 As light propagates through the nanofin, the two orthogonal components accumulate different phases:
 
 $$
-\phi_x = k_0 n_x H,
+\phi_x=k_0n_xH,
 $$
 
 and
 
 $$
-\phi_y = k_0 n_y H.
+\phi_y=k_0n_yH.
 $$
 
 The phase retardation is therefore
 
 $$
 \Delta\phi
-==========
-
-# \phi_x-\phi_y
-
+=
+\phi_x-\phi_y
+=
 k_0(n_x-n_y)H.
 $$
 
@@ -260,11 +258,17 @@ Thus,
 
 $$
 \boxed{
-\Phi_{\mathrm{PB}}=\sigma,2\alpha
+\Phi_{\mathrm{PB}}=2\sigma\alpha
 }
 $$
 
-where $\sigma=\pm1$ represents the helicity of the incident circular polarization.
+where
+
+$$
+\sigma=\pm1
+$$
+
+represents the helicity of the incident circular polarization.
 
 This helicity dependence is a defining characteristic of PB-phase metasurfaces.
 
@@ -278,8 +282,7 @@ Suppose the desired metalens phase profile is
 
 $$
 \Phi_{\mathrm{lens}}(x,y)
-=========================
-
+=
 -\frac{2\pi}{\lambda}
 \left[
 \sqrt{x^2+y^2+f^2}-f
@@ -291,31 +294,43 @@ This is the phase profile required to transform an incident plane wave into a co
 For a PB-phase metalens, we need
 
 $$
-\Phi_{\mathrm{lens}}(x,y)
-=========================
-
-2\alpha(x,y)
+\Phi_{\mathrm{PB}}(x,y)
+=
+2\sigma\alpha(x,y)
 $$
 
-for a chosen circular polarization convention.
+for a chosen circular-polarization convention.
 
-Therefore, the required orientation of every nanofin is simply
+Therefore, the required orientation of every nanofin is
 
 $$
 \boxed{
 \alpha(x,y)
-===========
-
-\frac{\Phi_{\mathrm{lens}}(x,y)}{2}.
+=
+\frac{\Phi_{\mathrm{lens}}(x,y)}
+{2\sigma}.
 }
 $$
 
-Because phase is defined modulo $2\pi$, we can write
+Because phase is defined modulo $2\pi$, we can write the orientation more generally as
+
+$$
+\boxed{
+\alpha(x,y)
+=
+\frac{1}{2\sigma}
+\left[
+\Phi_{\mathrm{lens}}(x,y)
+\bmod 2\pi
+\right].
+}
+$$
+
+For $\sigma=+1$, this reduces to
 
 $$
 \alpha(x,y)
-===========
-
+=
 \frac{1}{2}
 \left[
 \Phi_{\mathrm{lens}}(x,y)
@@ -361,10 +376,12 @@ Then
 
 $$
 \alpha(x_1)
-===========
-
-# \frac{1}{2}\frac{\pi}{2}
-
+=
+\frac{1}{2}
+\left(
+\frac{\pi}{2}
+\right)
+=
 \frac{\pi}{4}.
 $$
 
@@ -377,15 +394,19 @@ $$
 then
 
 $$
-\alpha(x_2)=\frac{\pi}{2}.
+\alpha(x_2)
+=
+\frac{\pi}{2}.
 $$
 
 Thus, the desired phase profile is encoded into the orientation of the nanofins:
 
 $$
+\boxed{
 \Phi(x)
 \quad\longrightarrow\quad
 \alpha(x)=\frac{\Phi(x)}{2}.
+}
 $$
 
 The metasurface does not need a different nanofin geometry for every phase value. Instead, the same basic nanofin can be **rotated**.
@@ -425,8 +446,7 @@ The nanofin must behave approximately as a half-wave plate over the desired wave
 
 $$
 \Delta\phi
-==========
-
+=
 k_0(n_x-n_y)H
 $$
 
@@ -459,13 +479,17 @@ It relies on an anisotropic structure and polarization conversion.
 For an ideal half-wave plate,
 
 $$
-\mathrm{LCP}\rightarrow\mathrm{RCP}
+\mathrm{LCP}
+\rightarrow
+\mathrm{RCP}
 $$
 
 or
 
 $$
-\mathrm{RCP}\rightarrow\mathrm{LCP}.
+\mathrm{RCP}
+\rightarrow
+\mathrm{LCP}.
 $$
 
 The desired phase is carried by the cross-polarized component.
@@ -481,18 +505,17 @@ Consequently, the conversion efficiency is a critical design parameter.
 The total transmitted field can be separated into co-polarized and cross-polarized components:
 
 $$
-E_{\mathrm{out}}
-================
-
-E_{\mathrm{co}}
+\mathbf{E}_{\mathrm{trans}}
+=
+\mathbf{E}_{\mathrm{co}}
 +
-E_{\mathrm{cross}}.
+\mathbf{E}_{\mathrm{cross}}.
 $$
 
 The useful PB-phase signal is the cross-polarized component:
 
 $$
-E_{\mathrm{cross}}
+\mathbf{E}_{\mathrm{cross}}
 \propto
 e^{\pm i2\alpha}.
 $$
@@ -500,17 +523,25 @@ $$
 For an efficient PB metasurface, we want
 
 $$
-|E_{\mathrm{cross}}|
+\left|
+E_{\mathrm{cross}}
+\right|
 \gg
-|E_{\mathrm{co}}|.
+\left|
+E_{\mathrm{co}}
+\right|.
 $$
 
 Ideally,
 
 $$
-|E_{\mathrm{cross}}|^2
+\left|
+E_{\mathrm{cross}}
+\right|^2
 \rightarrow
-|E_{\mathrm{in}}|^2.
+\left|
+E_{\mathrm{in}}
+\right|^2.
 $$
 
 This requires the meta-atom to provide approximately $\pi$ phase retardation while maintaining low reflection and absorption.
@@ -526,16 +557,16 @@ Therefore, geometric-phase design has two separate requirements:
 
 The three mechanisms can now be compared directly.
 
-| Property                 | Propagation Phase                | Resonant Phase                          | Geometric Phase                            |
-| ------------------------ | -------------------------------- | --------------------------------------- | ------------------------------------------ |
-| Main control parameter   | $n_{\mathrm{eff}}H$              | Resonance/geometry                      | Orientation $\alpha$                       |
-| Basic relation           | $\Phi\sim k_0n_{\mathrm{eff}}H$  | Geometry-dependent                      | $\Phi=\pm2\alpha$                          |
-| Polarization             | Can be polarization-independent  | Often polarization-dependent            | Requires polarization conversion           |
-| Spectral response        | Dispersive                       | Strongly dispersive                     | Phase relation is broadband                |
-| Amplitude-phase coupling | Moderate                         | Strong near resonance                   | Can be separated through wave-plate design |
-| Full $2\pi$ phase        | Possible                         | Possible                                | Yes                                        |
-| Main advantage           | Simple dielectric implementation | Large phase control and high efficiency | Simple orientation-based phase control     |
-| Main limitation          | Dispersion                       | Resonance-amplitude coupling            | Polarization dependence                    |
+| Property | Propagation Phase | Resonant Phase | Geometric Phase |
+| --- | --- | --- | --- |
+| Main control parameter | $n_{\mathrm{eff}}H$ | Resonance/geometry | Orientation $\alpha$ |
+| Basic relation | $\Phi\sim k_0n_{\mathrm{eff}}H$ | Geometry-dependent | $\Phi=\pm2\alpha$ |
+| Polarization | Can be polarization-independent | Often polarization-dependent | Requires polarization conversion |
+| Spectral response | Dispersive | Strongly dispersive | Phase relation is broadband |
+| Amplitude-phase coupling | Moderate | Strong near resonance | Can be separated through wave-plate design |
+| Full $2\pi$ phase | Possible | Possible | Yes |
+| Main advantage | Simple dielectric implementation | Large phase control and high efficiency | Simple orientation-based phase control |
+| Main limitation | Dispersion | Resonance-amplitude coupling | Polarization dependence |
 
 The important conceptual difference is therefore:
 
@@ -571,11 +602,11 @@ This creates a useful separation between different optical properties.
 
 More advanced metasurfaces can therefore combine multiple phase mechanisms to independently manipulate:
 
-* phase,
-* amplitude,
-* polarization,
-* wavelength,
-* and propagation direction.
+- phase,
+- amplitude,
+- polarization,
+- wavelength,
+- and propagation direction.
 
 Such combinations are particularly important for multifunctional and broadband metaoptical systems.
 
@@ -637,8 +668,7 @@ First, determine the required metalens phase:
 
 $$
 \Phi_{\mathrm{lens}}(x,y)
-=========================
-
+=
 -\frac{2\pi}{\lambda}
 \left[
 \sqrt{x^2+y^2+f^2}-f
@@ -649,15 +679,25 @@ Next, convert this phase into an orientation:
 
 $$
 \alpha(x,y)
-===========
-
+=
 \frac{1}{2}
-\Phi_{\mathrm{lens}}(x,y).
+\Phi_{\mathrm{lens}}(x,y)
+$$
+
+for the $\sigma=+1$ convention.
+
+More generally,
+
+$$
+\alpha(x,y)
+=
+\frac{\Phi_{\mathrm{lens}}(x,y)}
+{2\sigma}.
 $$
 
 Finally, place an anisotropic half-wave-plate-like nanofin at every lattice position with the corresponding orientation $\alpha(x,y)$.
 
-Thus:
+Thus,
 
 $$
 \boxed{
@@ -684,7 +724,9 @@ Instead of controlling phase through propagation distance or resonant response, 
 For circularly polarized incident light, an ideal half-wave-plate-like meta-atom produces a cross-polarized component whose phase is
 
 $$
-\boxed{\Phi_{\mathrm{PB}}=\pm2\alpha}.
+\boxed{
+\Phi_{\mathrm{PB}}=\pm2\alpha.
+}
 $$
 
 This allows a complete $2\pi$ phase range using only a $\pi$ rotation of the nanofin.
