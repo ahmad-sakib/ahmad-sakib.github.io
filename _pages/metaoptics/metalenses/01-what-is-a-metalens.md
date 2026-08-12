@@ -5,25 +5,28 @@ permalink: /metaoptics/metalenses/what-is-a-metalens/
 author_profile: false
 sidebar:
   nav: "metalenses"
+excerpt: A metalens is a flat optical surface with tiny meta-atoms that shape light phase and focus an image without bulky curved glass.
 ---
 
-A metalens is a very thin lens made from a flat surface covered with tiny structures called "meta-atoms." Instead of bending light by shaping glass, a metalens changes the color and direction of light using these tiny patterns. This allows it to focus light just like a normal lens, but in a much smaller and lighter form.
+What Is a Metalens?
 
-In a regular lens, light bends as it passes through curved glass or plastic. In a metalens, light interacts with the surface structures, and each tiny element changes the light slightly. When all these changes add up, the light comes together at the same place, forming a clear image.
+A metalens is a flat optical surface engineered with tiny nano-elements that steer light and focus images with minimal thickness.
 
-Metalenses are useful because they can be made thinner and lighter than traditional lenses. They may also be easier to combine with cameras, microscopes, and other optical devices. For beginners, the simplest idea is: a metalens is a flat, engineered surface that acts like a lens by using tiny patterned features instead of bulk curved glass.
+Instead of bending light inside glass, each meta-atom changes the local phase of the wavefront at the surface. Together, these phase shifts cause light to converge at a focus point.
 
-### From Fundamental Principles to Metalenses
+This approach makes lenses thinner, lighter, and easier to integrate into cameras, microscopes, and compact optical systems.
 
-In this upcoming series, I will develop the concept and theory of **metalenses from first principles**, building the discussion step by step from the fundamental ideas of wave optics to modern electromagnetic theory.
+**Key insights**
+- Metalenses use a flat patterned surface.
+- Tiny meta-atoms alter light phase.
+- The resulting wavefront focuses light without bulky glass.
 
-We will begin with the foundational principles of light propagation, including **Huygens' principle** and **Fermat's principle of least time**, and gradually move toward a more complete description of light through the **electromagnetic theory of Maxwell's equations**.
-
-From there, we will explore how light can be understood in terms of **phase, wavefronts, interference, diffraction, and electromagnetic fields**, and how these fundamental concepts ultimately lead to the idea of **wavefront engineering**.
-
-The goal is to follow the conceptual path from the fundamental physics of light to **metasurfaces and, ultimately, metalenses**—understanding not only *what* a metalens is, but *why* it works and how its behavior emerges from the underlying principles of optics and electromagnetism.
+> A metalens replaces curved optics with flat, engineered phase control on a surface.
 
 ![Metalens with different focal length and deflection angles](https://upload.wikimedia.org/wikipedia/commons/1/1c/Metalens_with_different_focal_length_and_deflection_angles.png)
 
-Image source: Wikimedia Commons, "Metalens with different focal length and deflection angles" (CC BY-SA 4.0)
+Image source: Wikimedia Commons, "Metalens with different focal length and deflection angles" (CC BY-SA 4.0) [1]
+
+## References
+[1] Wikimedia Commons, "Metalens with different focal length and deflection angles" (CC BY-SA 4.0). https://upload.wikimedia.org/wikipedia/commons/1/1c/Metalens_with_different_focal_length_and_deflection_angles.png
 
