@@ -8,6 +8,16 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" crossorigin="anonymous" onload="renderKaTeX();"></script>
+<style>
+  /* Ensure KaTeX uses proper mathematical fonts */
+  .katex {
+    font: normal 1.21em KaTeX_Main, KaTeX_Math, "Times New Roman", Times, serif;
+    font-style: normal;
+  }
+  .katex-mathit {
+    font-style: italic;
+  }
+</style>
 <script>
 function renderKaTeX() {
   if (typeof renderMathInElement === 'function') {
@@ -18,7 +28,8 @@ function renderKaTeX() {
         {left: '\\(', right: '\\)', display: false},
         {left: '\\[', right: '\\]', display: true}
       ],
-      throwOnError: false
+      throwOnError: false,
+      strict: false
     });
   }
 }
