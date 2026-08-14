@@ -15,7 +15,7 @@ Propagation phase is the phase accumulated as light travels through a subwavelen
 
 For a nanopillar of height $h$, the propagation phase can be approximated by:
 
-$$\Phi_{\text{prop}} \approx k_0 n_{\text{eff}} h$$
+$$\phi_{\text{prop}} \approx k_0 n_{\text{eff}} h$$
 
 where $k_0 = 2\pi/\lambda$ is the free-space wave number and $n_{\text{eff}}$ is the effective refractive index of the guided mode. Because $n_{\text{eff}}$ depends on the pillar geometry, such as its diameter, width, and cross-sectional shape, varying those dimensions changes the transmitted phase.
 

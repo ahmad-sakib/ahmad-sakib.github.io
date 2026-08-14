@@ -24,7 +24,7 @@ where $f$ is the focal length. This profile is valid for paraxial focusing, wher
 
 The more exact wavefront needed to focus to a point at distance $f$ is described by a hyperbolic phase law:
 
-$$\phi(r) = -k_0\left(\sqrt{r^2 + f^2} - f\right)$$
+$$\varphi(r) = -k_0\left(\sqrt{r^2 + f^2} - f\right)$$
 
 For $r \ll f$, this reduces to the simpler quadratic form above. This is why both conventional and metalenses can be analyzed using the same wavefront language, even though their physical implementations are very different.
 
