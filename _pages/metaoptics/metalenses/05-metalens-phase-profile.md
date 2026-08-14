@@ -14,13 +14,13 @@ A metalens converts a plane wave into a converging wavefront by imposing a desig
 
 The ideal phase profile for focusing at a distance $f$ is the hyperbolic function:
 
-$$\Phi(r) = -k_0\left(\sqrt{r^2 + f^2} - f\right)$$
+$$\varphi(r) = -k_0\left(\sqrt{r^2 + f^2} - f\right)$$
 
 where $r$ is the radial coordinate measured from the optical axis and $k_0 = 2\pi/\lambda$ is the wave number in free space. This phase profile ensures that each point on the surface adds the correct delay so that light from the entire aperture arrives at the same focal point with the same phase.
 
 For rays close to the axis, the approximation is simpler and more familiar. When $r \ll f$, the exact hyperbolic phase reduces to the quadratic phase profile:
 
-$$\Phi(r) \approx -\frac{k_0 r^2}{2f}$$
+$$\phi(r) \approx -\frac{k_0 r^2}{2f}$$
 
 This is the same low-angle form found in conventional thin lenses. It explains why a metalens can mimic the focusing behavior of a conventional lens even though it has no bulky curved shape.
 

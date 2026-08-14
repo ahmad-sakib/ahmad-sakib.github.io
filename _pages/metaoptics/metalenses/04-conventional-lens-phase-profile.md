@@ -18,13 +18,13 @@ This phase variation is what turns the incoming wavefront into a converging one.
 
 In a thin-lens approximation, the phase profile is often written as a quadratic function of the radial coordinate $r$:
 
-$$\Phi(r) \approx -\frac{k_0 r^2}{2f}$$
+$$ \phi(r) \approx -\frac{k_0 r^2}{2f}$$
 
 where $f$ is the focal length. This profile is valid for paraxial focusing, where the light remains close to the optical axis and the ray angles are small. It captures the essential idea: the lens modifies the phase more strongly at larger radii, creating a curved wavefront that converges toward the focus.
 
 The more exact wavefront needed to focus to a point at distance $f$ is described by a hyperbolic phase law:
 
-$$\Phi(r) = -k_0\left(\sqrt{r^2 + f^2} - f\right)$$
+$$\phi(r) = -k_0\left(\sqrt{r^2 + f^2} - f\right)$$
 
 For $r \ll f$, this reduces to the simpler quadratic form above. This is why both conventional and metalenses can be analyzed using the same wavefront language, even though their physical implementations are very different.
 
