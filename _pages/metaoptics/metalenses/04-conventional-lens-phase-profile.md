@@ -5,54 +5,39 @@ permalink: /metaoptics/metalenses/conventional-lens-phase-profile/
 author_profile: false
 sidebar:
   nav: "metalenses"
-excerpt: A conventional lens shapes light by imposing a spatial phase profile through thickness variation; a metalens achieves the same effect with flat surface phase control.
+excerpt: A conventional lens creates a curved wavefront by imposing a spatial phase delay through its thickness profile; a metalens does the same with a flat patterned surface.
 ---
 
-Conventional Lens Phase Profile
+# Conventional Lens Phase Profile
 
-A conventional lens focuses light by varying the optical phase across its aperture.
+The basic job of a conventional lens is to impose a phase profile across its aperture. A plane wave entering the lens should emerge with a phase that varies with position in exactly the right way to produce a converging wavefront. This is why a lens is often described as a device that delivers a spatially varying optical delay.
 
-A curved lens is thicker at the center than at the edge, so light traveling through the middle is delayed more. That spatial phase variation changes the outgoing wavefront and makes the beam converge.
+For a spherical refractive lens, the center of the element is thicker than the edge. That means light passing near the center travels a longer optical path than light passing near the edge. If the refractive index is $n$ and the material thickness is $L(r)$, then the optical path is approximately $nL(r)$, and the phase delay is proportional to $k_0 n L(r)$, where $k_0 = 2\pi/\lambda$ is the free-space wavenumber.
 
-This means the lens is not just bending rays; it is creating a position-dependent phase delay that turns a planar wave into a converging one.
+This phase variation is what turns the incoming wavefront into a converging one. Without this spatial phase gradient, a beam would continue traveling nearly unchanged. With it, rays are redirected toward a common focal point.
 
-**Key ideas**
-- A lens controls phase by changing optical path length.
-- Phase variation produces wavefront curvature.
-- Metalenses create the same phase profile on a flat surface.
+In a thin-lens approximation, the phase profile is often written as a quadratic function of the radial coordinate $r$:
 
-> The essential action of a lens is to impose a spatial phase profile that makes light arrive together at the focus.
+$$\Phi(r) \approx -\frac{k_0 r^2}{2f}$$
 
-A conventional lens achieves this through thickness variation.
-A metalens achieves it by engineering local phase shifts with meta-atoms.
+where $f$ is the focal length. This profile is valid for paraxial focusing, where the light remains close to the optical axis and the ray angles are small. It captures the essential idea: the lens modifies the phase more strongly at larger radii, creating a curved wavefront that converges toward the focus.
 
-A thin lens produces a quadratic phase profile in the paraxial approximation, which is enough for small angles and near-axis focusing.
+The more exact wavefront needed to focus to a point at distance $f$ is described by a hyperbolic phase law:
 
-The exact phase required to turn a plane wave into a spherical converging wave is a hyperbolic profile:
+$$\Phi(r) = -k_0\left(\sqrt{r^2 + f^2} - f\right)$$
 
-$$\Phi(r) = -k_0 \left( \sqrt{r^2 + f^2} - f \right).$$
+For $r \ll f$, this reduces to the simpler quadratic form above. This is why both conventional and metalenses can be analyzed using the same wavefront language, even though their physical implementations are very different.
 
-For small radial distances $r \ll f$, this reduces to the familiar quadratic form:
+The difference between the two approaches is the way this phase is generated:
 
-$$\Phi(r) \approx -\frac{k_0 r^2}{2f}.$$ 
+- Conventional lens: thickness variation and material refractive index change.
+- Metalens: local nanostructure geometry imposes the same phase delay at the surface.
 
-That is why conventional lenses and metalenses can be described by the same fundamental phase concept in the paraxial regime.
-
-A metalens does not reproduce glass thickness. Instead, it selects a local meta-atom geometry so the transmitted light has the required phase shift at each position.
-
-This changes the design process from:
-
-- thickness profile \(L(r)\) \rightarrow optical path \(\mathrm{OPL}(r)\) \rightarrow phase \(\Phi(r)\)
-
-to:
-
-- target phase \(\Phi(r)\) \rightarrow meta-atom geometry \(D(r)\) \rightarrow metalens.
-
-Because optical phase is periodic, the required phase can be wrapped modulo $2\pi$ and implemented as discrete zones on the surface.
-
-In both cases, the fundamental operation is the same:
-plane wave \(\rightarrow\) spatial phase transformation \(\rightarrow\) converging wavefront \(\rightarrow\) focus.
+In both cases, the fundamental operation is the same: a plane wave is transformed into a converging wavefront, and that converging wavefront focuses light at a point.
 
 ## References
+[1] Wikipedia contributors. “Lens.” https://en.wikipedia.org/wiki/Lens
 
-No explicit external references were present in the original content.
+[2] Wikipedia contributors. “Optical phase.” https://en.wikipedia.org/wiki/Phase_(waves)
+
+[3] RP Photonics. “Lenses.” https://www.rp-photonics.com/lenses.html

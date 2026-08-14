@@ -5,29 +5,34 @@ permalink: /metaoptics/metalenses/how-does-a-lens-focus-light/
 author_profile: false
 sidebar:
   nav: "metalenses"
-excerpt: A lens focuses light by shaping the wavefront so rays arrive together at a point; metalenses do the same with surface phase control.
+excerpt: A lens focuses light by imposing a spatial phase profile so that rays arrive in phase at a common point, creating a focal spot.
 ---
 
-How Does a Lens Focus Light?
+# How Does a Lens Focus Light?
 
-A lens focuses light by changing the wavefront shape so multiple rays arrive together at the same point.
+A lens focuses light by changing the phase of the wavefront across its aperture. Different parts of the incoming beam travel through slightly different optical path lengths, and the resulting wavefront becomes curved. A curved incoming wavefront is the condition for convergence: the rays are steered such that they meet at a point called the focal point.
 
-Huygens’ principle helps us picture this: each point on a wavefront emits a small wavelet, and the new wavefront is their envelope. A lens makes that envelope curved so light converges.
+A helpful physical picture comes from Huygens’ principle. Every point on a wavefront can be thought of as emitting a secondary wavelet. The new wavefront is the envelope of all those wavelets. When a lens modifies the optical path before the wave continues, the emitted wavelets no longer remain planar; their phase relation changes, and the envelope becomes curved. The beam therefore begins to converge.
 
-Fermat’s principle explains the timing: light takes the path of least time, so a lens delays some rays and advances others until they all reach the focus together.
+Fermat’s principle gives the deeper reason: light follows a path that minimizes the travel time between two points, subject to the medium it passes through. In a lens, the optical path is deliberately varied across the aperture, so some rays are delayed and others are advanced. When this phase delay is chosen correctly, all parts of the beam reach the same focal point nearly in phase, producing a bright focused spot.
+
+This constructive interference at the focal point is what gives a lens its image-forming ability. A lens does not simply “bend” light; it organizes the wavefront so that rays arrive together, with their fields adding coherently at the focus.
 
 **Key points**
-- A lens shapes the wavefront, not just individual rays.
-- A convex lens makes the wavefront converge.
-- A metalens achieves the same effect with flat surface phase shifts.
+- A lens changes the wavefront shape, not just the ray direction.
+- The focal point is where rays and wavefronts meet in phase.
+- A metalens performs the same function with a flat, patterned surface instead of curved bulk glass.
 
-> Focusing happens when a lens aligns wavefront shape and travel time so light adds constructively at one point.
+> Focusing happens when a lens turns a broad wavefront into a converging one and makes the field add constructively at a single point.
 
 ![Metalens with different focal length and deflection angles](https://upload.wikimedia.org/wikipedia/commons/1/1c/Metalens_with_different_focal_length_and_deflection_angles.png)
 
-Image source: Wikimedia Commons, "Metalens with different focal length and deflection angles" (CC BY-SA 4.0) [1]
+Image source: Wikimedia Commons, “Metalens with different focal length and deflection angles” (CC BY-SA 4.0).
 
 ## References
-[1] Wikimedia Commons, "Metalens with different focal length and deflection angles" (CC BY-SA 4.0). https://upload.wikimedia.org/wikipedia/commons/1/1c/Metalens_with_different_focal_length_and_deflection_angles.png
+[1] Wikipedia contributors. “Huygens–Fresnel principle.” https://en.wikipedia.org/wiki/Huygens%E2%80%93Fresnel_principle
 
+[2] Wikipedia contributors. “Fermat’s principle.” https://en.wikipedia.org/wiki/Fermat%27s_principle
+
+[3] Wikipedia contributors. “Lens.” https://en.wikipedia.org/wiki/Lens
 
