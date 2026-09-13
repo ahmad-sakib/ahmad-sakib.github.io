@@ -759,6 +759,14 @@ pre, code, .highlight {
   font-size: 0.9rem !important;
 }
 
+:not(pre) > code {
+  background-color: var(--bg-subtle) !important;
+  color: var(--accent-warm) !important;
+  padding: 0.15em 0.35em !important;
+  border-radius: 4px !important;
+  border: 1px solid var(--border) !important;
+}
+
 .highlight {
   background-color: var(--bg-subtle) !important;
   border-radius: var(--radius) !important;
