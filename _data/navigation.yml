@@ -1,4 +1,6 @@
 main:
+  - title: "HPC & MEEP"
+    url: /hpc/meep/
   - title: "Metalenses"
     url: /metaoptics/metalenses/
   - title: "Metaoptics"
