@@ -7,7 +7,7 @@ author_profile: false
 
 Welcome to the HPC and MEEP roadmap. This series will take you from the foundational concepts of High-Performance Computing (HPC) to successfully running large-scale MEEP (FDTD) electromagnetic simulations on a cluster.
 
-## Part 1: Introduction to High-Performance Computing (HPC)
+## [Part 1: Introduction to High-Performance Computing (HPC)](/hpc/meep/01-introduction-to-hpc/)
 *   **What is HPC?** Differences between your laptop and a supercomputer.
 *   **Architecture Basics:** Nodes, cores, RAM, and interconnects.
 *   **The HPC Environment:** Navigating the Linux terminal and connecting via SSH.

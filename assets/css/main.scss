@@ -777,8 +777,21 @@ pre, code, .highlight {
   margin: 1.5rem 0;
 }
 
+/* Keep fenced code snippets readable with a consistent blue text color. */
+.highlight pre,
+.highlight pre code,
+.highlight pre code span {
+  color: #2563eb !important;
+}
+
 html[data-theme="dark"] .highlight {
   background-color: var(--surface) !important;
+}
+
+html[data-theme="dark"] .highlight pre,
+html[data-theme="dark"] .highlight pre code,
+html[data-theme="dark"] .highlight pre code span {
+  color: #60a5fa !important;
 }
 
 /* Dynamic code block header and button overlay */
