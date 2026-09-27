@@ -13,7 +13,7 @@ Welcome to the HPC and MEEP roadmap. This series will take you from the foundati
 *   **The HPC Environment:** Navigating the Linux terminal and connecting via SSH.
 *   **The Role of Job Schedulers:** Introduction to Slurm/PBS.
 
-## Part 2: Working with HPC Clusters
+## [Part 2: Working with HPC Clusters](/hpc/meep/02-know-your-hpc/)
 *   **Environment Modules:** Loading software (`module load ...`).
 *   **Storage Systems:** Scratch vs. Home directories.
 *   **Writing Your First Batch Script:** Anatomy of a Slurm `.sh` file.
