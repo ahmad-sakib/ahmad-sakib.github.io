@@ -17,8 +17,8 @@ A practical guide to running **MEEP** (MIT Electromagnetic Equation Propagation)
 
 | # | Title | Description |
 |:--|:------|:------------|
-| 1 | [What are Slurm and Lmod?](/hpc/meep/01-what-are-slurm-and-lmod/) | Introduction to the HPC job scheduler and module system. |
-| 2 | [Know Your HPC System](/hpc/meep/02-know-your-hpc/) | Survey your cluster's hardware, partitions, storage, and software before running jobs. |
+| 1 | [Know Your HPC System](/hpc/meep/02-know-your-hpc/) | Survey your cluster's hardware, partitions, storage, and software before running jobs.|
+| 2 |  [What are Slurm and Lmod?](/hpc/meep/01-what-are-slurm-and-lmod/) | Introduction to the HPC job scheduler and module system. |
 
 ---
 
