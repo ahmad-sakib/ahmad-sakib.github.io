@@ -1,0 +1,779 @@
+/* ==========================================================================
+   HPC & MEEP Series — Academic Blog Stylesheet
+   Enhances the default Minimal Mistakes theme with professional academic
+   blog styling: article hero, meta bar, callout variants, reading progress,
+   inline code badges, section dividers, mermaid wrappers, and more.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Reading Progress Bar
+   -------------------------------------------------------------------------- */
+
+#hpc-reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-strong) 100%);
+  z-index: 9998;
+  transition: width 0.1s linear;
+  border-radius: 0 2px 2px 0;
+}
+
+/* --------------------------------------------------------------------------
+   2. Article Hero / Title Banner
+   -------------------------------------------------------------------------- */
+
+.hpc-article-hero {
+  position: relative;
+  background: linear-gradient(135deg,
+    var(--bg-subtle) 0%,
+    color-mix(in srgb, var(--accent) 6%, var(--bg)) 100%
+  );
+  border-bottom: 1px solid var(--border);
+  padding: 3rem 0 2.5rem;
+  margin-bottom: 2.5rem;
+  overflow: hidden;
+
+  /* Subtle grid decoration */
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.35;
+    pointer-events: none;
+  }
+}
+
+.hpc-article-hero__inner {
+  position: relative;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.hpc-article-hero__series-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  border-radius: 999px;
+  padding: 0.3rem 0.85rem;
+  margin-bottom: 1.25rem;
+}
+
+.hpc-article-hero__title {
+  font-family: var(--font-serif) !important;
+  font-size: clamp(1.75rem, 4vw, 2.75rem) !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  color: var(--text-primary) !important;
+  margin: 0 0 1rem 0 !important;
+}
+
+.hpc-article-hero__lead {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  max-width: 720px;
+  margin: 0 0 1.5rem 0;
+}
+
+.hpc-article-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+  padding-top: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.hpc-article-meta__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.hpc-article-meta__sep {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--border);
+  display: inline-block;
+}
+
+.hpc-article-meta__tag {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.15em 0.55em;
+  color: var(--text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   3. Article Content Wrapper
+   -------------------------------------------------------------------------- */
+
+.hpc-article-content {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+
+  /* Better paragraph spacing */
+  p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+  }
+
+  /* Section headings */
+  h2 {
+    font-family: var(--font-serif) !important;
+    font-size: 1.65rem !important;
+    font-weight: 600 !important;
+    color: var(--text-primary) !important;
+    margin: 3rem 0 1rem !important;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border);
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 48px;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+  }
+
+  h3 {
+    font-family: var(--font-serif) !important;
+    font-size: 1.25rem !important;
+    font-weight: 600 !important;
+    color: var(--text-primary) !important;
+    margin: 2.25rem 0 0.75rem !important;
+  }
+
+  h4 {
+    font-family: var(--font-sans) !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-muted) !important;
+    margin: 1.75rem 0 0.5rem !important;
+  }
+
+  /* Lists */
+  ul, ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1.25rem;
+
+    li {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--text-secondary);
+      margin-bottom: 0.35rem;
+    }
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0 2rem;
+    font-size: 0.95rem;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  thead {
+    background: var(--bg-subtle);
+  }
+
+  th {
+    font-family: var(--font-sans) !important;
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted) !important;
+    padding: 0.75rem 1rem !important;
+    border-bottom: 2px solid var(--border);
+    text-align: left;
+  }
+
+  td {
+    padding: 0.75rem 1rem !important;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-secondary) !important;
+    vertical-align: top;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  tr:hover td {
+    background: color-mix(in srgb, var(--accent) 4%, var(--bg));
+  }
+
+  /* Horizontal rules → styled section dividers */
+  hr {
+    border: none !important;
+    border-top: 1px solid var(--border) !important;
+    margin: 2.5rem 0 !important;
+  }
+
+  /* Blockquotes (used for series notes) */
+  blockquote {
+    margin: 1.5rem 0;
+    padding: 1rem 1.25rem;
+    border-left: 3px solid var(--accent);
+    background: color-mix(in srgb, var(--accent) 5%, var(--bg-subtle));
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    color: var(--text-secondary);
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. Enhanced Callout / Notice Boxes
+   -------------------------------------------------------------------------- */
+
+.hpc-article-content {
+
+  /* Base notice override */
+  .notice,
+  .notice--info,
+  .notice--tip,
+  .notice--warning,
+  .notice--danger {
+    border-radius: 8px !important;
+    padding: 1rem 1.25rem !important;
+    margin: 1.75rem 0 !important;
+    font-size: 0.95rem !important;
+    line-height: 1.65 !important;
+    border-left-width: 4px !important;
+    display: flex;
+    gap: 0.75rem;
+
+    &::before {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      margin-top: 0.05rem;
+    }
+  }
+
+  .notice,
+  .notice--info {
+    background: color-mix(in srgb, var(--accent) 7%, var(--bg)) !important;
+    border-left-color: var(--accent) !important;
+
+    &::before { content: 'ℹ️'; }
+  }
+
+  .notice--tip {
+    background: color-mix(in srgb, #16a34a 7%, var(--bg)) !important;
+    border-left-color: #16a34a !important;
+
+    &::before { content: '💡'; }
+  }
+
+  .notice--warning {
+    background: color-mix(in srgb, var(--accent-warm) 8%, var(--bg)) !important;
+    border-left-color: var(--accent-warm) !important;
+
+    &::before { content: '⚠️'; }
+  }
+
+  .notice--danger {
+    background: color-mix(in srgb, #dc2626 7%, var(--bg)) !important;
+    border-left-color: #dc2626 !important;
+
+    &::before { content: '🚫'; }
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. Mermaid Diagram Container
+   -------------------------------------------------------------------------- */
+
+.hpc-article-content .mermaid,
+.hpc-article-content pre.mermaid {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem 1rem;
+  margin: 2rem 0;
+  overflow-x: auto;
+  text-align: center;
+
+  /* Caption via data-caption attribute */
+  &[data-caption]::after {
+    content: attr(data-caption);
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 0.75rem;
+    font-style: italic;
+  }
+}
+
+/* Mermaid diagram label — shown above the chart */
+.hpc-diagram-label {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: -1rem;
+  padding-left: 0.25rem;
+}
+
+/* Diagram figure wrapper */
+.hpc-figure {
+  margin: 2.25rem 0;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.hpc-figure__body {
+  padding: 1.5rem 1rem 1rem;
+  text-align: center;
+}
+
+.hpc-figure__caption {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+  text-align: left;
+
+  strong {
+    color: var(--text-secondary);
+    font-weight: 600;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. Inline Key-Value Highlight Chips
+   -------------------------------------------------------------------------- */
+
+.hpc-kv {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 0 0.15rem;
+  vertical-align: middle;
+}
+
+.hpc-kv__key {
+  padding: 0.15em 0.5em;
+  background: color-mix(in srgb, var(--accent) 12%, var(--bg));
+  color: var(--accent);
+  font-weight: 600;
+  border-right: 1px solid var(--border);
+}
+
+.hpc-kv__val {
+  padding: 0.15em 0.5em;
+  color: var(--text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   7. Summary / Key-Takeaways Box
+   -------------------------------------------------------------------------- */
+
+.hpc-summary-box {
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--accent) 8%, var(--bg-subtle)) 0%,
+    var(--bg-subtle) 100%
+  );
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, var(--border));
+  border-radius: var(--radius);
+  padding: 1.75rem 2rem;
+  margin: 2.5rem 0;
+
+  h3 {
+    font-family: var(--font-serif) !important;
+    font-size: 1.1rem !important;
+    color: var(--text-primary) !important;
+    margin: 0 0 1rem 0 !important;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &::before {
+      content: '✦';
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+  }
+
+  ol, ul {
+    margin: 0;
+    padding-left: 1.5rem;
+
+    li {
+      font-size: 1rem !important;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 0.4rem;
+
+      strong {
+        color: var(--text-primary);
+      }
+    }
+  }
+}
+
+/* --------------------------------------------------------------------------
+   8. Navigation — Previous / Next Article
+   -------------------------------------------------------------------------- */
+
+.hpc-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 1rem;
+  margin: 3rem 0 0;
+  flex-wrap: wrap;
+}
+
+.hpc-pagination__link {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  text-decoration: none !important;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+
+  &:hover {
+    border-color: var(--accent);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    transform: translateY(-2px);
+  }
+}
+
+.hpc-pagination__dir {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.hpc-pagination__title {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent) !important;
+  line-height: 1.35;
+}
+
+.hpc-pagination__link--next {
+  text-align: right;
+  align-items: flex-end;
+}
+
+/* --------------------------------------------------------------------------
+   9. Series Overview Index Page
+   -------------------------------------------------------------------------- */
+
+.hpc-index-hero {
+  background: linear-gradient(
+    160deg,
+    color-mix(in srgb, var(--accent) 8%, var(--bg)) 0%,
+    var(--bg-subtle) 55%,
+    color-mix(in srgb, var(--accent-warm) 5%, var(--bg-subtle)) 100%
+  );
+  border-bottom: 1px solid var(--border);
+  padding: 3.5rem 1.5rem 3rem;
+  margin-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: 'HPC & MEEP';
+    position: absolute;
+    right: -1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--font-serif);
+    font-size: clamp(4rem, 10vw, 8rem);
+    font-weight: 700;
+    color: color-mix(in srgb, var(--accent) 6%, transparent);
+    pointer-events: none;
+    white-space: nowrap;
+    user-select: none;
+  }
+}
+
+.hpc-index-hero__inner {
+  max-width: 720px;
+  position: relative;
+  z-index: 1;
+}
+
+.hpc-index-hero__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.hpc-index-hero__title {
+  font-family: var(--font-serif) !important;
+  font-size: clamp(2rem, 5vw, 3rem) !important;
+  color: var(--text-primary) !important;
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.15 !important;
+}
+
+.hpc-index-hero__desc {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 640px;
+  margin: 0 0 1.75rem 0;
+}
+
+.hpc-index-hero__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.hpc-index-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.25em 0.75em;
+  background: color-mix(in srgb, var(--accent) 10%, var(--bg));
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, var(--border));
+  border-radius: 999px;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* Article cards in the series index */
+.hpc-article-list {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+.hpc-article-card {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.25rem;
+  text-decoration: none !important;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+  color: inherit !important;
+
+  &:hover {
+    border-color: var(--accent);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+    transform: translateY(-2px);
+  }
+}
+
+.hpc-article-card__number {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: color-mix(in srgb, var(--accent) 30%, var(--border));
+  line-height: 1;
+  min-width: 2rem;
+  padding-top: 0.15rem;
+}
+
+.hpc-article-card__body {
+  flex: 1;
+}
+
+.hpc-article-card__title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary) !important;
+  margin: 0 0 0.4rem 0;
+  text-decoration: none !important;
+}
+
+a.hpc-article-card:hover .hpc-article-card__title {
+  color: var(--accent) !important;
+}
+
+.hpc-article-card__desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.hpc-article-card__arrow {
+  color: var(--text-muted);
+  font-size: 1.25rem;
+  align-self: center;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.hpc-article-card:hover .hpc-article-card__arrow {
+  transform: translateX(4px);
+  color: var(--accent);
+}
+
+.hpc-coming-soon {
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+}
+
+/* --------------------------------------------------------------------------
+   10. Sidebar — Enhanced HPC Series Sidebar
+   -------------------------------------------------------------------------- */
+
+#hpc-series-sidebar {
+  background: var(--surface) !important;
+  border-right: 1px solid var(--border);
+  box-shadow: 4px 0 32px rgba(0,0,0,0.12) !important;
+
+  h3 {
+    font-family: var(--font-serif) !important;
+    font-size: 1rem !important;
+    color: var(--text-primary) !important;
+    border-bottom-color: var(--border) !important;
+    letter-spacing: 0.01em;
+  }
+
+  a {
+    font-family: var(--font-sans);
+    color: var(--text-secondary) !important;
+    font-size: 0.92rem !important;
+    border-radius: 6px;
+
+    &:hover {
+      color: var(--accent) !important;
+      background: color-mix(in srgb, var(--accent) 8%, var(--bg)) !important;
+    }
+  }
+}
+
+#hpc-sidebar-toggle {
+  background: var(--accent) !important;
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--accent) 35%, transparent) !important;
+  font-size: 16px !important;
+  
+  &:hover {
+    background: var(--accent-strong) !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   11. Responsive Overrides
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 640px) {
+  .hpc-article-hero {
+    padding: 2rem 0 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .hpc-article-hero__title {
+    font-size: 1.6rem !important;
+  }
+
+  .hpc-article-meta {
+    gap: 0.6rem;
+  }
+
+  .hpc-article-content {
+    padding: 0 1rem 3rem;
+  }
+
+  .hpc-article-card {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .hpc-article-card__arrow {
+    display: none;
+  }
+
+  .hpc-pagination {
+    flex-direction: column;
+  }
+
+  .hpc-pagination__link--next {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .hpc-index-hero::after {
+    display: none;
+  }
+}

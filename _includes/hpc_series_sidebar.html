@@ -1,132 +1,323 @@
 <style>
-  /* Floating Sidebar Styles */
+  /* =====================================================================
+     HPC Series Sidebar — Enhanced to match site design tokens
+     ===================================================================== */
+
   #hpc-series-sidebar {
     position: fixed;
     top: 0;
     left: -320px;
     width: 300px;
     height: 100vh;
-    background: rgba(30, 30, 30, 0.85); /* Low opacity */
-    color: white;
-    box-shadow: 2px 0 10px rgba(0,0,0,0.5);
-    transition: left 0.3s ease-in-out;
+    background: var(--surface, #ffffff);
+    color: var(--text-secondary, #475569);
+    border-right: 1px solid var(--border, #e5e7eb);
+    box-shadow: 4px 0 32px rgba(0,0,0,0.12);
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 9999;
-    padding: 30px 20px;
+    padding: 0;
     overflow-y: auto;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
   }
-  
+
+  html[data-theme="dark"] #hpc-series-sidebar {
+    background: var(--surface, #151a23);
+    border-right-color: var(--border, #262c38);
+    box-shadow: 4px 0 32px rgba(0,0,0,0.5);
+  }
+
   #hpc-series-sidebar.active {
     left: 0;
   }
 
-  #hpc-series-sidebar h3 {
-    margin-top: 0;
-    color: #fff;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    padding-bottom: 10px;
-    font-size: 1.5em;
+  /* Sidebar header */
+  .hpc-sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.25rem 1rem;
+    border-bottom: 1px solid var(--border, #e5e7eb);
+    background: var(--bg-subtle, #f7f8fa);
+    flex-shrink: 0;
+  }
+
+  html[data-theme="dark"] .hpc-sidebar-header {
+    background: var(--bg-subtle, #11151d);
+    border-bottom-color: var(--border, #262c38);
+  }
+
+  .hpc-sidebar-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .hpc-sidebar-eyebrow {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent, #4338ca);
+    font-weight: 600;
+  }
+
+  .hpc-sidebar-title {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary, #0f172a);
+    margin: 0;
+  }
+
+  html[data-theme="dark"] .hpc-sidebar-title {
+    color: var(--text-primary, #e6e9ef);
+  }
+
+  /* Close button */
+  #hpc-sidebar-close {
+    background: none;
+    border: 1px solid var(--border, #e5e7eb);
+    color: var(--text-muted, #94a3b8);
+    font-size: 1.25rem;
+    cursor: pointer;
+    line-height: 1;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s, background 0.2s;
+    flex-shrink: 0;
+  }
+
+  #hpc-sidebar-close:hover {
+    color: var(--text-primary, #0f172a);
+    background: var(--bg, #ffffff);
+  }
+
+  html[data-theme="dark"] #hpc-sidebar-close:hover {
+    background: var(--bg, #0b0e14);
+  }
+
+  /* Nav list */
+  .hpc-sidebar-nav {
+    flex: 1;
+    padding: 1rem 0.75rem;
+    overflow-y: auto;
+  }
+
+  .hpc-sidebar-section-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted, #94a3b8);
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    margin-bottom: 0.5rem;
   }
 
   #hpc-series-sidebar ul {
     list-style: none;
     padding: 0;
-    margin: 20px 0 0 0;
+    margin: 0 0 1rem 0;
   }
 
   #hpc-series-sidebar li {
-    margin-bottom: 15px;
+    margin-bottom: 0.25rem;
   }
 
-  #hpc-series-sidebar a {
-    color: #ddd;
+  .hpc-sidebar-link {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    color: var(--text-secondary, #475569) !important;
     text-decoration: none;
-    font-size: 1.1em;
-    display: block;
-    padding: 8px 10px;
-    border-radius: 4px;
-    transition: background 0.2s, color 0.2s;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 0.88rem;
+    padding: 0.55rem 0.75rem;
+    border-radius: 8px;
+    transition: background 0.15s, color 0.15s;
+    line-height: 1.4;
   }
 
-  #hpc-series-sidebar a:hover {
-    color: #fff;
-    background: rgba(255, 255, 255, 0.1);
+  .hpc-sidebar-link:hover {
+    background: color-mix(in srgb, var(--accent, #4338ca) 8%, transparent);
+    color: var(--accent, #4338ca) !important;
   }
 
-  /* Hamburger Button */
+  .hpc-sidebar-link.current {
+    background: color-mix(in srgb, var(--accent, #4338ca) 10%, transparent);
+    color: var(--accent, #4338ca) !important;
+    font-weight: 500;
+  }
+
+  .hpc-sidebar-num {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-muted, #94a3b8);
+    min-width: 1.5rem;
+    padding-top: 0.05rem;
+    flex-shrink: 0;
+  }
+
+  .hpc-sidebar-link.current .hpc-sidebar-num {
+    color: var(--accent, #4338ca);
+  }
+
+  /* Sidebar footer */
+  .hpc-sidebar-footer {
+    padding: 0.75rem 1.25rem 1.25rem;
+    border-top: 1px solid var(--border, #e5e7eb);
+    flex-shrink: 0;
+  }
+
+  .hpc-sidebar-back {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 0.82rem;
+    color: var(--text-muted, #94a3b8) !important;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .hpc-sidebar-back:hover {
+    color: var(--accent, #4338ca) !important;
+  }
+
+  /* Hamburger Toggle Button */
   #hpc-sidebar-toggle {
     position: fixed;
     bottom: 30px;
-    left: 30px;
-    width: 50px;
-    height: 50px;
-    background: rgba(0, 123, 255, 0.7);
+    left: 20px;
+    width: 46px;
+    height: 46px;
+    background: var(--accent, #4338ca);
     color: white;
     border: none;
     border-radius: 50%;
     cursor: pointer;
     z-index: 10000;
-    font-size: 24px;
+    font-size: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: transform 0.2s, background 0.2s;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  }
-  
-  #hpc-sidebar-toggle:hover {
-    background: rgba(0, 123, 255, 0.9);
-    transform: scale(1.1);
+    box-shadow: 0 4px 16px color-mix(in srgb, var(--accent, #4338ca) 40%, transparent);
+    letter-spacing: 0;
   }
 
-  /* Close Button inside Sidebar */
-  #hpc-sidebar-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 28px;
-    cursor: pointer;
-    line-height: 1;
-    transition: color 0.2s;
+  #hpc-sidebar-toggle:hover {
+    background: var(--accent-strong, #312e81);
+    transform: scale(1.08);
   }
-  
-  #hpc-sidebar-close:hover {
-    color: #ff4d4d;
+
+  /* Backdrop overlay */
+  #hpc-sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 9998;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+
+  #hpc-sidebar-overlay.active {
+    display: block;
   }
 </style>
 
-<button id="hpc-sidebar-toggle" title="Table of Contents">☰</button>
+<button id="hpc-sidebar-toggle" title="Series Navigation" aria-label="Open series navigation">☰</button>
+<div id="hpc-sidebar-overlay"></div>
 
-<div id="hpc-series-sidebar">
-  <button id="hpc-sidebar-close" title="Close">&times;</button>
-  <h3>HPC & MEEP Series</h3>
-  <ul>
-    <li><a href="{{ '/hpc/meep/01-know-your-hpc/' | relative_url }}">1. Know Your HPC System</a></li>
-    <li><a href="{{ '/hpc/meep/02-what-are-slurm-and-lmod/' | relative_url }}">2. What are Slurm and Lmod?</a></li>
-    <!-- More posts will be added here -->
-  </ul>
+<div id="hpc-series-sidebar" role="navigation" aria-label="HPC and MEEP Series Navigation">
+  <div class="hpc-sidebar-header">
+    <div class="hpc-sidebar-title-group">
+      <span class="hpc-sidebar-eyebrow">Tutorial Series</span>
+      <h2 class="hpc-sidebar-title">HPC &amp; MEEP</h2>
+    </div>
+    <button id="hpc-sidebar-close" title="Close" aria-label="Close navigation">&times;</button>
+  </div>
+
+  <nav class="hpc-sidebar-nav">
+    <div class="hpc-sidebar-section-label">Articles</div>
+    <ul>
+      <li>
+        <a class="hpc-sidebar-link{% if page.url == '/hpc/meep/01-what-are-slurm-and-lmod/' %} current{% endif %}"
+           href="{{ '/hpc/meep/01-what-are-slurm-and-lmod/' | relative_url }}">
+          <span class="hpc-sidebar-num">01</span>
+          What are Slurm and Lmod?
+        </a>
+      </li>
+      <li>
+        <a class="hpc-sidebar-link{% if page.url == '/hpc/meep/02-know-your-hpc/' %} current{% endif %}"
+           href="{{ '/hpc/meep/02-know-your-hpc/' | relative_url }}">
+          <span class="hpc-sidebar-num">02</span>
+          Know Your HPC System
+        </a>
+      </li>
+      <!-- More articles will be added here -->
+    </ul>
+
+    <div class="hpc-sidebar-section-label">Coming Soon</div>
+    <ul>
+      <li>
+        <span class="hpc-sidebar-link" style="opacity:0.5;cursor:default;">
+          <span class="hpc-sidebar-num">03</span>
+          Writing Your First Job Script
+        </span>
+      </li>
+      <li>
+        <span class="hpc-sidebar-link" style="opacity:0.5;cursor:default;">
+          <span class="hpc-sidebar-num">04</span>
+          Running MEEP with MPI
+        </span>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="hpc-sidebar-footer">
+    <a class="hpc-sidebar-back" href="{{ '/hpc/meep/' | relative_url }}">
+      ← Series Overview
+    </a>
+  </div>
 </div>
 
 <script>
-  document.getElementById('hpc-sidebar-toggle').addEventListener('click', function(e) {
+(function () {
+  var toggle   = document.getElementById('hpc-sidebar-toggle');
+  var sidebar  = document.getElementById('hpc-series-sidebar');
+  var overlay  = document.getElementById('hpc-sidebar-overlay');
+  var closeBtn = document.getElementById('hpc-sidebar-close');
+
+  function openSidebar() {
+    sidebar.classList.add('active');
+    overlay.classList.add('active');
+    toggle.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeSidebar() {
+    sidebar.classList.remove('active');
+    overlay.classList.remove('active');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  toggle.addEventListener('click', function (e) {
     e.stopPropagation();
-    document.getElementById('hpc-series-sidebar').classList.add('active');
+    sidebar.classList.contains('active') ? closeSidebar() : openSidebar();
   });
 
-  document.getElementById('hpc-sidebar-close').addEventListener('click', function(e) {
-    e.stopPropagation();
-    document.getElementById('hpc-series-sidebar').classList.remove('active');
-  });
+  closeBtn.addEventListener('click', closeSidebar);
+  overlay.addEventListener('click', closeSidebar);
 
-  document.addEventListener('click', function(event) {
-    const sidebar = document.getElementById('hpc-series-sidebar');
-    const toggle = document.getElementById('hpc-sidebar-toggle');
-    if (!sidebar.contains(event.target) && !toggle.contains(event.target)) {
-      sidebar.classList.remove('active');
-    }
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeSidebar();
   });
+})();
 </script>
