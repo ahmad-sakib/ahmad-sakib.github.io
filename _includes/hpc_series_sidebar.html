@@ -1,0 +1,132 @@
+<style>
+  /* Floating Sidebar Styles */
+  #hpc-series-sidebar {
+    position: fixed;
+    top: 0;
+    left: -320px;
+    width: 300px;
+    height: 100vh;
+    background: rgba(30, 30, 30, 0.85); /* Low opacity */
+    color: white;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+    transition: left 0.3s ease-in-out;
+    z-index: 9999;
+    padding: 30px 20px;
+    overflow-y: auto;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  
+  #hpc-series-sidebar.active {
+    left: 0;
+  }
+
+  #hpc-series-sidebar h3 {
+    margin-top: 0;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 10px;
+    font-size: 1.5em;
+  }
+
+  #hpc-series-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+  }
+
+  #hpc-series-sidebar li {
+    margin-bottom: 15px;
+  }
+
+  #hpc-series-sidebar a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 1.1em;
+    display: block;
+    padding: 8px 10px;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  #hpc-series-sidebar a:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Hamburger Button */
+  #hpc-sidebar-toggle {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 123, 255, 0.7);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10000;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, background 0.2s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+  
+  #hpc-sidebar-toggle:hover {
+    background: rgba(0, 123, 255, 0.9);
+    transform: scale(1.1);
+  }
+
+  /* Close Button inside Sidebar */
+  #hpc-sidebar-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+  }
+  
+  #hpc-sidebar-close:hover {
+    color: #ff4d4d;
+  }
+</style>
+
+<button id="hpc-sidebar-toggle" title="Table of Contents">☰</button>
+
+<div id="hpc-series-sidebar">
+  <button id="hpc-sidebar-close" title="Close">&times;</button>
+  <h3>HPC & MEEP Series</h3>
+  <ul>
+    <li><a href="{{ '/hpc/meep/01-what-are-slurm-and-lmod/' | relative_url }}">1. What are Slurm and Lmod?</a></li>
+    <li><a href="{{ '/hpc/meep/02-know-your-hpc/' | relative_url }}">2. Know Your HPC System</a></li>
+    <!-- More posts will be added here -->
+  </ul>
+</div>
+
+<script>
+  document.getElementById('hpc-sidebar-toggle').addEventListener('click', function(e) {
+    e.stopPropagation();
+    document.getElementById('hpc-series-sidebar').classList.add('active');
+  });
+
+  document.getElementById('hpc-sidebar-close').addEventListener('click', function(e) {
+    e.stopPropagation();
+    document.getElementById('hpc-series-sidebar').classList.remove('active');
+  });
+
+  document.addEventListener('click', function(event) {
+    const sidebar = document.getElementById('hpc-series-sidebar');
+    const toggle = document.getElementById('hpc-sidebar-toggle');
+    if (!sidebar.contains(event.target) && !toggle.contains(event.target)) {
+      sidebar.classList.remove('active');
+    }
+  });
+</script>

@@ -8,6 +8,8 @@ toc_sticky: true
 classes: wide
 ---
 
+{% include hpc_series_sidebar.html %}
+
 *This guide is Part 2 of the [HPC and MEEP series](/hpc/meep/).*
 
 Before running an intensive simulation, take a few minutes to understand the cluster you have logged into. Check which machines are available, what hardware resources they provide, which Slurm partition can allocate them, and what software environment is installed.
