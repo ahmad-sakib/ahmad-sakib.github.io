@@ -14,7 +14,7 @@ classes: wide
     <p class="hpc-index-hero__eyebrow">Tutorial Series · Computational Photonics</p>
     <h1 class="hpc-index-hero__title">Running MEEP on an HPC Cluster</h1>
     <p class="hpc-index-hero__desc">
-      A practical, step-by-step guide to deploying <strong>MEEP</strong> (MIT Electromagnetic Equation Propagation) simulations on a High-Performance Computing cluster — from understanding the job scheduler to running full parallel FDTD simulations.
+      A four-part learning path from computer and cluster fundamentals to <strong>MEEP</strong> simulations, meta-optics, and reproducible HPC workflows.
     </p>
     <div class="hpc-index-hero__tags">
       <span class="hpc-index-tag">FDTD</span>
@@ -27,32 +27,32 @@ classes: wide
   </div>
 </div>
 
-<div class="hpc-article-list">
+<p class="hpc-coming-soon">The roadmap below is the planned article architecture. Placeholder pages identify topics reserved for future writing.</p>
 
-  <a class="hpc-article-card" href="/hpc/meep/01-what-are-slurm-and-lmod/">
-    <span class="hpc-article-card__number">01</span>
-    <div class="hpc-article-card__body">
-      <p class="hpc-article-card__title">What are Slurm and Lmod?</p>
-      <p class="hpc-article-card__desc">
-        A beginner-friendly introduction to the two essential HPC tools — the Slurm job scheduler and the Lmod environment module system — explained with intuitive analogies.
-      </p>
-    </div>
-    <span class="hpc-article-card__arrow">→</span>
-  </a>
+## Series Roadmap
 
-  <a class="hpc-article-card" href="/hpc/meep/02-know-your-hpc/">
-    <span class="hpc-article-card__number">02</span>
-    <div class="hpc-article-card__body">
-      <p class="hpc-article-card__title">Know Your HPC System</p>
-      <p class="hpc-article-card__desc">
-        Survey your cluster's hardware, partitions, storage, and installed software using Slurm commands and Lmod — before writing a single job script.
-      </p>
-    </div>
-    <span class="hpc-article-card__arrow">→</span>
-  </a>
-
-  <div class="hpc-coming-soon">
-    📡 &nbsp; More articles are on the way — covering MEEP installation, MPI job scripts, GPU acceleration, and full FDTD simulation workflows.
+{% for part in site.data.hpc_meep_series.parts %}
+<section class="hpc-roadmap-part" id="part-{{ part.number }}">
+  <h2>Part {{ part.roman }} — {{ part.title }}</h2>
+  <p>{{ part.description }}</p>
+  <div class="hpc-article-list">
+    {% for article in part.articles %}
+    <a class="hpc-article-card" href="{{ article.url | relative_url }}">
+      <span class="hpc-article-card__number">{{ part.roman }}.{{ article.number }}</span>
+      <div class="hpc-article-card__body">
+        <p class="hpc-article-card__title">{{ article.title }}</p>
+        <p class="hpc-article-card__desc">{{ article.summary }}</p>
+      </div>
+      <span class="hpc-article-card__arrow" aria-hidden="true">&rarr;</span>
+    </a>
+    {% endfor %}
   </div>
+</section>
+{% endfor %}
 
-</div>
+## Existing Guides
+
+These articles were published before the four-part roadmap was organized. They remain available as supplementary material:
+
+- [What are Slurm and Lmod?](/hpc/meep/01-what-are-slurm-and-lmod/)
+- [Know Your HPC System](/hpc/meep/02-know-your-hpc/)

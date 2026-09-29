@@ -1,0 +1,203 @@
+title: "MEEP on HPC"
+overview_url: "/hpc/meep/"
+parts:
+  - number: 1
+    roman: "I"
+    title: "Understanding the Machine"
+    description: "Build the basic computer and scientific-computing concepts needed to understand HPC."
+    articles:
+      - order: 1
+        number: 1
+        title: "What Is HPC?"
+        url: "/hpc/meep/part-1/01-what-is-hpc/"
+        summary: "Computing, HPC, its purpose, and the problems it is designed to help solve."
+      - order: 2
+        number: 2
+        title: "HPC vs. Workstation vs. Server vs. Supercomputer"
+        url: "/hpc/meep/part-1/02-hpc-vs-workstation-server-supercomputer/"
+        summary: "Compare common computing systems by architecture, purpose, and workload."
+      - order: 3
+        number: 3
+        title: "How Does a Computer Process Data?"
+        url: "/hpc/meep/part-1/03-how-computer-processes-data/"
+        summary: "Programs, instructions, data, memory, storage, and the basic execution path."
+      - order: 4
+        number: 4
+        title: "Storage, Memory, Cache, and CPU"
+        url: "/hpc/meep/part-1/04-storage-memory-cache-cpu/"
+        summary: "A beginner-friendly tour of the memory hierarchy, latency, and bandwidth."
+      - order: 5
+        number: 5
+        title: "Inside the CPU"
+        url: "/hpc/meep/part-1/05-inside-the-cpu/"
+        summary: "Cores, registers, execution units, control logic, cycles, and I/O."
+      - order: 6
+        number: 6
+        title: "Why Scientific Computing Needs HPC"
+        url: "/hpc/meep/part-1/06-why-scientific-computing-needs-hpc/"
+        summary: "How compute, memory, and runtime demands lead from one machine to a cluster."
+  - number: 2
+    roman: "II"
+    title: "Understanding the Cluster"
+    description: "Learn the general cluster workflow, then relate it to the YZ HPC environment."
+    articles:
+      - order: 7
+        number: 1
+        title: "Introducing the YZ HPC Cluster"
+        url: "/hpc/meep/part-2/01-introducing-yz-hpc/"
+        summary: "Introduce YZ HPC and distinguish its site-specific details from general HPC concepts."
+      - order: 8
+        number: 2
+        title: "YZ HPC Architecture"
+        url: "/hpc/meep/part-2/02-yz-hpc-architecture/"
+        summary: "Reserve an architecture overview from the user's computer to allocated compute resources."
+      - order: 9
+        number: 3
+        title: "The Linux Filesystem on an HPC Cluster"
+        url: "/hpc/meep/part-2/03-linux-filesystem-hpc/"
+        summary: "Plan where code, persistent files, temporary data, and simulation outputs belong."
+      - order: 10
+        number: 4
+        title: "Connecting to YZ HPC with SSH"
+        url: "/hpc/meep/part-2/04-connecting-yz-hpc-ssh/"
+        summary: "Outline the local-to-remote connection and safe authentication practices."
+      - order: 11
+        number: 5
+        title: "Login Nodes vs. Compute Nodes"
+        url: "/hpc/meep/part-2/05-login-vs-compute-nodes/"
+        summary: "Explain the different roles of login and compute nodes in a scheduled workflow."
+      - order: 12
+        number: 6
+        title: "How Do HPC Nodes Communicate?"
+        url: "/hpc/meep/part-2/06-how-hpc-nodes-communicate/"
+        summary: "Introduce node-to-node communication, latency, bandwidth, and data exchange."
+      - order: 13
+        number: 7
+        title: "Introduction to Slurm"
+        url: "/hpc/meep/part-2/07-introduction-to-slurm/"
+        summary: "Reserve an introduction to queues, jobs, partitions, resources, and Slurm commands."
+      - order: 14
+        number: 8
+        title: "Writing Your First Slurm Job"
+        url: "/hpc/meep/part-2/08-first-slurm-job/"
+        summary: "Outline a batch script, resource requests, submission, execution, and output."
+      - order: 15
+        number: 9
+        title: "Lmod and HPC Software Environments"
+        url: "/hpc/meep/part-2/09-lmod-software-environments/"
+        summary: "Reserve space for software modules, versions, dependencies, and environment commands."
+      - order: 16
+        number: 10
+        title: "MPI and OpenMP"
+        url: "/hpc/meep/part-2/10-mpi-and-openmp/"
+        summary: "Compare serial, shared-memory, and distributed-memory parallel execution."
+  - number: 3
+    roman: "III"
+    title: "Understanding MEEP"
+    description: "Connect electromagnetic ideas and numerical methods to MEEP models and results."
+    articles:
+      - order: 17
+        number: 1
+        title: "From Maxwell's Equations to FDTD"
+        url: "/hpc/meep/part-3/01-maxwell-to-fdtd/"
+        summary: "Trace the path from electromagnetic equations to a discretized time-stepping method."
+      - order: 18
+        number: 2
+        title: "The Yee Grid"
+        url: "/hpc/meep/part-3/02-yee-grid/"
+        summary: "Reserve an explanation of field placement and spatial and temporal staggering."
+      - order: 19
+        number: 3
+        title: "The CFL Stability Condition"
+        url: "/hpc/meep/part-3/03-cfl-stability-condition/"
+        summary: "Introduce timestep, resolution, and the role of the Courant stability condition."
+      - order: 20
+        number: 4
+        title: "Understanding MEEP's Core Objects"
+        url: "/hpc/meep/part-3/04-meep-core-objects/"
+        summary: "Map common MEEP objects to geometry, materials, boundaries, sources, and simulations."
+      - order: 21
+        number: 5
+        title: "Your First MEEP Simulation: Vacuum"
+        url: "/hpc/meep/part-3/05-first-vacuum-simulation/"
+        summary: "Reserve the first complete model, run, visualization, and output workflow."
+      - order: 22
+        number: 6
+        title: "Fabry-Perot Simulation"
+        url: "/hpc/meep/part-3/06-fabry-perot/"
+        summary: "Plan a slab example connecting reflection, transmission, interference, and resonance."
+      - order: 23
+        number: 7
+        title: "Waveguide Simulation"
+        url: "/hpc/meep/part-3/07-waveguide-simulation/"
+        summary: "Reserve a guided-wave model and analysis of modes, index, and field profiles."
+      - order: 24
+        number: 8
+        title: "Flux and Electromagnetic Observables"
+        url: "/hpc/meep/part-3/08-flux-and-electromagnetic-observables/"
+        summary: "Introduce flux monitors and the interpretation of reflection, transmission, and absorption."
+      - order: 25
+        number: 9
+        title: "Photonic Crystals"
+        url: "/hpc/meep/part-3/09-photonic-crystals/"
+        summary: "Reserve periodic structures, Bloch wavevectors, bands, gaps, and defects."
+      - order: 26
+        number: 10
+        title: "Mie Scattering"
+        url: "/hpc/meep/part-3/10-mie-scattering/"
+        summary: "Plan a particle-scattering example and comparison with analytical results."
+      - order: 27
+        number: 11
+        title: "Dispersive Materials"
+        url: "/hpc/meep/part-3/11-dispersive-materials/"
+        summary: "Reserve frequency-dependent material models and their role in simulations."
+  - number: 4
+    roman: "IV"
+    title: "Using MEEP for Meta-Optics"
+    description: "Build from MEEP fundamentals toward reproducible meta-optics and metalens workflows."
+    articles:
+      - order: 28
+        number: 1
+        title: "What Is a Meta-Atom?"
+        url: "/hpc/meep/part-4/01-meta-atom/"
+        summary: "Introduce a meta-atom as a geometry-dependent element in a metasurface design."
+      - order: 29
+        number: 2
+        title: "Complex Electromagnetic Fields"
+        url: "/hpc/meep/part-4/02-complex-electromagnetic-fields/"
+        summary: "Reserve amplitude, phase, phasors, and extracting phase from complex fields."
+      - order: 30
+        number: 3
+        title: "Building a Phase Library"
+        url: "/hpc/meep/part-4/03-building-phase-library/"
+        summary: "Outline a geometry sweep that records transmission and phase for later design."
+      - order: 31
+        number: 4
+        title: "Phase Coverage and Meta-Atom Selection"
+        url: "/hpc/meep/part-4/04-phase-coverage-meta-atom-selection/"
+        summary: "Reserve phase-range and transmission trade-offs for selecting candidate geometries."
+      - order: 32
+        number: 5
+        title: "Beam Deflector"
+        url: "/hpc/meep/part-4/05-beam-deflector/"
+        summary: "Plan a device example connecting a spatial phase profile to a deflected beam."
+      - order: 33
+        number: 6
+        title: "Metalens Simulation"
+        url: "/hpc/meep/part-4/06-metalens-simulation/"
+        summary: "Outline the progression from phase library to full-wave metalens evaluation."
+      - order: 34
+        number: 7
+        title: "Running Meta-Optics Parameter Sweeps on HPC"
+        url: "/hpc/meep/part-4/07-hpc-parameter-sweeps/"
+        summary: "Reserve batch workflows for independent geometry sweeps and output organization."
+      - order: 35
+        number: 8
+        title: "Numerical Convergence"
+        url: "/hpc/meep/part-4/08-numerical-convergence/"
+        summary: "Plan convergence checks for resolution, timestep, boundaries, and domain size."
+      - order: 36
+        number: 9
+        title: "Research Reproduction"
+        url: "/hpc/meep/part-4/09-research-reproduction/"
+        summary: "Capstone outline for modeling, running, validating, and comparing a published result."

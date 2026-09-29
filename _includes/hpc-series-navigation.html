@@ -1,0 +1,29 @@
+{% assign previous_url = "" %}
+{% assign previous_title = "" %}
+{% assign next_url = "" %}
+{% assign next_title = "" %}
+{% for part in site.data.hpc_meep_series.parts %}
+  {% for article in part.articles %}
+    {% if article.order < page.series_order %}
+      {% assign previous_url = article.url %}
+      {% assign previous_title = article.title %}
+    {% elsif article.order > page.series_order and next_url == "" %}
+      {% assign next_url = article.url %}
+      {% assign next_title = article.title %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+<nav class="hpc-sequence-nav" aria-label="Article sequence">
+  <p><a href="{{ site.data.hpc_meep_series.overview_url | relative_url }}">{{ site.data.hpc_meep_series.title }}</a> / Part {{ page.series_part }}</p>
+  <div class="hpc-sequence-nav__links">
+    {% if previous_url != "" %}
+      <a rel="prev" href="{{ previous_url | relative_url }}">&larr; Previous: {{ previous_title }}</a>
+    {% else %}
+      <span></span>
+    {% endif %}
+    {% if next_url != "" %}
+      <a rel="next" href="{{ next_url | relative_url }}">Next: {{ next_title }} &rarr;</a>
+    {% endif %}
+  </div>
+</nav>

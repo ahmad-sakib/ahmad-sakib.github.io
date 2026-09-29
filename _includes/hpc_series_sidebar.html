@@ -246,39 +246,25 @@
   </div>
 
   <nav class="hpc-sidebar-nav">
-    <div class="hpc-sidebar-section-label">Articles</div>
-    <ul>
-      <li>
-        <a class="hpc-sidebar-link{% if page.url == '/hpc/meep/01-what-are-slurm-and-lmod/' %} current{% endif %}"
-           href="{{ '/hpc/meep/01-what-are-slurm-and-lmod/' | relative_url }}">
-          <span class="hpc-sidebar-num">01</span>
-          What are Slurm and Lmod?
-        </a>
-      </li>
-      <li>
-        <a class="hpc-sidebar-link{% if page.url == '/hpc/meep/02-know-your-hpc/' %} current{% endif %}"
-           href="{{ '/hpc/meep/02-know-your-hpc/' | relative_url }}">
-          <span class="hpc-sidebar-num">02</span>
-          Know Your HPC System
-        </a>
-      </li>
-      <!-- More articles will be added here -->
-    </ul>
+    {% for part in site.data.hpc_meep_series.parts %}
+      <div class="hpc-sidebar-section-label">Part {{ part.roman }} — {{ part.title }}</div>
+      <ul>
+        {% for article in part.articles %}
+          <li>
+            <a class="hpc-sidebar-link{% if page.url == article.url %} current{% endif %}"
+               href="{{ article.url | relative_url }}"{% if page.url == article.url %} aria-current="page"{% endif %}>
+              <span class="hpc-sidebar-num">{{ part.roman }}.{{ article.number }}</span>
+              {{ article.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
 
-    <div class="hpc-sidebar-section-label">Coming Soon</div>
+    <div class="hpc-sidebar-section-label">Existing Guides</div>
     <ul>
-      <li>
-        <span class="hpc-sidebar-link" style="opacity:0.5;cursor:default;">
-          <span class="hpc-sidebar-num">03</span>
-          Writing Your First Job Script
-        </span>
-      </li>
-      <li>
-        <span class="hpc-sidebar-link" style="opacity:0.5;cursor:default;">
-          <span class="hpc-sidebar-num">04</span>
-          Running MEEP with MPI
-        </span>
-      </li>
+      <li><a class="hpc-sidebar-link" href="{{ '/hpc/meep/01-what-are-slurm-and-lmod/' | relative_url }}">What are Slurm and Lmod?</a></li>
+      <li><a class="hpc-sidebar-link" href="{{ '/hpc/meep/02-know-your-hpc/' | relative_url }}">Know Your HPC System</a></li>
     </ul>
   </nav>
 
