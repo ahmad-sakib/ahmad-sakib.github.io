@@ -31,7 +31,8 @@ A program is a list of machine instructions that tells the processor what to do.
 
 <div class="hpc-diagram-label">Figure 1 · A simplified path from stored program to result</div>
 ```mermaid
-flowchart LR
+%%{init: {"themeVariables": {"fontSize": "18px"}, "flowchart": {"nodeSpacing": 36, "rankSpacing": 48}}}%%
+flowchart TB
 	Disk["SSD / storage<br/>program and input"] -->|load| RAM["RAM<br/>instructions and data"]
 	RAM -->|fetch instruction| Fetch[Fetch]
 	Fetch --> Decode[Decode]
