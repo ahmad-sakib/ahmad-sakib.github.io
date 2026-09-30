@@ -149,6 +149,29 @@
     margin-bottom: 1.25rem;
   }
 
+  strong {
+    color: var(--text-primary);
+    font-weight: 650;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
+    text-underline-offset: 0.16em;
+    transition: color 0.15s ease, text-decoration-color 0.15s ease;
+
+    &:hover {
+      color: var(--accent-strong);
+      text-decoration-color: currentColor;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+  }
+
   /* Section headings */
   h2 {
     font-family: var(--font-serif) !important;
@@ -334,11 +357,19 @@
 .hpc-article-content pre.mermaid {
   background: var(--bg-subtle);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.5rem 1rem;
-  margin: 2rem 0;
+  border-radius: 8px;
+  padding: 1.5rem 1.25rem;
+  margin: 1.75rem 0 2rem;
   overflow-x: auto;
   text-align: center;
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--text-primary) 5%, transparent);
+
+  svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
 
   /* Caption via data-caption attribute */
   &[data-caption]::after {
@@ -354,14 +385,31 @@
 
 /* Mermaid diagram label — shown above the chart */
 .hpc-diagram-label {
-  font-family: var(--font-sans);
-  font-size: 0.8rem;
+  width: fit-content;
+  max-width: 100%;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--text-muted);
-  margin-bottom: -1rem;
-  padding-left: 0.25rem;
+  letter-spacing: 0;
+  color: var(--accent);
+  margin: 1.9rem 0 -1.1rem;
+  padding: 0.4rem 0.7rem;
+  background: color-mix(in srgb, var(--accent) 7%, var(--bg));
+  border: 1px solid color-mix(in srgb, var(--accent) 18%, var(--border));
+  border-radius: 4px 4px 0 0;
+}
+
+.hpc-article-content h2:last-of-type + ol {
+  margin-top: 1rem;
+  padding: 0.5rem 0 0.5rem 2.5rem;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+
+  li {
+    padding: 0.45rem 0.25rem;
+    margin: 0;
+  }
 }
 
 /* Diagram figure wrapper */
@@ -525,6 +573,54 @@
 .hpc-pagination__link--next {
   text-align: right;
   align-items: flex-end;
+}
+
+.hpc-sequence-nav {
+  max-width: 860px;
+  margin: 0 auto 3rem;
+  padding: 1.25rem 1.5rem 0;
+  border-top: 1px solid var(--border);
+
+  > p {
+    margin: 0 0 0.85rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.hpc-sequence-nav__links {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+
+  a {
+    min-width: 0;
+    color: var(--text-secondary);
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--accent);
+    }
+  }
+
+  a[rel="next"] {
+    margin-left: auto;
+    text-align: right;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -755,6 +851,16 @@ a.hpc-article-card:hover .hpc-article-card__title {
     padding: 0 1rem 3rem;
   }
 
+  .hpc-article-content .mermaid,
+  .hpc-article-content pre.mermaid {
+    padding: 1rem 0.5rem;
+  }
+
+  .hpc-diagram-label {
+    font-size: 0.7rem;
+    overflow-wrap: anywhere;
+  }
+
   .hpc-article-card {
     flex-direction: column;
     gap: 0.75rem;
@@ -762,6 +868,19 @@ a.hpc-article-card:hover .hpc-article-card__title {
 
   .hpc-article-card__arrow {
     display: none;
+  }
+
+  .hpc-sequence-nav {
+    padding: 1rem 1rem 0;
+  }
+
+  .hpc-sequence-nav__links {
+    flex-direction: column;
+    gap: 0.75rem;
+
+    a[rel="next"] {
+      text-align: left;
+    }
   }
 
   .hpc-pagination {
