@@ -4,6 +4,7 @@ title: "The Ultimate Guide to Installing MEEP on Arch Linux"
 date: 2026-09-13 10:00:00 +0600
 categories: [Computational Photonics, FDTD]
 tags: [meep, arch-linux, conda, python, jupyter, fdtd, photonics]
+series: meep-fdtd
 description: "A comprehensive, step-by-step guide to installing MEEP and PyMeep on Arch Linux using Miniforge. Learn how to set up your environment, integrate with VS Code and Jupyter, and run your first FDTD simulation."
 toc: true
 toc_sticky: true

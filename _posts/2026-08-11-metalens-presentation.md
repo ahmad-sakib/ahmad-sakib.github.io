@@ -4,6 +4,7 @@ title: "Metalens Presentation Slide"
 date: 2026-08-11 12:00:00 +0600
 categories: [Research, Metaoptics]
 tags: [metalens, presentation, slides]
+series: metalens
 description: "Download the comprehensive metalens presentation slide covering key concepts, design principles, and applications in metaoptics research."
 
 ---

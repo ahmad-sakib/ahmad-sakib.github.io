@@ -1,57 +1,25 @@
 ---
-title: "Metalenses | From Wavefronts to Inverse Design"
+title: "Metalenses"
 layout: single
 permalink: /metaoptics/metalenses/
 author_profile: false
-sidebar:
-  nav: "metalenses"
+series: metalens
 ---
 
-# Metalenses
+I am working on metalenses. This series will collect my posts as I write each part.
 
-Welcome to the Metalenses roadmap. This hub organizes the 22-part series into a clear, navigable learning path.
+## Posts
 
-## Foundations
-
-- [01 — What Is a Metalens?](/metaoptics/metalenses/what-is-a-metalens/)
-- [02 — What Does a Lens Do?](/metaoptics/metalenses/what-does-a-lens-do/)
-- [03 — How Does a Lens Focus Light?](/metaoptics/metalenses/how-does-a-lens-focus-light/)
-- [04 — Conventional Lens Phase Profile](/metaoptics/metalenses/conventional-lens-phase-profile/)
-- [05 — Metalens Phase Profile](/metaoptics/metalenses/metalens-phase-profile/)
-
-## Meta-Atom Physics
-
-- [06 — Meta-Atom](/metaoptics/metalenses/meta-atom/)
-- [07 — Propagation Phase](/metaoptics/metalenses/propagation-phase/)
-- [08 — Resonant Phase](/metaoptics/metalenses/resonant-phase/)
-- [09 — Geometric Phase](/metaoptics/metalenses/geometric-phase/)
-- [10 — Meta-Atom Library](/metaoptics/metalenses/meta-atom-library/)
-
-## Design
-
-- [11 — Metalens Design](/metaoptics/metalenses/metalens-design/)
-
-## Electromagnetic Simulation
-
-- [12 — Electromagnetic Simulation](/metaoptics/metalenses/electromagnetic-simulation/)
-- [13 — FDTD](/metaoptics/metalenses/fdtd/)
-- [14 — RCWA](/metaoptics/metalenses/rcwa/)
-
-## Performance
-
-- [15 — Metalens Performance](/metaoptics/metalenses/metalens-performance/)
-- [16 — Efficiency](/metaoptics/metalenses/efficiency/)
-- [17 — Numerical Aperture](/metaoptics/metalenses/numerical-aperture/)
-- [18 — Chromaticity](/metaoptics/metalenses/chromaticity/)
-
-## Inverse Design
-
-- [19 — Inverse Design](/metaoptics/metalenses/inverse-design/)
-- [20 — Adjoint Optimization](/metaoptics/metalenses/adjoint-optimization/)
-- [21 — Machine Learning for Metalens Design](/metaoptics/metalenses/machine-learning-for-metalens-design/)
-
-## Frontiers
-
-- [22 — Next-Generation Metalenses](/metaoptics/metalenses/next-generation-metalenses/)
-
-<!-- Keep the hub content minimal; article pages remain unchanged. -->
+{% assign series_posts = site.posts | where: "series", page.series %}
+{% if series_posts.size > 0 %}
+<ol class="series-post-list">
+	{% for post in series_posts %}
+		<li>
+			<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+			<a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+		</li>
+	{% endfor %}
+</ol>
+{% else %}
+Posts in this series will appear here as I publish them.
+{% endif %}

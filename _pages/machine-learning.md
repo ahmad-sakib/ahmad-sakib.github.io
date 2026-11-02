@@ -2,16 +2,22 @@
 layout: single
 title: "Machine Learning"
 permalink: /machine-learning/
-excerpt: "Ahmad Hasan Sakib's research on machine learning for physics — neural networks, gradient descent, PCA, and ML applications in nonlinear optics."
+excerpt: "Learning notes on gradient descent, PCA, and linear regression."
 author_profile: false
 ---
 
-# Machine Learning in Physics
+I am learning machine-learning fundamentals and collecting notes here. The descriptions below are placeholders for my own explanations and examples.
 
-This archive collects my research at the intersection of machine learning and computational physics. My focus: applying neural network architectures to model nonlinear optical phenomena that resist classical analytical solutions.
+## Topics
 
----
+### Gradient descent
 
-### Machine Learning Insights
+Placeholder: add my explanation, derivation, and examples here.
 
-{% include topic-archive.html category="Machine Learning" empty_message="Currently drafting several tutorials on Gradient Descent and Neural Network optimization. Stay tuned." %}
+### PCA
+
+Placeholder: add my explanation and an example here.
+
+### Linear regression
+
+Placeholder: add my explanation, assumptions, and examples here.
