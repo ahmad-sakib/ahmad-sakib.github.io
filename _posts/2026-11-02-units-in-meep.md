@@ -9,7 +9,7 @@ description: "Understand Meep's unit system through scale invariance, and conver
 mathjax: true
 toc: true
 toc_sticky: true
-classes: wide
+classes: wide units-in-meep
 ---
 
 

@@ -511,6 +511,35 @@ html:not([data-theme="dark"]) .moon-icon {
   color: var(--text-secondary);
 }
 
+body.units-in-meep .page__content,
+body.units-in-meep .page__content p,
+body.units-in-meep .page__content li,
+body.units-in-meep .page__content h2,
+body.units-in-meep .page__content h3,
+body.units-in-meep .page__content h4,
+body.units-in-meep .page__content blockquote {
+  font-family: "STIX Two Text", Georgia, serif !important;
+}
+
+body.units-in-meep .page__content {
+  font-size: 1.12rem;
+  line-height: 1.9;
+}
+
+body.units-in-meep .page__content h2,
+body.units-in-meep .page__content h3,
+body.units-in-meep .page__content h4 {
+  line-height: 1.4;
+}
+
+body.units-in-meep .page__content .katex {
+  font-size: 1em !important;
+}
+
+body.units-in-meep .page__content :not(.katex-display) > .katex {
+  font-size: 0.95em !important;
+}
+
 .article-epigraph {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);

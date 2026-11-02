@@ -1,7 +1,7 @@
-<!-- Fonts: Literata (long-form reading/headings) + IBM Plex Sans (UI) + IBM Plex Mono (code) -->
+<!-- Fonts: Literata (long-form reading/headings) + IBM Plex Sans (UI) + IBM Plex Mono (code) + STIX Two (math) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Literata:ital,wght@0,400;0,500;0,600;1,400;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Literata:ital,wght@0,400;0,500;0,600;1,400;1,600&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=STIX+Two+Math&display=swap" rel="stylesheet">
 
 {% if page.mathjax != false %}
 <!-- KaTeX — fast LaTeX math rendering -->
@@ -9,13 +9,46 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" crossorigin="anonymous" onload="renderKaTeX();"></script>
 <style>
-  /* Ensure KaTeX uses proper mathematical fonts */
+  /*
+   * STIX Two Math — a beautiful, eye-soothing serif math font
+   * designed specifically for scientific and mathematical typesetting.
+   * It provides harmonious integration with body text and
+   * exceptional legibility for equations.
+   */
   .katex {
-    font: normal 1.21em KaTeX_Main, KaTeX_Math, "Times New Roman", Times, serif;
-    font-style: normal;
+    font-size: 1.15em;
+    font-family: "STIX Two Math", "STIX Two Text", KaTeX_Main, KaTeX_Math, "Times New Roman", serif;
   }
-  .katex-mathit {
-    font-style: italic;
+
+  /* Display math: generous breathing room, subtle background card */
+  .katex-display {
+    margin: 1.75rem 0 !important;
+    padding: 1.25rem 1.5rem !important;
+    background: var(--bg-subtle);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  /* Boxed equations get a special highlight treatment */
+  .katex-display .katex .boxed {
+    border-color: var(--accent) !important;
+    padding: 0.35em 0.5em !important;
+  }
+
+  /* Dark mode refinements */
+  html[data-theme="dark"] .katex-display {
+    background: var(--surface);
+    border-color: var(--border);
+    border-left-color: var(--accent);
+  }
+
+  /* Inline math: subtle weight to stand out in body text */
+  :not(.katex-display) > .katex {
+    font-size: 1.1em;
+    color: var(--text-primary);
   }
 </style>
 <script>
